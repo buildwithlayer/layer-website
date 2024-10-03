@@ -1,0 +1,48 @@
+/** @jsxImportSource @emotion/react */
+import React from "react";
+import { Colors } from "../constants/Colors";
+import { css } from "@emotion/react";
+
+const Button = ({
+  label,
+  type,
+  onClick,
+  fullWidth = false,
+}: {
+  label: string;
+  type: "primary" | "secondary";
+  onClick: () => void;
+  fullWidth?: boolean;
+}) => {
+  const buttonStyle = css`
+    ${fullWidth ? "width: 100%;" : ""}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: ${type === "primary"
+      ? "0"
+      : `inset 0px 0px 0px 1px ${Colors.primary.main}`};
+    gap: 8px;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: ${type === "primary"
+      ? Colors.primary.main
+      : "transparent"};
+    color: ${type === "primary" ? "white" : Colors.primary.main};
+    &:hover {
+      background-color: ${type === "primary"
+        ? Colors.primary.dark
+        : Colors.primary.light};
+    }
+  `;
+  return (
+    <button css={buttonStyle} onClick={onClick}>
+      <p className="button">{label}</p>
+    </button>
+  );
+};
+
+export default Button;
