@@ -1,0 +1,31 @@
+name: deploy
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: ${{github.ref == 'refs/heads/main' && 'main' || 'stg'}}
+    steps:
+      - name: Checkout 🔀
+        uses: actions/checkout@v3
+
+      - name: Configure gcloud 🌧
+        id: "auth"
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Deploy Layer Website 🚀
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: ${{vars.GOOGLE_CLOUD_RUN_SERVICE}}
+          source: "."
+          env_vars: |-
+            REACT_APP_MANAGEMENT_DASH_URL=${{vars.REACT_APP_MANAGEMENT_DASH_URL}}
+            REACT_APP_CHAT_URL=${{vars.REACT_APP_CHAT_URL}}
+          timeout: 10m

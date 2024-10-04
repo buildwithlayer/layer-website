@@ -130,7 +130,8 @@ const Pricing = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       buttonLabel: "Get Started for Free",
       buttonType: "primary",
       buttonOnClick: () => {
-        window.location.href = "https://dashboard.buildwithlayer.com/signup";
+        window.location.href =
+          process.env.REACT_APP_MANAGEMENT_DASH_URL + "signup";
       },
     },
     {
