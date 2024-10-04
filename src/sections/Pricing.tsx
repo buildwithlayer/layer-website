@@ -117,7 +117,7 @@ const PricingCard = ({
   );
 };
 
-const Pricing = () => {
+const Pricing = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const pricingPlans: iPricingCard[] = [
     {
       label: "Basic",
@@ -178,7 +178,7 @@ const Pricing = () => {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: screenWidth === "lg" ? "row" : "column",
             alignItems: "stretch",
             gap: "16px",
             width: "100%",

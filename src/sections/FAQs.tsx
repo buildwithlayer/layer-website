@@ -3,7 +3,7 @@ import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
 import ExpandIcon from "../assets/expand-icon.svg";
 
-const FAQs = () => {
+const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const Collapse = ({
     question,
     answer,
@@ -88,7 +88,14 @@ const FAQs = () => {
           width: "100%",
         }}
       >
-        <h2>You may be asking yourself 🤔</h2>
+        <h2
+          style={{
+            textAlign: screenWidth === "lg" ? "left" : "center",
+            width: "100%",
+          }}
+        >
+          You may be asking yourself 🤔
+        </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {faqs.map((faq, index) => (
             <Collapse

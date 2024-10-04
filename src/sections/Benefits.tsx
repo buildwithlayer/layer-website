@@ -4,7 +4,7 @@ import FeatureCard from "../components/FeatureCard";
 import AnalyticsIcon from "../assets/analytics-icon.svg";
 import SupportIcon from "../assets/support-icon.svg";
 
-const Benefits = () => {
+const Benefits = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const [activeFeature, setActiveFeature] =
     React.useState("In Depth Analytics");
 
@@ -43,26 +43,41 @@ const Benefits = () => {
         }}
       >
         {/* Left Section */}
-        <div style={{ width: "450px", overflow: "hidden" }}>
-          <img
-            src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-            alt="Features Illustration"
-            height="400px"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
+        {screenWidth === "lg" && (
+          <div style={{ width: "450px", overflow: "hidden" }}>
+            <img
+              src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+              alt="Features Illustration"
+              height="400px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        )}
         {/* Right Section */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "24px",
-            width: "440px",
+            width: screenWidth === "lg" ? "440px" : "100%",
+            alignItems: screenWidth === "lg" ? "center" : "flex-start",
           }}
         >
-          <h2>Your product will 📈 from</h2>
+          <h2
+            style={{
+              textAlign: screenWidth === "lg" ? "left" : "center",
+              width: "100%",
+            }}
+          >
+            Your product will 📈 from
+          </h2>
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              width: "100%",
+            }}
           >
             {features.map((feature, index) => (
               <FeatureCard {...feature} key={index} />

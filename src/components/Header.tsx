@@ -4,7 +4,7 @@ import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
 
-const Header = () => {
+const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
 
   const handleClick = () => {
@@ -20,6 +20,7 @@ const Header = () => {
         left: 0,
         right: 0,
         width: "100%",
+        maxWidth: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -53,35 +54,39 @@ const Header = () => {
           <h1 className="brand-text">Layer</h1>
         </div>
         {/* Nav Links & Button */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "16px",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
-          {/* Nav Links */}
+        {screenWidth != "sm" ? (
           <div
             style={{
               display: "flex",
               flexDirection: "row",
+              gap: "16px",
               justifyContent: "flex-start",
               alignItems: "center",
             }}
           >
-            {sections.map((section, index) => (
-              <NavLink section={section} key={index} />
-            ))}
+            {/* Nav Links */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              {sections.map((section, index) => (
+                <NavLink section={section} key={index} />
+              ))}
+            </div>
+            {/* Button */}
+            <Button
+              label="Get Started for Free"
+              type="primary"
+              onClick={handleClick}
+            />
           </div>
-          {/* Button */}
-          <Button
-            label="Get Started for Free"
-            type="primary"
-            onClick={handleClick}
-          />
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

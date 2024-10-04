@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Overview from "./sections/Overview";
 import Features from "./sections/Features";
 import Benefits from "./sections/Benefits";
 import Pricing from "./sections/Pricing";
 import FAQs from "./sections/FAQs";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const [screenWidth, setScreenWidth] = useState<"sm" | "md" | "lg">("lg");
+
+  useEffect(() => {
+    if (isDesktop) {
+      setScreenWidth("lg");
+    } else if (isTablet) {
+      setScreenWidth("md");
+    } else if (isMobile) {
+      setScreenWidth("sm");
+    }
+  }, [isDesktop, isTablet, isMobile]);
+
   return (
     <>
-      <Header />
+      <Header screenWidth={screenWidth} />
       <div
         style={{
           display: "flex",
@@ -17,13 +34,14 @@ function App() {
           alignItems: "stretch",
           marginTop: 76,
           width: "100%",
+          maxWidth: "100%",
         }}
       >
-        <Overview />
-        <Features />
-        <Benefits />
-        <Pricing />
-        <FAQs />
+        <Overview screenWidth={screenWidth} />
+        <Features screenWidth={screenWidth} />
+        <Benefits screenWidth={screenWidth} />
+        <Pricing screenWidth={screenWidth} />
+        <FAQs screenWidth={screenWidth} />
       </div>
     </>
   );

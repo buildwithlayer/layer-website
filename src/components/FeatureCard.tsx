@@ -17,6 +17,7 @@ const FeatureCard = ({
   return (
     <div
       style={{
+        width: "100%",
         cursor: "pointer",
         display: "flex",
         flexDirection: "column",

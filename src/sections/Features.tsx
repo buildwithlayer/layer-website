@@ -5,7 +5,7 @@ import CopilotIcon from "../assets/copilot-icon.svg";
 import GPTIcon from "../assets/gpt-icon.svg";
 import DocsIcon from "../assets/docs-icon.svg";
 
-const Features = () => {
+const Features = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const [activeFeature, setActiveFeature] = React.useState(
     "GitHub Copilot Assistance"
   );
@@ -59,12 +59,25 @@ const Features = () => {
             display: "flex",
             flexDirection: "column",
             gap: "24px",
-            width: "440px",
+            width: screenWidth === "lg" ? "440px" : "100%",
+            alignItems: screenWidth === "lg" ? "center" : "flex-start",
           }}
         >
-          <h2>Your developers will ❤️</h2>
+          <h2
+            style={{
+              textAlign: screenWidth === "lg" ? "left" : "center",
+              width: "100%",
+            }}
+          >
+            Your developers will ❤️
+          </h2>
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              width: "100%",
+            }}
           >
             {features.map((feature, index) => (
               <FeatureCard {...feature} key={index} />
@@ -72,14 +85,16 @@ const Features = () => {
           </div>
         </div>
         {/* Right Section */}
-        <div style={{ width: "450px" }}>
-          <img
-            src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-            alt="Features Illustration"
-            height="400px"
-            style={{ objectFit: "cover", overflow: "hidden" }}
-          />
-        </div>
+        {screenWidth === "lg" && (
+          <div style={{ width: "450px" }}>
+            <img
+              src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+              alt="Features Illustration"
+              height="400px"
+              style={{ objectFit: "cover", overflow: "hidden" }}
+            />
+          </div>
+        )}
       </div>
     </SectionTemplate>
   );

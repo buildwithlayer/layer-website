@@ -3,7 +3,7 @@ import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
 import Button from "../components/Button";
 
-const Overview = () => {
+const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const demoProducts = ["Django", "MUI", "SQLAlchemy"];
 
   const handlePrimaryClick = () => {
@@ -17,10 +17,12 @@ const Overview = () => {
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
+          flexDirection: screenWidth === "lg" ? "row" : "column",
+          justifyContent: screenWidth === "lg" ? "space-between" : "center",
           alignItems: "center",
           width: "100%",
+          textAlign: screenWidth === "lg" ? "left" : "center",
+          gap: "40px",
         }}
       >
         {/* Left Section */}
@@ -30,11 +32,16 @@ const Overview = () => {
             flexDirection: "column",
             gap: "32px",
             maxWidth: "440px",
+            alignItems: screenWidth === "lg" ? "flex-start" : "center",
           }}
         >
           {/* Left Section Text */}
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: screenWidth === "lg" ? "12px" : "16px",
+            }}
           >
             <h1>
               Treat your developers
@@ -67,7 +74,7 @@ const Overview = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "16px",
+            gap: "12px",
             width: "450px",
             alignItems: "center",
           }}
@@ -84,8 +91,14 @@ const Overview = () => {
               width: "100%",
               borderRadius: "8px",
               border: `1px solid ${Colors.gray[200]}`,
+              overflow: "hidden",
             }}
-          ></div>
+          >
+            <iframe
+              src="https://chat-app-prod-692435806978.us-central1.run.app/?apikey=379dae40-f6e9-4c57-adeb-18372a8e3ced"
+              style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            />
+          </div>
         </div>
       </div>
     </SectionTemplate>
