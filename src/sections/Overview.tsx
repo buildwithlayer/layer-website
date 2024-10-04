@@ -96,8 +96,9 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           >
             <iframe
               src={
-                process.env.REACT_APP_CHAT_URL +
-                "?apikey=379dae40-f6e9-4c57-adeb-18372a8e3ced"
+                process.env.REACT_APP_CHAT_URL ||
+                "https://chat-app-prod-692435806978.us-central1.run.app/" +
+                  "?apikey=379dae40-f6e9-4c57-adeb-18372a8e3ced"
               }
               style={{ height: "100%", width: "100%", borderRadius: "8px" }}
             />
