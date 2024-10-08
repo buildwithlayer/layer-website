@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import LayerLogo from "../assets/LayerLogo.svg";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
+import HamburgerIcon from "../assets/hamburger-icon.svg";
+import CloseIcon from "../assets/close-icon.svg";
 
 const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
@@ -11,8 +13,14 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     window.location.href = "https://dashboard.buildwithlayer.com/signup";
   };
 
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  const handleMobileNavClick = () => {
+    setMobileNavOpen(!mobileNavOpen);
+  };
+
   return (
-    // Outer Nav Container
+    // Top Level Nav Container (Contains mobile nav links too)
     <div
       style={{
         position: "fixed",
@@ -22,72 +30,116 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         width: "100%",
         maxWidth: "100%",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "16px 24px",
+        flexDirection: "column",
         backgroundColor: "rgba(255, 255, 255, 0.7)",
         backdropFilter: "blur(8px)",
-        borderBottom: `1px solid ${Colors.gray[200]}`,
       }}
     >
-      {/* Inner Nav Container */}
+      {/* Outer Nav Container */}
       <div
         style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          maxWidth: "1000px",
           width: "100%",
+          maxWidth: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "16px 24px",
+          borderBottom: `1px solid ${Colors.gray[200]}`,
         }}
       >
-        {/* Brand */}
+        {/* Inner Nav Container */}
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            gap: "14px",
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             alignItems: "center",
+            maxWidth: "1000px",
+            width: "100%",
           }}
         >
-          <img src={LayerLogo} alt="Layer Logo" width={"40px"} />
-          <h1 className="brand-text">Layer</h1>
-        </div>
-        {/* Nav Links & Button */}
-        {screenWidth != "sm" ? (
+          {/* Brand */}
           <div
             style={{
               display: "flex",
               flexDirection: "row",
-              gap: "16px",
+              gap: "14px",
               justifyContent: "flex-start",
               alignItems: "center",
             }}
           >
-            {/* Nav Links */}
+            <img src={LayerLogo} alt="Layer Logo" width={"40px"} />
+            <h1 className="brand-text">Layer</h1>
+          </div>
+          {/* Nav Links & Button */}
+          {screenWidth != "sm" ? (
             <div
               style={{
                 display: "flex",
                 flexDirection: "row",
+                gap: "16px",
                 justifyContent: "flex-start",
                 alignItems: "center",
               }}
             >
-              {sections.map((section, index) => (
-                <NavLink section={section} key={index} />
-              ))}
+              {/* Nav Links */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                }}
+              >
+                {sections.map((section, index) => (
+                  <NavLink section={section} key={index} />
+                ))}
+              </div>
+              {/* Button */}
+              <Button
+                label="Get Started for Free"
+                type="primary"
+                onClick={handleClick}
+              />
             </div>
-            {/* Button */}
-            <Button
-              label="Get Started for Free"
-              type="primary"
-              onClick={handleClick}
-            />
-          </div>
-        ) : (
-          <></>
-        )}
+          ) : (
+            // Mobile Nav Button
+            <button
+              style={{
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                border: `1px solid ${Colors.gray[200]}`,
+                borderRadius: "8px",
+                width: "40px",
+                height: "40px",
+              }}
+              onClick={handleMobileNavClick}
+            >
+              <img
+                src={mobileNavOpen ? CloseIcon : HamburgerIcon}
+                alt="Navigation Menu Icon"
+              />
+            </button>
+          )}
+        </div>
       </div>
+      {mobileNavOpen && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "stretch",
+            borderBottom: `1px solid ${Colors.gray[200]}`,
+          }}
+        >
+          {sections.map((section, index) => (
+            <NavLink section={section} key={index} mobile />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
