@@ -51,7 +51,13 @@ const DemoProductButton = ({
   );
 };
 
-const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
+const Overview = ({
+  screenWidth,
+  setDemoFormOpen,
+}: {
+  screenWidth: "sm" | "md" | "lg";
+  setDemoFormOpen: (open: boolean) => void;
+}) => {
   const demoProducts = [
     {
       productName: "Django",
@@ -78,7 +84,9 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     window.location.href = process.env.REACT_APP_MANAGEMENT_DASH_URL + "signup";
   };
 
-  const handleSecondaryClick = () => {};
+  const handleSecondaryClick = () => {
+    setDemoFormOpen(true);
+  };
 
   const handleDemoProductClick = (productName: string) => {
     const product = demoProducts.find(

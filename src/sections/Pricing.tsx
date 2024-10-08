@@ -117,7 +117,13 @@ const PricingCard = ({
   );
 };
 
-const Pricing = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
+const Pricing = ({
+  screenWidth,
+  setDemoFormOpen,
+}: {
+  screenWidth: "sm" | "md" | "lg";
+  setDemoFormOpen: (open: boolean) => void;
+}) => {
   const pricingPlans: iPricingCard[] = [
     {
       label: "Basic",
@@ -147,7 +153,9 @@ const Pricing = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       ],
       buttonLabel: "Book a Demo",
       buttonType: "secondary",
-      buttonOnClick: () => {},
+      buttonOnClick: () => {
+        setDemoFormOpen(true);
+      },
     },
     {
       label: "Enterprise",
@@ -159,7 +167,9 @@ const Pricing = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       ],
       buttonLabel: "Book a Demo",
       buttonType: "secondary",
-      buttonOnClick: () => {},
+      buttonOnClick: () => {
+        setDemoFormOpen(true);
+      },
     },
   ];
 

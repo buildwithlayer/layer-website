@@ -6,8 +6,11 @@ import Benefits from "./sections/Benefits";
 import Pricing from "./sections/Pricing";
 import FAQs from "./sections/FAQs";
 import { useMediaQuery } from "react-responsive";
+import DemoForm from "./components/DemoForm";
 
 function App() {
+  const [demoFormOpen, setDemoFormOpen] = useState(false);
+
   const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
   const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -37,12 +40,13 @@ function App() {
           maxWidth: "100%",
         }}
       >
-        <Overview screenWidth={screenWidth} />
+        <Overview screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
         <Features screenWidth={screenWidth} />
         <Benefits screenWidth={screenWidth} />
-        <Pricing screenWidth={screenWidth} />
+        <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
         <FAQs screenWidth={screenWidth} />
       </div>
+      <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />
     </>
   );
 }
