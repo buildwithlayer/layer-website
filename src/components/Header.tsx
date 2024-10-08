@@ -72,7 +72,7 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             <h1 className="brand-text">Layer</h1>
           </div>
           {/* Nav Links & Button */}
-          {screenWidth != "sm" ? (
+          {screenWidth !== "sm" ? (
             <div
               style={{
                 display: "flex",

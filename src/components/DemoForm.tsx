@@ -49,9 +49,15 @@ const DemoForm = ({
           }}
           onClick={() => setOpen(false)}
         >
-          <img src={CloseIcon} width={"24px"} height={"24px"} />
+          <img
+            src={CloseIcon}
+            width={"24px"}
+            height={"24px"}
+            alt="Close Icon"
+          />
         </button>
         <iframe
+          title="Booking Page"
           src="https://deepgram.com/"
           style={{ border: "none", height: "100%", width: "100%" }}
         />

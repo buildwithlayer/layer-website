@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { AnchorHTMLAttributes, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Colors } from "../constants/Colors";
 import { css } from "@emotion/react";
 
@@ -57,7 +57,7 @@ const NavLink = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [section]);
 
   if (!mobile) {
     const navLinkStyle = css`

@@ -195,6 +195,7 @@ const Overview = ({
             }}
           >
             <iframe
+              title="Chat Demo"
               src={iframeSrc}
               style={{
                 height: "100%",
