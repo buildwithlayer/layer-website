@@ -23,6 +23,7 @@ const DemoForm = ({
         justifyContent: "center",
         alignItems: "center",
         padding: "24px",
+        zIndex: 999999,
       }}
       onClick={() => setOpen(false)}
     >
