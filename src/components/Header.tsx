@@ -136,7 +136,14 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           }}
         >
           {sections.map((section, index) => (
-            <NavLink section={section} key={index} mobile />
+            <NavLink
+              section={section}
+              key={index}
+              mobile
+              closeMobileNav={() => {
+                setMobileNavOpen(false);
+              }}
+            />
           ))}
         </div>
       )}

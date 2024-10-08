@@ -76,6 +76,16 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       answer:
         "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
     },
+    {
+      question: "How do I get started?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+    },
   ];
 
   return (
