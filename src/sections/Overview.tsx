@@ -1,16 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
 import Button from "../components/Button";
+import DjangoIcon from "../assets/django-icon.svg";
+import MUIIcon from "../assets/mui-icon.svg";
+import SQLAlchemyIcon from "../assets/sqlalchemy-icon.svg";
+
+const DemoProductButton = ({
+  productName,
+  iconPath,
+  active = false,
+  onClick,
+}: {
+  productName: string;
+  iconPath: string;
+  active?: boolean;
+  onClick: (productName: string) => void;
+}) => {
+  return (
+    <button
+      onClick={() => onClick(productName)}
+      style={{
+        cursor: "pointer",
+        display: "flex",
+        flexDirection: "row",
+        gap: "8px",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "transparent",
+        padding: "6px 8px 6px 6px",
+        borderRadius: "4px",
+        border: active
+          ? `1px solid ${Colors.primary.main}`
+          : `1px solid ${Colors.gray[200]}`,
+      }}
+    >
+      <img
+        src={iconPath}
+        style={{
+          width: "24px",
+          height: "24px",
+          borderRadius: "4px",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        alt={productName + " icon"}
+      />
+      <p className="button">{productName}</p>
+    </button>
+  );
+};
 
 const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
-  const demoProducts = ["Django", "MUI", "SQLAlchemy"];
+  const demoProducts = [
+    {
+      productName: "Django",
+      iconPath: DjangoIcon,
+      apiKey: "17243613-9791-49dd-8c64-8051a1c6593d",
+    },
+    {
+      productName: "MUI",
+      iconPath: MUIIcon,
+      apiKey: "9b84a3c7-8387-4bd7-918f-52acf4475a71",
+    },
+    {
+      productName: "SQLAlchemy",
+      iconPath: SQLAlchemyIcon,
+      apiKey: "379dae40-f6e9-4c57-adeb-18372a8e3ced",
+    },
+  ];
+
+  const [activeProduct, setActiveProduct] = useState(demoProducts[0]);
+
+  const [iframeSrc, setIframeSrc] = useState("");
 
   const handlePrimaryClick = () => {
     window.location.href = process.env.REACT_APP_MANAGEMENT_DASH_URL + "signup";
   };
 
   const handleSecondaryClick = () => {};
+
+  const handleDemoProductClick = (productName: string) => {
+    const product = demoProducts.find(
+      (product) => product.productName === productName
+    );
+    if (product) {
+      setActiveProduct(product);
+    }
+  };
+
+  useEffect(() => {
+    const newSrc =
+      (process.env.REACT_APP_CHAT_URL ||
+        "https://chat-app-prod-692435806978.us-central1.run.app/") +
+      "?apikey=" +
+      activeProduct.apiKey;
+    setIframeSrc(newSrc);
+  }, [activeProduct]);
 
   return (
     <SectionTemplate section="Overview">
@@ -82,7 +168,13 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           <p style={{ color: Colors.gray[300] }}>Try it yourself</p>
           <div style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
             {demoProducts.map((product, index) => (
-              <p key={index}>{product}</p>
+              <DemoProductButton
+                key={index}
+                productName={product.productName}
+                iconPath={product.iconPath}
+                active={activeProduct.productName === product.productName}
+                onClick={handleDemoProductClick}
+              />
             ))}
           </div>
           <div
@@ -95,12 +187,13 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             }}
           >
             <iframe
-              src={
-                process.env.REACT_APP_CHAT_URL ||
-                "https://chat-app-prod-692435806978.us-central1.run.app/" +
-                  "?apikey=379dae40-f6e9-4c57-adeb-18372a8e3ced"
-              }
-              style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+              src={iframeSrc}
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "8px",
+                border: "none",
+              }}
             />
           </div>
         </div>
