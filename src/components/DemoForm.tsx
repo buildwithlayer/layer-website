@@ -1,5 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
 import CloseIcon from "../assets/icons/close-icon.svg";
+import { css } from "@emotion/react";
 
 const DemoForm = ({
   open,
@@ -9,6 +11,21 @@ const DemoForm = ({
   setOpen: (open: boolean) => void;
 }) => {
   if (!open) return null;
+
+  const closeBtnStyles = css`
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 8px;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  `;
+
   return (
     <div
       style={{
@@ -29,27 +46,17 @@ const DemoForm = ({
     >
       <div
         style={{
-          backgroundColor: "white",
-          borderRadius: "8px",
           display: "flex",
           flexDirection: "column",
           gap: "16px",
           alignItems: "flex-end",
-          padding: "16px",
           width: "100%",
           maxWidth: "1000px",
           height: "80vh",
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          style={{
-            backgroundColor: "transparent",
-            border: "none",
-            cursor: "pointer",
-          }}
-          onClick={() => setOpen(false)}
-        >
+        <button css={closeBtnStyles} onClick={() => setOpen(false)}>
           <img
             src={CloseIcon}
             width={"24px"}
@@ -59,8 +66,13 @@ const DemoForm = ({
         </button>
         <iframe
           title="Booking Page"
-          src="https://deepgram.com/"
-          style={{ border: "none", height: "100%", width: "100%" }}
+          src="https://cal.com/team/layer/demo?date=2024-10-14&month=2024-10&layout=month_view"
+          style={{
+            border: "none",
+            height: "100%",
+            width: "100%",
+            borderRadius: "8px",
+          }}
         />
       </div>
     </div>
