@@ -1,9 +1,9 @@
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import FeatureCard from "../components/FeatureCard";
-import CopilotIcon from "../assets/copilot-icon.svg";
-import GPTIcon from "../assets/gpt-icon.svg";
-import DocsIcon from "../assets/docs-icon.svg";
+import CopilotIcon from "../assets/icons/copilot-icon.svg";
+import GPTIcon from "../assets/icons/gpt-icon.svg";
+import DocsIcon from "../assets/icons/docs-icon.svg";
 
 const Features = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const [activeFeature, setActiveFeature] = React.useState(

@@ -1,5 +1,5 @@
 import React from "react";
-import CloseIcon from "../assets/close-icon.svg";
+import CloseIcon from "../assets/icons/close-icon.svg";
 
 const DemoForm = ({
   open,

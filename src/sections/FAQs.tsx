@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
-import ExpandIcon from "../assets/expand-icon.svg";
+import ExpandIcon from "../assets/icons/expand-icon.svg";
 
 const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const Collapse = ({

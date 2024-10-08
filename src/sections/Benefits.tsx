@@ -1,8 +1,8 @@
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import FeatureCard from "../components/FeatureCard";
-import AnalyticsIcon from "../assets/analytics-icon.svg";
-import SupportIcon from "../assets/support-icon.svg";
+import AnalyticsIcon from "../assets/icons/analytics-icon.svg";
+import SupportIcon from "../assets/icons/support-icon.svg";
 
 const Benefits = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const [activeFeature, setActiveFeature] =

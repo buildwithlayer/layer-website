@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import LayerLogo from "../assets/LayerLogo.svg";
+import LayerLogo from "../assets/icons/LayerLogo.svg";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
-import HamburgerIcon from "../assets/hamburger-icon.svg";
-import CloseIcon from "../assets/close-icon.svg";
+import HamburgerIcon from "../assets/icons/hamburger-icon.svg";
+import CloseIcon from "../assets/icons/close-icon.svg";
 
 const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
@@ -33,6 +33,7 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         flexDirection: "column",
         backgroundColor: "rgba(255, 255, 255, 0.7)",
         backdropFilter: "blur(8px)",
+        zIndex: 1000,
       }}
     >
       {/* Outer Nav Container */}

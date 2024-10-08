@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
 import Button from "../components/Button";
-import DjangoIcon from "../assets/django-icon.svg";
-import MUIIcon from "../assets/mui-icon.svg";
-import SQLAlchemyIcon from "../assets/sqlalchemy-icon.svg";
+import DjangoIcon from "../assets/icons/django-icon.svg";
+import MUIIcon from "../assets/icons/mui-icon.svg";
+import SQLAlchemyIcon from "../assets/icons/sqlalchemy-icon.svg";
+import Lottie from "react-lottie-player";
+import bgBlob from "../assets/animations/bg-blob.json";
 
 const DemoProductButton = ({
   productName,
@@ -171,8 +173,21 @@ const Overview = ({
             gap: "12px",
             width: "450px",
             alignItems: "center",
+            position: "relative",
           }}
         >
+          <Lottie
+            style={{
+              zIndex: "-1",
+              position: "absolute",
+              width: 700,
+              height: 700,
+              transform: "rotate(90deg)",
+            }}
+            loop
+            animationData={bgBlob}
+            play
+          />
           <p style={{ color: Colors.gray[300] }}>Try it yourself</p>
           <div style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
             {demoProducts.map((product, index) => (
