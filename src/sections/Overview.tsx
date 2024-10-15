@@ -124,7 +124,7 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     <>
       <Lottie
         style={{
-          zIndex: "-3",
+          zIndex: "1",
           opacity: ".25",
           position: "absolute",
           height: "100%",
@@ -137,7 +137,7 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       />
       <div
         style={{
-          zIndex: "-2",
+          zIndex: "2",
           position: "absolute",
           bottom: "0",
           right: "0",
@@ -173,7 +173,14 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         background: `linear-gradient(180deg, #FAFAFA 80%, #F1F1F1 100%)`,
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column", gap: "64px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "64px",
+          zIndex: "3",
+        }}
+      >
         <div
           style={{
             padding: "24px 0",
