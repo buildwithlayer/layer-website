@@ -4,7 +4,11 @@ export const Colors = {
     light: "#E1DCFC",
     dark: "#5546B2",
   },
+  secondary: {
+    main: "#C965FF",
+  },
   gray: {
+    100: "#F2F2F2",
     200: "#E0E0E0",
     300: "#828282",
     500: "#333333",

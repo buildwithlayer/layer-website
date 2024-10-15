@@ -40,7 +40,7 @@ function App() {
           maxWidth: "100%",
         }}
       >
-        <Overview screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
+        <Overview screenWidth={screenWidth} />
         <Features screenWidth={screenWidth} />
         <Benefits screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />

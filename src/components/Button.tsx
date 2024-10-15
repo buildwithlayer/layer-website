@@ -8,11 +8,15 @@ const Button = ({
   type,
   onClick,
   fullWidth = false,
+  styleOverrides,
+  submitButton = false,
 }: {
   label: string;
   type: "primary" | "secondary";
   onClick: () => void;
   fullWidth?: boolean;
+  styleOverrides?: React.CSSProperties;
+  submitButton?: boolean;
 }) => {
   const buttonStyle = css`
     ${fullWidth ? "width: 100%;" : ""}
@@ -39,7 +43,12 @@ const Button = ({
     }
   `;
   return (
-    <button css={buttonStyle} onClick={onClick}>
+    <button
+      type={submitButton ? "submit" : "button"}
+      css={buttonStyle}
+      style={{ ...styleOverrides }}
+      onClick={onClick}
+    >
       <p className="button">{label}</p>
     </button>
   );
