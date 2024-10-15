@@ -373,6 +373,9 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             css={css`
               width: calc(200% + 24px);
               animation: ${scrollAnimation} 20s linear infinite;
+              &:hover {
+                animation-play-state: paused;
+              }
             `}
           >
             <div
