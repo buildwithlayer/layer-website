@@ -1,5 +1,8 @@
 import React from "react";
 import { Colors } from "../constants/Colors";
+import SectionTemplate from "./SectionTemplate";
+import { ReactComponent as ConnectIcon } from "../assets/icons/connect-icon.svg";
+import Card from "../components/Card";
 
 const LayerInAction = ({
   screenWidth,
@@ -7,101 +10,74 @@ const LayerInAction = ({
   screenWidth: "sm" | "md" | "lg";
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "24px",
-        width: "100%",
-      }}
-    >
-      <h2 style={{ textAlign: "center" }}>How it Works</h2>
+    <SectionTemplate section="Layer in Action">
       <div
         style={{
           display: "flex",
-          flexDirection: screenWidth === "lg" ? "row" : "column",
-          alignItems: "stretch",
-          gap: "16px",
+          flexDirection: "column",
+          gap: "24px",
           width: "100%",
         }}
       >
         <div
           style={{
-            width: "100%",
             display: "flex",
             flexDirection: "column",
-            padding: "16px",
-            boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
-            borderRadius: "8px",
             gap: "8px",
+            alignItems: "center",
           }}
         >
-          <h3>Connect Your Knowledgebase</h3>
-          <p>
+          <h2 style={{ textAlign: "center" }}>Layer in Action</h2>
+          <p style={{ textAlign: "center" }}>
             Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id
             aliquam neque.
           </p>
-          <img
-            src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-            alt=""
-            style={{
-              width: "100%",
-              marginTop: "16px",
-            }}
-          />
         </div>
         <div
           style={{
-            width: "100%",
             display: "flex",
-            flexDirection: "column",
-            padding: "16px",
-            boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
-            borderRadius: "8px",
-            gap: "8px",
+            flexDirection: screenWidth === "lg" ? "row" : "column",
+            alignItems: "stretch",
+            gap: "16px",
+            width: "100%",
           }}
         >
-          <h3>Publish Your Extension</h3>
-          <p>
-            Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id
-            aliquam neque.
-          </p>
-          <img
-            src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-            alt=""
-            style={{
-              width: "100%",
-              marginTop: "16px",
-            }}
+          <Card
+            label="Connect to Knowledge Sources"
+            icon={<ConnectIcon />}
+            text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
-        </div>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            padding: "16px",
-            boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
-            borderRadius: "8px",
-            gap: "8px",
-          }}
-        >
-          <h3>Learn From Your Developers</h3>
-          <p>
-            Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id
-            aliquam neque.
-          </p>
-          <img
-            src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-            alt=""
+          <div
             style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
               width: "100%",
-              marginTop: "16px",
             }}
+          >
+            <Card
+              label="Deploy to Web"
+              icon={<ConnectIcon />}
+              text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+              image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            />
+            <Card
+              label="Deploy to VS Code"
+              icon={<ConnectIcon />}
+              text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+              image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            />
+          </div>
+          <Card
+            label="Get Live Insights"
+            icon={<ConnectIcon />}
+            text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
         </div>
       </div>
-    </div>
+    </SectionTemplate>
   );
 };
 
