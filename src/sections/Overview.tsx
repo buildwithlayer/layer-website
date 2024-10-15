@@ -166,7 +166,13 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   `;
 
   return (
-    <SectionTemplate section="Overview" fullWidthChildren={bgBallElement}>
+    <SectionTemplate
+      section="Overview"
+      fullWidthChildren={bgBallElement}
+      sectionStyleOverrides={{
+        background: `linear-gradient(180deg, #FAFAFA 80%, #F1F1F1 100%)`,
+      }}
+    >
       <div style={{ display: "flex", flexDirection: "column", gap: "64px" }}>
         <div
           style={{
@@ -410,7 +416,7 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               left: "0",
               width: "64px",
               height: "100px",
-              background: `linear-gradient(270deg, rgba(250,250,250,0) 0%, rgba(250,250,250,1) 100%)`,
+              background: `linear-gradient(270deg, rgba(247,247,247,0) 0%, rgba(247,247,247,1) 100%)`,
             }}
           />
           <div
@@ -420,7 +426,7 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               right: "0",
               width: "64px",
               height: "100px",
-              background: `linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,1) 100%)`,
+              background: `linear-gradient(90deg, rgba(247,247,247,0) 0%, rgba(247,247,247,1) 100%)`,
             }}
           />
         </div>

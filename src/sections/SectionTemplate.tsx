@@ -5,10 +5,12 @@ const SectionTemplate = ({
   section,
   children,
   fullWidthChildren,
+  sectionStyleOverrides,
 }: {
   section: string;
   children: ReactNode;
   fullWidthChildren?: ReactNode;
+  sectionStyleOverrides?: React.CSSProperties;
 }) => {
   return (
     <div
@@ -23,6 +25,7 @@ const SectionTemplate = ({
         position: "relative",
         // Make this responsive
         padding: "48px 16px",
+        ...sectionStyleOverrides,
       }}
     >
       {fullWidthChildren}
