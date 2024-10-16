@@ -20,6 +20,8 @@ import { ReactComponent as APIFlaskLogo } from "../assets/logos/apiflask.svg";
 import { css, keyframes } from "@emotion/react";
 import { darken, lighten } from "polished";
 
+// TODO: Fix mobile centering
+
 interface Company {
   name: string;
   logo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -100,20 +102,45 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     {
       name: "MUI",
       logo: MuiLogo,
-      url: "",
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.gavyn-test-mui",
       primaryColor: "#0273E6",
     },
     {
       name: "SQLAlchemy",
       logo: SQLAlchemyLogo,
-      url: "",
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.sqlalchemy-integration-expert-jYSzG",
       primaryColor: "#CA2726",
     },
-    { name: "Django", logo: DjangoLogo, url: "", primaryColor: "#0B4B33" },
-    { name: "API Flask", logo: APIFlaskLogo, url: "", primaryColor: "#FF6E42" },
-    { name: "WorkOS", logo: WorkOSLogo, url: "", primaryColor: "#6363F1" },
-    { name: "Vite", logo: ViteLogo, url: "", primaryColor: "#B44BFF" },
-    { name: "FastAPI", logo: FastAPILogo, url: "", primaryColor: "#009485" },
+    {
+      name: "Django",
+      logo: DjangoLogo,
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.django-integration-expert-Gus30",
+      primaryColor: "#0B4B33",
+    },
+    {
+      name: "API Flask",
+      logo: APIFlaskLogo,
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.api-flask-integration-expert-bWPT8",
+      primaryColor: "#FF6E42",
+    },
+    {
+      name: "WorkOS",
+      logo: WorkOSLogo,
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.company1-jonah-integration-expert-R3ZXz",
+      primaryColor: "#6363F1",
+    },
+    {
+      name: "Vite",
+      logo: ViteLogo,
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.vite-integration-expert-p8NvA",
+      primaryColor: "#B44BFF",
+    },
+    {
+      name: "FastAPI",
+      logo: FastAPILogo,
+      url: "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.fastapi-integration-expert-rItxt",
+      primaryColor: "#009485",
+    },
   ];
 
   const [iframeSrc, setIframeSrc] = useState(
