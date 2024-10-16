@@ -8,6 +8,7 @@ import FAQs from "./sections/FAQs";
 import { useMediaQuery } from "react-responsive";
 import DemoForm from "./components/DemoForm";
 import LayerInAction from "./sections/LayerInAction";
+import Quote from "./sections/Quote";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -43,6 +44,7 @@ function App() {
       >
         <Overview screenWidth={screenWidth} />
         <LayerInAction screenWidth={screenWidth} />
+        <Quote screenWidth={screenWidth} />
         <Features screenWidth={screenWidth} />
         <Benefits screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />

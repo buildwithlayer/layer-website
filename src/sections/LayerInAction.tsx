@@ -1,7 +1,8 @@
-import React from "react";
-import { Colors } from "../constants/Colors";
 import SectionTemplate from "./SectionTemplate";
 import { ReactComponent as ConnectIcon } from "../assets/icons/connect-icon.svg";
+import { ReactComponent as WebIcon } from "../assets/icons/web-icon.svg";
+import { ReactComponent as VSCodeIcon } from "../assets/icons/vscode-icon.svg";
+import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.svg";
 import Card from "../components/Card";
 
 const LayerInAction = ({
@@ -58,20 +59,20 @@ const LayerInAction = ({
           >
             <Card
               label="Deploy to Web"
-              icon={<ConnectIcon />}
+              icon={<WebIcon />}
               text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
             />
             <Card
               label="Deploy to VS Code"
-              icon={<ConnectIcon />}
+              icon={<VSCodeIcon />}
               text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
             />
           </div>
           <Card
             label="Get Live Insights"
-            icon={<ConnectIcon />}
+            icon={<AnalyticsIcon />}
             text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
