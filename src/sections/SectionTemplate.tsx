@@ -24,7 +24,7 @@ const SectionTemplate = ({
         overflow: "hidden",
         position: "relative",
         // Make this responsive
-        padding: "48px 16px",
+        padding: "72px 16px",
         ...sectionStyleOverrides,
       }}
     >

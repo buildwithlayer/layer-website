@@ -10,6 +10,7 @@ import DemoForm from "./components/DemoForm";
 import LayerInAction from "./sections/LayerInAction";
 import Quote from "./sections/Quote";
 import Numbers from "./sections/Numbers";
+import Accuracy from "./sections/Accuracy";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -47,6 +48,7 @@ function App() {
         <LayerInAction screenWidth={screenWidth} />
         <Quote screenWidth={screenWidth} />
         <Numbers screenWidth={screenWidth} />
+        <Accuracy screenWidth={screenWidth} />
         <Features screenWidth={screenWidth} />
         <Benefits screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />

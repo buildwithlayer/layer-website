@@ -6,11 +6,13 @@ const Card = ({
   icon,
   text,
   image,
+  styleOverrides,
 }: {
   label: string;
   icon: React.ReactNode;
   text: string;
   image: string;
+  styleOverrides?: React.CSSProperties;
 }) => {
   return (
     <div

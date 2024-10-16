@@ -100,7 +100,14 @@ const Numbers = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     { number: 10, label: "Languages Supported" },
   ];
   return (
-    <SectionTemplate section="Numbers">
+    <SectionTemplate
+      section="Numbers"
+      sectionStyleOverrides={{
+        paddingTop: "96px",
+        paddingBottom: "48px",
+        borderBottom: "none",
+      }}
+    >
       <div
         style={{
           width: "100%",
