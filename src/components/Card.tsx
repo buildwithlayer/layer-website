@@ -7,12 +7,14 @@ const Card = ({
   text,
   image,
   styleOverrides,
+  imageStyleOverrides,
 }: {
   label: string;
   icon: React.ReactNode;
   text: string;
   image: string;
   styleOverrides?: React.CSSProperties;
+  imageStyleOverrides?: React.CSSProperties;
 }) => {
   return (
     <div
@@ -25,6 +27,7 @@ const Card = ({
         borderRadius: "8px",
         gap: "8px",
         backgroundColor: "white",
+        ...styleOverrides,
       }}
     >
       <div
@@ -45,6 +48,7 @@ const Card = ({
         style={{
           width: "100%",
           marginTop: "16px",
+          ...imageStyleOverrides,
         }}
       />
     </div>

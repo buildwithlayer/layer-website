@@ -10,6 +10,7 @@ import Quote from "./sections/Quote";
 import Numbers from "./sections/Numbers";
 import Accuracy from "./sections/Accuracy";
 import ManagementPlatform from "./sections/ManagementPlatform";
+import Deployments from "./sections/Deployments";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -49,8 +50,9 @@ function App() {
         <Numbers screenWidth={screenWidth} />
         <Accuracy screenWidth={screenWidth} />
         <ManagementPlatform screenWidth={screenWidth} />
-        <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
+        <Deployments screenWidth={screenWidth} />
         <FAQs screenWidth={screenWidth} />
+        <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
       </div>
       <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />
     </>
