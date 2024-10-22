@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Overview from "./sections/Overview";
-import Features from "./sections/Features";
-import Benefits from "./sections/Benefits";
 import Pricing from "./sections/Pricing";
 import FAQs from "./sections/FAQs";
 import { useMediaQuery } from "react-responsive";
@@ -11,6 +9,7 @@ import LayerInAction from "./sections/LayerInAction";
 import Quote from "./sections/Quote";
 import Numbers from "./sections/Numbers";
 import Accuracy from "./sections/Accuracy";
+import ManagementPlatform from "./sections/ManagementPlatform";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -49,8 +48,7 @@ function App() {
         <Quote screenWidth={screenWidth} />
         <Numbers screenWidth={screenWidth} />
         <Accuracy screenWidth={screenWidth} />
-        <Features screenWidth={screenWidth} />
-        <Benefits screenWidth={screenWidth} />
+        <ManagementPlatform screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
         <FAQs screenWidth={screenWidth} />
       </div>

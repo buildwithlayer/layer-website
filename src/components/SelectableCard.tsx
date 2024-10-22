@@ -1,7 +1,7 @@
 import React from "react";
 import { Colors } from "../constants/Colors";
 
-const FeatureCard = ({
+const SelectableCard = ({
   iconSrc,
   label,
   description,
@@ -51,4 +51,4 @@ const FeatureCard = ({
   );
 };
 
-export default FeatureCard;
+export default SelectableCard;
