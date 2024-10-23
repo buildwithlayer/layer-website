@@ -75,14 +75,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             icon={<QuestionIcon />}
             text="Acknowledges when it doesn't have the information needed to answer a question and suggests relevant backup plans."
             imageElementOverride={
-              <Lottie
-                play
-                loop
-                animationData={NoHallucinate}
-                style={{
-                  padding: "32px 0",
-                }}
-              />
+              <Lottie play loop animationData={NoHallucinate} />
             }
           />
           <Card
