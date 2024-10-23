@@ -5,6 +5,7 @@ import connectIcon from "../assets/icons/connect-icon.svg";
 import deploymentsIcon from "../assets/icons/deployments-icon.svg";
 import bugIcon from "../assets/icons/bug-icon.svg";
 import analyticsIcon from "../assets/icons/analytics-icon.svg";
+import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
   screenWidth,
@@ -59,7 +60,14 @@ const ManagementPlatform = ({
   ];
 
   return (
-    <SectionTemplate section="Features">
+    <SectionTemplate
+      section="Features"
+      sectionStyleOverrides={{
+        backgroundColor: Colors.gray[1000],
+        color: "white",
+        borderBottom: "none",
+      }}
+    >
       <div
         style={{
           display: "flex",
