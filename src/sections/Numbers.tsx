@@ -72,23 +72,24 @@ const NumberBlock = ({
         justifyContent: "center",
         width: "100%",
         padding: "24px 16px 32px 16px",
-        background: "linear-gradient(180deg, #FAFAFA 80%, #F1F1F1 100%)",
+        background: Colors.gray[1000],
         borderRadius: "8px",
-        border: `1px solid ${Colors.gray[200]}`,
       }}
     >
       <p
         style={{
           fontSize: "96px",
           fontWeight: "800",
-          background: "linear-gradient(180deg, #833D99, #5C3D99)",
+          background: "linear-gradient(0deg, #F565FF, #7A65FF)",
           backgroundClip: "text",
           color: "transparent",
         }}
       >
         {Math.round(countingNumber) + (numberSuffix ? numberSuffix : "")}
       </p>
-      <p style={{ fontWeight: "600", fontSize: "18px" }}>{label}</p>
+      <p style={{ fontWeight: "600", fontSize: "18px", color: "white" }}>
+        {label}
+      </p>
     </div>
   );
 };
