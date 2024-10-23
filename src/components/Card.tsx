@@ -5,16 +5,18 @@ const Card = ({
   label,
   icon,
   text,
-  image,
+  image = "",
   styleOverrides,
   imageStyleOverrides,
+  imageElementOverride,
 }: {
   label: string;
   icon: React.ReactNode;
   text: string;
-  image: string;
+  image?: string;
   styleOverrides?: React.CSSProperties;
   imageStyleOverrides?: React.CSSProperties;
+  imageElementOverride?: React.ReactNode;
 }) => {
   return (
     <div
@@ -52,14 +54,18 @@ const Card = ({
         </div>
         <p>{text}</p>
       </div>
-      <img
-        src={image}
-        alt=""
-        style={{
-          width: "100%",
-          ...imageStyleOverrides,
-        }}
-      />
+      {imageElementOverride ? (
+        imageElementOverride
+      ) : (
+        <img
+          src={image}
+          alt=""
+          style={{
+            width: "100%",
+            ...imageStyleOverrides,
+          }}
+        />
+      )}
     </div>
   );
 };

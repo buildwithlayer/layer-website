@@ -7,6 +7,8 @@ import Card from "../components/Card";
 import { ReactComponent as BookIcon } from "../assets/icons/book-icon.svg";
 import { ReactComponent as CodeIcon } from "../assets/icons/code-icon.svg";
 import { ReactComponent as QuestionIcon } from "../assets/icons/question-icon.svg";
+import CodeOptimized from "../assets/animations/code-optimized.json";
+import Lottie from "react-lottie-player";
 
 const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   return (
@@ -74,7 +76,9 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             label="Optimized for Code"
             icon={<CodeIcon />}
             text="Trained to generate accurate and explainable code examples for live assistance in the IDE."
-            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            imageElementOverride={
+              <Lottie play loop animationData={CodeOptimized} />
+            }
           />
         </div>
       </div>
