@@ -30,8 +30,8 @@ const LayerInAction = ({
         >
           <h2 style={{ textAlign: "center" }}>Layer in Action</h2>
           <p style={{ textAlign: "center" }}>
-            Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id
-            aliquam neque.
+            We transform your existing knowledge base into an interactive AI
+            chat experience that follows developers wherever they go.
           </p>
         </div>
         <div
@@ -46,7 +46,7 @@ const LayerInAction = ({
           <Card
             label="Connect to Knowledge Sources"
             icon={<ConnectIcon />}
-            text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+            text="Link your website, docs, GitHub repos, FAQs, and more to automatically train your AI chat system."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
           <div
@@ -60,20 +60,20 @@ const LayerInAction = ({
             <Card
               label="Deploy to Web"
               icon={<WebIcon />}
-              text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+              text="Embed the AI chat widget on your docs site so users can have their questions answered without talking to a human."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
             />
             <Card
               label="Deploy to VS Code"
               icon={<VSCodeIcon />}
-              text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+              text="Make the same AI chat system available to developers in the IDE for an enhanced support experience and increased ticket deflection."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
             />
           </div>
           <Card
             label="Get Live Insights"
             icon={<AnalyticsIcon />}
-            text="Lorem ipsum dolor sit amet consect. Habitasse vel risus sapien id aliquam neque."
+            text="Find out where users are getting stuck, areas your docs fall short, and make data-driven decisions to improve your product faster."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
         </div>

@@ -61,19 +61,19 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           <Card
             label="Cites its Sources"
             icon={<BookIcon />}
-            text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+            text="All responses are grounded in the provided context to ensure users always get accurate answers with relevant citations."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
           <Card
             label="Knows What it Doesn’t Know"
             icon={<QuestionIcon />}
-            text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+            text="Acknowledges when it doesn't have the information needed to answer a question and suggests relevant backup plans."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
           <Card
             label="Optimized for Code"
             icon={<CodeIcon />}
-            text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+            text="Trained to generate accurate and explainable code examples for live assistance in the IDE."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
           />
         </div>

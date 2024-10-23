@@ -44,22 +44,28 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             <Card
               label="VS Code"
               icon={<VSCodeIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              text="Make everything developers need to integrate easily searchable directly from the IDE — the place developers spend the bulk of their time and where 100% of bugs occur."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-              imageStyleOverrides={{ height: "200px", objectFit: "cover" }}
+              imageStyleOverrides={{
+                height: "200px",
+                objectFit: "cover",
+              }}
             />
             <Card
               label="Embeddable Website Widget"
               icon={<WebIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              text="Create an embeddable website widget and easily deploy on your docs site to serve as a first line of defense against any questions."
               image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-              imageStyleOverrides={{ height: "200px", objectFit: "cover" }}
+              imageStyleOverrides={{
+                height: "200px",
+                objectFit: "cover",
+              }}
             />
           </div>
           <Card
             label="Coming Soon..."
             icon={<></>}
-            text="Stay tuned for upcoming deployment integrations!"
+            text="Stay tuned for new deployment options, such as Discord bots, Slack bots, and Zendesk apps."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
             imageStyleOverrides={{ height: "200px", objectFit: "cover" }}
           />

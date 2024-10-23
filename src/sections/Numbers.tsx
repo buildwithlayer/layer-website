@@ -95,9 +95,9 @@ const NumberBlock = ({
 
 const Numbers = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const numbers = [
-    { number: 20, label: "Questions Answered", numberSuffix: "k+" },
-    { number: 100, label: "Extensions Deployed", numberSuffix: "+" },
-    { number: 10, label: "Languages Supported" },
+    { number: 15, label: "Questions Answered", numberSuffix: "k+" },
+    { number: 80, label: "Extensions Deployed", numberSuffix: "+" },
+    { number: 12, label: "Languages Supported" },
   ];
   return (
     <SectionTemplate

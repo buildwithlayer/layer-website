@@ -26,22 +26,32 @@ const Card = ({
         boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
         borderRadius: "8px",
         gap: "8px",
+        justifyContent: "space-between",
         backgroundColor: "white",
         ...styleOverrides,
       }}
     >
       <div
         style={{
+          width: "100%",
           display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
+          flexDirection: "column",
           gap: "8px",
         }}
       >
-        {icon}
-        <h3>{label}</h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          {icon}
+          <h3>{label}</h3>
+        </div>
+        <p>{text}</p>
       </div>
-      <p>{text}</p>
       <img
         src={image}
         alt=""

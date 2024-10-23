@@ -20,7 +20,7 @@ const ManagementPlatform = ({
       iconSrc: connectIcon,
       label: "Manage Knowledge Sources",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "Your control center into exactly what sources of information are accessible to the AI chat system.",
       active: activeFeature === "Manage Knowledge Sources",
       onClick: () => {
         setActiveFeature("Manage Knowledge Sources");
@@ -30,7 +30,7 @@ const ManagementPlatform = ({
       iconSrc: deploymentsIcon,
       label: "Configure Deployments",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "Decide where to deploy to and customize the look and feel of the experience across all channels.",
       active: activeFeature === "Configure Deployments",
       onClick: () => {
         setActiveFeature("Configure Deployments");
@@ -40,7 +40,7 @@ const ManagementPlatform = ({
       iconSrc: bugIcon,
       label: "Find User Issues",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "Get detailed usage reports and analytics on the questions users are asking, where they're running into issues, and how to address them.",
       active: activeFeature === "Find User Issues",
       onClick: () => {
         setActiveFeature("Find User Issues");
@@ -48,9 +48,9 @@ const ManagementPlatform = ({
     },
     {
       iconSrc: analyticsIcon,
-      label: "Track Usage",
+      label: "Improve Answers Over Time",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "Create reinforcement loops to continually train the AI system on new information such as support tickets, docs updates, and more.",
       active: activeFeature === "Track Usage",
       onClick: () => {
         setActiveFeature("Track Usage");
@@ -90,8 +90,9 @@ const ManagementPlatform = ({
               Take Total Control
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien
-              id aliquam neque.
+              Introducing the Layer Management Platform: A complete suite of
+              tools designed to help you deflect tickets and improve developer
+              experience.
             </p>
           </div>
           <div
