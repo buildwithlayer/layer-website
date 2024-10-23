@@ -5,6 +5,7 @@ import { ReactComponent as VSCodeIcon } from "../assets/icons/vscode-icon.svg";
 import { ReactComponent as WebIcon } from "../assets/icons/web-icon.svg";
 import VSCodeImage from "../assets/images/vscode-deployment.png";
 import WebWidgetImage from "../assets/images/webwidget-deployment.png";
+import FutureDeploymentsImage from "../assets/images/future-deployments.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   return (
@@ -62,9 +63,8 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             label="Coming Soon..."
             icon={<></>}
             text="Stay tuned for new deployment options, such as Discord bots, Slack bots, and Zendesk apps."
-            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            image={FutureDeploymentsImage}
             styleOverrides={{ flexDirection: "column-reverse" }}
-            imageStyleOverrides={{ height: "200px", objectFit: "cover" }}
           />
         </div>
       </div>
