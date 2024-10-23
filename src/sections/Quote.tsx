@@ -1,12 +1,17 @@
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import adamSilvermanImg from "../assets/images/adam-silverman.png";
+import { Colors } from "../constants/Colors";
 
 const Quote = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   return (
     <SectionTemplate
       section="Quote"
-      sectionStyleOverrides={{ backgroundColor: "white", padding: "0px 16px" }}
+      sectionStyleOverrides={{
+        backgroundColor: Colors.gray[1000],
+        padding: "0px 16px",
+        color: "white",
+      }}
     >
       <div
         style={{
