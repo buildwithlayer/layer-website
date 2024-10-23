@@ -8,6 +8,8 @@ import { ReactComponent as BookIcon } from "../assets/icons/book-icon.svg";
 import { ReactComponent as CodeIcon } from "../assets/icons/code-icon.svg";
 import { ReactComponent as QuestionIcon } from "../assets/icons/question-icon.svg";
 import CodeOptimized from "../assets/animations/code-optimized.json";
+import NoHallucinate from "../assets/animations/no-hallucinate.json";
+import Citations from "../assets/animations/citations.json";
 import Lottie from "react-lottie-player";
 
 const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
@@ -64,13 +66,24 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             label="Cites its Sources"
             icon={<BookIcon />}
             text="All responses are grounded in the provided context to ensure users always get accurate answers with relevant citations."
-            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            imageElementOverride={
+              <Lottie play loop animationData={Citations} />
+            }
           />
           <Card
             label="Knows What it Doesn’t Know"
             icon={<QuestionIcon />}
             text="Acknowledges when it doesn't have the information needed to answer a question and suggests relevant backup plans."
-            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            imageElementOverride={
+              <Lottie
+                play
+                loop
+                animationData={NoHallucinate}
+                style={{
+                  padding: "32px 0",
+                }}
+              />
+            }
           />
           <Card
             label="Optimized for Code"
