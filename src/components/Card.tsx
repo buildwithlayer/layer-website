@@ -25,7 +25,7 @@ const Card = ({
         padding: "16px",
         boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
         borderRadius: "8px",
-        gap: "8px",
+        gap: "16px",
         justifyContent: "space-between",
         backgroundColor: "white",
         ...styleOverrides,
@@ -57,7 +57,6 @@ const Card = ({
         alt=""
         style={{
           width: "100%",
-          marginTop: "16px",
           ...imageStyleOverrides,
         }}
       />

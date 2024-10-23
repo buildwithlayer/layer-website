@@ -3,6 +3,8 @@ import SectionTemplate from "./SectionTemplate";
 import Card from "../components/Card";
 import { ReactComponent as VSCodeIcon } from "../assets/icons/vscode-icon.svg";
 import { ReactComponent as WebIcon } from "../assets/icons/web-icon.svg";
+import VSCodeImage from "../assets/images/vscode-deployment.png";
+import WebWidgetImage from "../assets/images/webwidget-deployment.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   return (
@@ -45,21 +47,15 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               label="VS Code"
               icon={<VSCodeIcon />}
               text="Make everything developers need to integrate easily searchable directly from the IDE — the place developers spend the bulk of their time and where 100% of bugs occur."
-              image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-              imageStyleOverrides={{
-                height: "200px",
-                objectFit: "cover",
-              }}
+              image={VSCodeImage}
+              styleOverrides={{ flexDirection: "column-reverse" }}
             />
             <Card
               label="Embeddable Website Widget"
               icon={<WebIcon />}
               text="Create an embeddable website widget and easily deploy on your docs site to serve as a first line of defense against any questions."
-              image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-              imageStyleOverrides={{
-                height: "200px",
-                objectFit: "cover",
-              }}
+              image={WebWidgetImage}
+              styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>
           <Card
@@ -67,6 +63,7 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             icon={<></>}
             text="Stay tuned for new deployment options, such as Discord bots, Slack bots, and Zendesk apps."
             image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            styleOverrides={{ flexDirection: "column-reverse" }}
             imageStyleOverrides={{ height: "200px", objectFit: "cover" }}
           />
         </div>
