@@ -11,6 +11,7 @@ import Numbers from "./sections/Numbers";
 import Accuracy from "./sections/Accuracy";
 import ManagementPlatform from "./sections/ManagementPlatform";
 import Deployments from "./sections/Deployments";
+import Footer from "./components/Footer";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -53,6 +54,7 @@ function App() {
         <Deployments screenWidth={screenWidth} />
         <FAQs screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
+        <Footer screenWidth={screenWidth} />
       </div>
       <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />
     </>
