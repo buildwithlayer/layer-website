@@ -5,6 +5,7 @@ import { ReactComponent as ConnectIcon } from "../assets/icons/connect-icon.svg"
 import { ReactComponent as DeploymentsIcon } from "../assets/icons/deployments-icon.svg";
 import { ReactComponent as BugIcon } from "../assets/icons/bug-icon.svg";
 import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.svg";
+import { ReactComponent as Triangle } from "../assets/images/traingle.svg";
 import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
@@ -60,74 +61,84 @@ const ManagementPlatform = ({
   ];
 
   return (
-    <SectionTemplate
-      section="Features"
-      sectionStyleOverrides={{
-        backgroundColor: Colors.gray[1000],
-        color: "white",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-          overflow: "hidden",
+    <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+      <Triangle width={"100%"} height={"100%"} fill={Colors.gray[1000]} />
+      <SectionTemplate
+        section="Features"
+        sectionStyleOverrides={{
+          backgroundColor: Colors.gray[1000],
+          color: "white",
+          padding: "128px 16px",
         }}
       >
-        {/* Left Section */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            gap: "24px",
-            width: screenWidth === "lg" ? "440px" : "100%",
-            alignItems: screenWidth === "lg" ? "center" : "flex-start",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            overflow: "hidden",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <h2
-              style={{
-                textAlign: screenWidth === "lg" ? "left" : "center",
-                width: "100%",
-              }}
-            >
-              Take Total Control
-            </h2>
-            <p>
-              Introducing the Layer Management Platform: A complete suite of
-              tools designed to help you deflect tickets and improve developer
-              experience.
-            </p>
-          </div>
+          {/* Left Section */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "16px",
-              width: "100%",
+              gap: "24px",
+              width: screenWidth === "lg" ? "440px" : "100%",
+              alignItems: screenWidth === "lg" ? "center" : "flex-start",
             }}
           >
-            {features.map((feature, index) => (
-              <SelectableCard {...feature} key={index} />
-            ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <h2
+                style={{
+                  textAlign: screenWidth === "lg" ? "left" : "center",
+                  width: "100%",
+                }}
+              >
+                Take Total Control
+              </h2>
+              <p>
+                Introducing the Layer Management Platform: A complete suite of
+                tools designed to help you deflect tickets and improve developer
+                experience.
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                width: "100%",
+              }}
+            >
+              {features.map((feature, index) => (
+                <SelectableCard {...feature} key={index} />
+              ))}
+            </div>
           </div>
+          {/* Right Section */}
+          {screenWidth === "lg" && (
+            <div style={{ width: "450px" }}>
+              <img
+                src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+                alt="Features Illustration"
+                height="400px"
+                style={{ objectFit: "cover", overflow: "hidden" }}
+              />
+            </div>
+          )}
         </div>
-        {/* Right Section */}
-        {screenWidth === "lg" && (
-          <div style={{ width: "450px" }}>
-            <img
-              src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
-              alt="Features Illustration"
-              height="400px"
-              style={{ objectFit: "cover", overflow: "hidden" }}
-            />
-          </div>
-        )}
-      </div>
-    </SectionTemplate>
+      </SectionTemplate>
+      <Triangle
+        width={"100%"}
+        height={"100%"}
+        fill={Colors.gray[1000]}
+        style={{ transform: "scale(-100%)" }}
+      />
+    </div>
   );
 };
 
