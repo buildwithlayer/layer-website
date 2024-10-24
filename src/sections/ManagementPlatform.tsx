@@ -1,10 +1,10 @@
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import SelectableCard from "../components/SelectableCard";
-import connectIcon from "../assets/icons/connect-icon.svg";
-import deploymentsIcon from "../assets/icons/deployments-icon.svg";
-import bugIcon from "../assets/icons/bug-icon.svg";
-import analyticsIcon from "../assets/icons/analytics-icon.svg";
+import { ReactComponent as ConnectIcon } from "../assets/icons/connect-icon.svg";
+import { ReactComponent as DeploymentsIcon } from "../assets/icons/deployments-icon.svg";
+import { ReactComponent as BugIcon } from "../assets/icons/bug-icon.svg";
+import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.svg";
 import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
@@ -18,7 +18,7 @@ const ManagementPlatform = ({
 
   const features = [
     {
-      iconSrc: connectIcon,
+      icon: ConnectIcon,
       label: "Manage Knowledge Sources",
       description:
         "Your control center into exactly what sources of information are accessible to the AI chat system.",
@@ -28,7 +28,7 @@ const ManagementPlatform = ({
       },
     },
     {
-      iconSrc: deploymentsIcon,
+      icon: DeploymentsIcon,
       label: "Configure Deployments",
       description:
         "Decide where to deploy to and customize the look and feel of the experience across all channels.",
@@ -38,7 +38,7 @@ const ManagementPlatform = ({
       },
     },
     {
-      iconSrc: bugIcon,
+      icon: BugIcon,
       label: "Find User Issues",
       description:
         "Get detailed usage reports and analytics on the questions users are asking, where they're running into issues, and how to address them.",
@@ -48,7 +48,7 @@ const ManagementPlatform = ({
       },
     },
     {
-      iconSrc: analyticsIcon,
+      icon: AnalyticsIcon,
       label: "Improve Answers Over Time",
       description:
         "Create reinforcement loops to continually train the AI system on new information such as support tickets, docs updates, and more.",
@@ -65,7 +65,6 @@ const ManagementPlatform = ({
       sectionStyleOverrides={{
         backgroundColor: Colors.gray[1000],
         color: "white",
-        borderBottom: "none",
       }}
     >
       <div

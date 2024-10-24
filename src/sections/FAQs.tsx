@@ -100,11 +100,11 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       >
         <h2
           style={{
-            textAlign: screenWidth === "lg" ? "left" : "center",
+            textAlign: "center",
             width: "100%",
           }}
         >
-          You may be asking yourself 🤔
+          You may be asking yourself
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {faqs.map((faq, index) => (

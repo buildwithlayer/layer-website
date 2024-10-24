@@ -2,6 +2,7 @@
 import React from "react";
 import { Colors } from "../constants/Colors";
 import { css } from "@emotion/react";
+import { transparentize } from "polished";
 
 const Button = ({
   label,
@@ -39,7 +40,7 @@ const Button = ({
     &:hover {
       background-color: ${type === "primary"
         ? Colors.primary.dark
-        : Colors.primary.light};
+        : transparentize(0.8, Colors.primary.main)};
     }
   `;
   return (

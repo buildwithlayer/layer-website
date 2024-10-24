@@ -19,7 +19,6 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       sectionStyleOverrides={{
         backgroundColor: Colors.gray[1000],
         padding: "32px 16px",
-        borderBottom: "none",
       }}
     >
       <div

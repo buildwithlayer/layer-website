@@ -52,8 +52,8 @@ function App() {
         <Accuracy screenWidth={screenWidth} />
         <ManagementPlatform screenWidth={screenWidth} />
         <Deployments screenWidth={screenWidth} />
-        <FAQs screenWidth={screenWidth} />
         <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
+        <FAQs screenWidth={screenWidth} />
         <Footer screenWidth={screenWidth} />
       </div>
       <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />

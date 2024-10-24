@@ -106,7 +106,6 @@ const Numbers = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       sectionStyleOverrides={{
         paddingTop: "96px",
         paddingBottom: "48px",
-        borderBottom: "none",
       }}
     >
       <div

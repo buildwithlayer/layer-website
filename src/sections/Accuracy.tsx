@@ -14,10 +14,7 @@ import Lottie from "react-lottie-player";
 
 const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   return (
-    <SectionTemplate
-      section="Accuracy"
-      sectionStyleOverrides={{ borderBottom: "none" }}
-    >
+    <SectionTemplate section="Accuracy">
       <div
         style={{
           width: "100%",

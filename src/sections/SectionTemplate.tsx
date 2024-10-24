@@ -20,7 +20,6 @@ const SectionTemplate = ({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        borderBottom: `1px solid ${Colors.gray[200]}`,
         overflow: "hidden",
         position: "relative",
         // Make this responsive

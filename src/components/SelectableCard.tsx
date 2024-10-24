@@ -2,18 +2,19 @@ import React from "react";
 import { Colors } from "../constants/Colors";
 
 const SelectableCard = ({
-  iconSrc,
+  icon,
   label,
   description,
   active,
   onClick,
 }: {
-  iconSrc: string;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   label: string;
   description: string;
   active: boolean;
   onClick: () => void;
 }) => {
+  const Icon = icon;
   return (
     <div
       style={{
@@ -38,12 +39,7 @@ const SelectableCard = ({
           gap: "12px",
         }}
       >
-        <img
-          src={iconSrc}
-          alt={label + " icon"}
-          width={"24px"}
-          height={"24px"}
-        />
+        <Icon fill="white" width={"24px"} height={"24px"} />
         <h3>{label}</h3>
       </div>
       {active && <p>{description}</p>}

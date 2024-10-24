@@ -7,7 +7,7 @@ interface iPricingCard {
   badge?: string | null;
   label: string;
   price: string;
-  monthly?: boolean;
+  showPerMonth?: boolean;
   features: string[];
   buttonLabel: string;
   buttonType: "primary" | "secondary";
@@ -18,7 +18,7 @@ const PricingCard = ({
   badge = null,
   label,
   price,
-  monthly = false,
+  showPerMonth = false,
   features,
   buttonLabel,
   buttonType,
@@ -32,8 +32,9 @@ const PricingCard = ({
         flexDirection: "column",
         justifyContent: "space-between",
         padding: "16px",
-        boxShadow: `inset 0px 0px 0px 1px ${Colors.gray[200]}`,
         borderRadius: "8px",
+        backgroundColor: Colors.gray[1000],
+        color: "white",
       }}
     >
       <div
@@ -43,65 +44,68 @@ const PricingCard = ({
           gap: "16px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: badge ? "space-between" : "flex-start",
-            alignItems: "flex-start",
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: badge ? "space-between" : "flex-start",
+              alignItems: "center",
+            }}
+          >
             <p style={{ color: Colors.gray[300], fontWeight: "600" }}>
               {label}
             </p>
-            <div
+            {badge && (
+              <div
+                style={{
+                  padding: "2px 8px",
+                  boxShadow: `inset 0px 0px 0px 1px ${Colors.primary.main}`,
+                  borderRadius: "16px",
+                  color: Colors.primary.main,
+                  fontWeight: "500",
+                  fontSize: "14px",
+                }}
+              >
+                {badge}
+              </div>
+            )}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "4px",
+              alignItems: "flex-end",
+            }}
+          >
+            <p
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: "4px",
-                alignItems: "flex-end",
+                fontSize: "40px",
+                fontWeight: "800",
               }}
             >
+              {price}
+            </p>
+            {showPerMonth && (
               <p
                 style={{
-                  fontSize: "40px",
+                  fontSize: "20px",
+                  lineHeight: "38px",
                   fontWeight: "800",
                 }}
               >
-                {price}
+                /mo
               </p>
-              {monthly && (
-                <p
-                  style={{
-                    fontSize: "20px",
-                    lineHeight: "38px",
-                    fontWeight: "800",
-                  }}
-                >
-                  /mo
-                </p>
-              )}
-            </div>
+            )}
           </div>
-          {badge && (
-            <div
-              style={{
-                padding: "2px 8px",
-                boxShadow: `inset 0px 0px 0px 1px ${Colors.primary.main}`,
-                borderRadius: "16px",
-                color: Colors.primary.main,
-                fontWeight: "500",
-                fontSize: "14px",
-              }}
-            >
-              {badge}
-            </div>
-          )}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {features.map((feature, index) => (
-            <p key={index}>✅ {feature}</p>
+            <div key={index} style={{ display: "flex", gap: "8px" }}>
+              <p>✅</p>
+              <p>{feature}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -126,12 +130,15 @@ const Pricing = ({
 }) => {
   const pricingPlans: iPricingCard[] = [
     {
-      label: "Basic",
-      price: "Free",
+      label: "Starter",
+      price: "$250",
+      showPerMonth: true,
+      badge: "2 Week Free Trial",
       features: [
-        "Up to X monthly active developers",
-        "GitHub Copilot & GPT-4o chat",
-        "Basic support",
+        "Up to 1,000 queries per month",
+        "Deploy to Website Chatbot & VS Code Extension",
+        "Website & Public Docs Data Sources",
+        "Semantic Search on Your Docs",
       ],
       buttonLabel: "Get Started for Free",
       buttonType: "primary",
@@ -142,14 +149,15 @@ const Pricing = ({
     },
     {
       badge: "Most Popular",
-      label: "Standard",
-      price: "$XXX",
-      monthly: true,
+      label: "Growth",
+      price: "Contact Us",
       features: [
-        "Everything included in the basic tier",
-        "Embedded chat in documentation",
-        "Up to X monthly active developers",
-        "Priority support",
+        "Everything included in the Starter plan",
+        "Up to 10,000 queries per month",
+        "GitHub Repo Data Sources",
+        "Advanced Docs Analytics & Reports",
+        "Custom Styling",
+        "Adaptive Models",
       ],
       buttonLabel: "Book a Demo",
       buttonType: "secondary",
@@ -161,9 +169,13 @@ const Pricing = ({
       label: "Enterprise",
       price: "Contact Us",
       features: [
-        "Custom feature support",
-        "X+ monthly active developers",
-        "Priority support",
+        "Everything included in the Growth plan",
+        "Unlimited queries",
+        "Zendesk Copilot for Support Agents",
+        "Integrations: Salesforce, Zendesk, Intercom, Custom",
+        "Discord & Slack Bot Deployments",
+        "Auto Integration (Experimental)",
+        "Uptime SLA?",
       ],
       buttonLabel: "Book a Demo",
       buttonType: "secondary",
@@ -185,7 +197,7 @@ const Pricing = ({
           width: "100%",
         }}
       >
-        <h2>Pricing 💳</h2>
+        <h2>Pricing</h2>
         <div
           style={{
             display: "flex",

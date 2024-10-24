@@ -198,6 +198,7 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       fullWidthChildren={bgBallElement}
       sectionStyleOverrides={{
         background: `linear-gradient(180deg, #FAFAFA 80%, #F1F1F1 100%)`,
+        borderBottom: `1px solid ${Colors.gray[200]}`,
       }}
     >
       <div
