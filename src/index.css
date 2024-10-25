@@ -54,3 +54,12 @@ p {
   font-size: 18px;
   font-weight: 500;
 }
+
+@keyframes growHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--target-height);
+  }
+}

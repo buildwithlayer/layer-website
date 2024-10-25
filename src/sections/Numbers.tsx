@@ -2,16 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
 
-const NumberBlock = ({
+export const NumberBlock = ({
   number,
   label,
   animationDuration,
   numberSuffix,
+  blockStyleOverrides,
+  numberStyleOverrides,
+  labelStyleOverrides,
+  roundDigits = 0,
 }: {
   number: number;
   label: string;
   animationDuration: number;
   numberSuffix?: string;
+  blockStyleOverrides?: React.CSSProperties;
+  numberStyleOverrides?: React.CSSProperties;
+  labelStyleOverrides?: React.CSSProperties;
+  roundDigits?: number;
 }) => {
   const [countingNumber, setCountingNumber] = useState(0);
   const [isInView, setIsInView] = useState(false);
@@ -62,6 +70,8 @@ const NumberBlock = ({
     return () => clearInterval(interval);
   }, [isInView, number]);
 
+  const roundedNumber = countingNumber.toFixed(roundDigits);
+
   return (
     <div
       ref={elementRef}
@@ -74,6 +84,7 @@ const NumberBlock = ({
         padding: "24px 16px 32px 16px",
         background: Colors.gray[1000],
         borderRadius: "8px",
+        ...blockStyleOverrides,
       }}
     >
       <p
@@ -83,11 +94,19 @@ const NumberBlock = ({
           background: "linear-gradient(0deg, #F565FF, #7A65FF)",
           backgroundClip: "text",
           color: "transparent",
+          ...numberStyleOverrides,
         }}
       >
-        {Math.round(countingNumber) + (numberSuffix ? numberSuffix : "")}
+        {roundedNumber + (numberSuffix ? numberSuffix : "")}
       </p>
-      <p style={{ fontWeight: "600", fontSize: "18px", color: "white" }}>
+      <p
+        style={{
+          fontWeight: "600",
+          fontSize: "18px",
+          color: "white",
+          ...labelStyleOverrides,
+        }}
+      >
         {label}
       </p>
     </div>
