@@ -1,26 +1,26 @@
-export async function sendEmail(
-  to: string,
-  subject: string,
-  text: string,
-  html?: string
-) {
-  const sgMail = require("@sendgrid/mail");
-  sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+import emailjs from "emailjs-com";
 
-  const msg = {
-    to: to,
-    from: "website@buildwithlayer.com",
+export async function sendEmail(subject: string, message: string) {
+  const serviceID = "service_gl5lv8a";
+  const templateID = "template_xw7ygbi";
+  const userID = "SmgoytTTUrkJAzJBF";
+
+  emailjs.init(userID);
+
+  const templateParams = {
     subject: subject,
-    text: text,
-    html: html || text,
+    content: message,
   };
 
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log("Email sent");
-    })
-    .catch((error: Error) => {
-      console.error(error);
-    });
+  try {
+    const response = await emailjs.send(
+      serviceID,
+      templateID,
+      templateParams,
+      userID
+    );
+    console.log("Email sent", response.status, response.text);
+  } catch (error) {
+    console.error("Failed to send email", error);
+  }
 }

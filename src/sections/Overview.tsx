@@ -90,7 +90,15 @@ const CompanyBlock = ({ company }: { company: Company }) => {
   );
 };
 
-const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
+const Overview = ({
+  screenWidth,
+  setCTAFormOpen,
+  setCTADocsLink,
+}: {
+  screenWidth: "sm" | "md" | "lg";
+  setCTAFormOpen: (open: boolean) => void;
+  setCTADocsLink: (link: string) => void;
+}) => {
   const investors = [
     { name: "Drive Capital", logo: DriveLogo },
     { name: "Resolute Ventures", logo: ResoluteLogo },
@@ -271,14 +279,16 @@ const Overview = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               <form
                 style={{ display: "flex", flexDirection: "row", width: "100%" }}
                 onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                  e.preventDefault();
                   const form = e.target as HTMLFormElement;
                   const input = form.elements[0] as HTMLInputElement;
-                  console.log(input.value);
-                  // TODO: Open modal with rest of form
+                  setCTADocsLink(input.value);
+                  setCTAFormOpen(true);
+                  input.value = "";
                 }}
               >
                 <input
-                  type="text"
+                  type="url"
                   placeholder="https://yoursite.com/docs"
                   css={inputStyles}
                   required

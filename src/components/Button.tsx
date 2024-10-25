@@ -11,6 +11,7 @@ const Button = ({
   fullWidth = false,
   styleOverrides,
   submitButton = false,
+  disabled = false,
 }: {
   label: string;
   type: "primary" | "secondary";
@@ -18,6 +19,7 @@ const Button = ({
   fullWidth?: boolean;
   styleOverrides?: React.CSSProperties;
   submitButton?: boolean;
+  disabled?: boolean;
 }) => {
   const buttonStyle = css`
     ${fullWidth ? "width: 100%;" : ""}
@@ -30,17 +32,20 @@ const Button = ({
       ? "0"
       : `inset 0px 0px 0px 1px ${Colors.primary.main}`};
     gap: 8px;
-    cursor: pointer;
+    cursor: ${!disabled ? "pointer" : "auto"};
     padding: 12px 16px;
     border-radius: 4px;
     background-color: ${type === "primary"
-      ? Colors.primary.main
+      ? disabled
+        ? Colors.gray[200]
+        : Colors.primary.main
       : "transparent"};
     color: ${type === "primary" ? "white" : Colors.primary.main};
     &:hover {
-      background-color: ${type === "primary"
+      background-color: ${!disabled &&
+      (type === "primary"
         ? Colors.primary.dark
-        : transparentize(0.8, Colors.primary.main)};
+        : transparentize(0.8, Colors.primary.main))};
     }
   `;
   return (
@@ -49,6 +54,7 @@ const Button = ({
       css={buttonStyle}
       style={{ ...styleOverrides }}
       onClick={onClick}
+      disabled={disabled}
     >
       <p className="button">{label}</p>
     </button>

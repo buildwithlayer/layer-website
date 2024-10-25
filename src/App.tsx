@@ -12,9 +12,13 @@ import Accuracy from "./sections/Accuracy";
 import ManagementPlatform from "./sections/ManagementPlatform";
 import Deployments from "./sections/Deployments";
 import Footer from "./components/Footer";
+import CTAForm from "./components/CTAForm";
+import emailjs from "emailjs-com";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
+  const [ctaFormOpen, setCTAFormOpen] = useState(false);
+  const [initialDocsLink, setInitialDocsLink] = useState("");
 
   const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
   const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
@@ -45,7 +49,11 @@ function App() {
           maxWidth: "100%",
         }}
       >
-        <Overview screenWidth={screenWidth} />
+        <Overview
+          screenWidth={screenWidth}
+          setCTAFormOpen={setCTAFormOpen}
+          setCTADocsLink={setInitialDocsLink}
+        />
         <LayerInAction screenWidth={screenWidth} />
         <Quote screenWidth={screenWidth} />
         <Numbers screenWidth={screenWidth} />
@@ -57,6 +65,11 @@ function App() {
         <Footer screenWidth={screenWidth} />
       </div>
       <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />
+      <CTAForm
+        open={ctaFormOpen}
+        setOpen={setCTAFormOpen}
+        initialDocsLink={initialDocsLink}
+      />
     </>
   );
 }
