@@ -2,17 +2,21 @@ import React from "react";
 import { Colors } from "../constants/Colors";
 
 const SelectableCard = ({
+  screenWidth,
   icon,
   label,
   description,
   active,
   onClick,
+  image,
 }: {
+  screenWidth: "sm" | "md" | "lg";
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   label: string;
   description: string;
   active: boolean;
   onClick: () => void;
+  image?: string;
 }) => {
   const Icon = icon;
   return (
@@ -26,7 +30,9 @@ const SelectableCard = ({
         padding: "16px",
         borderRadius: "8px",
         boxShadow: `inset 0px 0px 0px 1px ${
-          active ? Colors.primary.main : Colors.gray[200]
+          active && screenWidth === "lg"
+            ? Colors.primary.main
+            : Colors.gray[200]
         }`,
       }}
       onClick={onClick}
@@ -42,7 +48,10 @@ const SelectableCard = ({
         <Icon fill="white" width={"24px"} height={"24px"} />
         <h3>{label}</h3>
       </div>
-      {active && <p>{description}</p>}
+      {(active || screenWidth !== "lg") && <p>{description}</p>}
+      {screenWidth !== "lg" && (
+        <img src={image} alt={label} style={{ marginTop: "16px" }} />
+      )}
     </div>
   );
 };

@@ -84,7 +84,7 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               }}
             >
               {/* Nav Links */}
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   flexDirection: "row",
@@ -95,7 +95,7 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                 {sections.map((section, index) => (
                   <NavLink section={section} key={index} />
                 ))}
-              </div>
+              </div> */}
               {/* Button */}
               <Button
                 label="Get Started for Free"
@@ -104,26 +104,27 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               />
             </div>
           ) : (
+            <></>
             // Mobile Nav Button
-            <button
-              style={{
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                border: `1px solid ${Colors.gray[200]}`,
-                borderRadius: "8px",
-                width: "40px",
-                height: "40px",
-              }}
-              onClick={handleMobileNavClick}
-            >
-              <img
-                src={mobileNavOpen ? CloseIcon : HamburgerIcon}
-                alt="Navigation Menu Icon"
-              />
-            </button>
+            // <button
+            //   style={{
+            //     cursor: "pointer",
+            //     display: "flex",
+            //     alignItems: "center",
+            //     justifyContent: "center",
+            //     backgroundColor: "transparent",
+            //     border: `1px solid ${Colors.gray[200]}`,
+            //     borderRadius: "8px",
+            //     width: "40px",
+            //     height: "40px",
+            //   }}
+            //   onClick={handleMobileNavClick}
+            // >
+            //   <img
+            //     src={mobileNavOpen ? CloseIcon : HamburgerIcon}
+            //     alt="Navigation Menu Icon"
+            //   />
+            // </button>
           )}
         </div>
       </div>

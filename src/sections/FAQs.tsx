@@ -62,29 +62,19 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
 
   const faqs = [
     {
-      question: "How do I get started?",
+      question: "What is Layer?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "Our platform allows customers to easily connect existing knowledge bases (documentation, code repositories, FAQs, etc) and train an AI chat system on them. Our platform then allows customers to deploy this AI chat system to as many places as possible where developers are (website docs, discord channel, slack channel, VS Code, Jetbrains, etc). The goal is to bring everything developers need to integrate to their fingertips and provide as much assistance as possible throughout the process.",
     },
     {
       question: "How do I get started?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "You can sign up here to start your two week free trial or contact us for more information!",
     },
     {
-      question: "How do I get started?",
+      question: "Why IDE extensions?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
-    },
-    {
-      question: "How do I get started?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
-    },
-    {
-      question: "How do I get started?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque.",
+        "There are several “chat-with-your-docs” providers that train AI chatbots for companies to deploy on their documentation sites. We believe any “chat with your docs” solution that is not also available to developers in the IDE is incomplete. The IDE (whether VS Code, Jetbrains, or something else altogether) is where >99 percent of bugs occur and it’s where developers spend the majority of their time. The biggest benefit of having an AI chat extension in the IDE is that it’s able to use codebase context when generating code and making suggestions. This leads to much more accurate, useful, and comprehensive developer assistance.",
     },
   ];
 

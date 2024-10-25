@@ -6,6 +6,8 @@ import { ReactComponent as DeploymentsIcon } from "../assets/icons/deployments-i
 import { ReactComponent as BugIcon } from "../assets/icons/bug-icon.svg";
 import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.svg";
 import { ReactComponent as Triangle } from "../assets/images/traingle.svg";
+import sourcesImage from "../assets/images/sources.png";
+import configureDeploymentsImage from "../assets/images/configure-deployments.png";
 import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
@@ -27,6 +29,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Manage Knowledge Sources");
       },
+      image: sourcesImage,
     },
     {
       icon: DeploymentsIcon,
@@ -37,6 +40,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Configure Deployments");
       },
+      image: configureDeploymentsImage,
     },
     {
       icon: BugIcon,
@@ -47,6 +51,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Find User Issues");
       },
+      image: sourcesImage,
     },
     {
       icon: AnalyticsIcon,
@@ -57,6 +62,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Track Usage");
       },
+      image: sourcesImage,
     },
   ];
 
@@ -78,7 +84,7 @@ const ManagementPlatform = ({
             justifyContent: "space-between",
             alignItems: "center",
             width: "100%",
-            overflow: "hidden",
+            gap: "64px",
           }}
         >
           {/* Left Section */}
@@ -87,8 +93,10 @@ const ManagementPlatform = ({
               display: "flex",
               flexDirection: "column",
               gap: "24px",
-              width: screenWidth === "lg" ? "440px" : "100%",
               alignItems: screenWidth === "lg" ? "center" : "flex-start",
+              width: screenWidth === "lg" ? "380px" : "100%",
+              minWidth: screenWidth === "lg" ? "380px" : "100%",
+              maxWidth: screenWidth === "lg" ? "380px" : "100%",
             }}
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -100,7 +108,12 @@ const ManagementPlatform = ({
               >
                 Take Total Control
               </h2>
-              <p>
+              <p
+                style={{
+                  textAlign: screenWidth === "lg" ? "left" : "center",
+                  width: "100%",
+                }}
+              >
                 Introducing the Layer Management Platform: A complete suite of
                 tools designed to help you deflect tickets and improve developer
                 experience.
@@ -115,18 +128,30 @@ const ManagementPlatform = ({
               }}
             >
               {features.map((feature, index) => (
-                <SelectableCard {...feature} key={index} />
+                <SelectableCard
+                  {...feature}
+                  screenWidth={screenWidth}
+                  key={index}
+                />
               ))}
             </div>
           </div>
           {/* Right Section */}
           {screenWidth === "lg" && (
-            <div style={{ width: "450px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <img
-                src="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+                src={features.find((f) => f.active)?.image}
                 alt="Features Illustration"
-                height="400px"
-                style={{ objectFit: "cover", overflow: "hidden" }}
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "center",
+                  width: "100%",
+                }}
               />
             </div>
           )}

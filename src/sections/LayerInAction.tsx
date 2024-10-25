@@ -7,10 +7,12 @@ import { ReactComponent as UpArrowIcon } from "../assets/icons/up-arrow-icon.svg
 import { ReactComponent as LightBulbIcon } from "../assets/icons/lightbulb-icon.svg";
 import DeployToVSCodeImage from "../assets/images/deploy-to-vscode.png";
 import DeployToWebImage from "../assets/images/deploy-to-web.png";
+import ConnectKnowledgeAnimation from "../assets/animations/connect-knowlege.json";
 import Card from "../components/Card";
 import { Colors } from "../constants/Colors";
 import { NumberBlock } from "./Numbers";
 import { useEffect, useRef, useState } from "react";
+import Lottie from "react-lottie-player";
 
 const InsightBlock = ({
   number,
@@ -271,7 +273,9 @@ const LayerInAction = ({
             label="Connect to Knowledge Sources"
             icon={<ConnectIcon />}
             text="Link your website, docs, GitHub repos, FAQs, and more to automatically train your AI chat system."
-            image="https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg"
+            imageElementOverride={
+              <Lottie animationData={ConnectKnowledgeAnimation} play loop />
+            }
           />
           <div
             style={{
