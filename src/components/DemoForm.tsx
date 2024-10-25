@@ -18,6 +18,9 @@ const DemoForm = ({
         src="https://cal.com/team/layer/demo?date=2024-10-14&month=2024-10&layout=month_view"
         style={{
           border: "none",
+          width: "100%",
+          height: "100%",
+          borderRadius: "8px",
         }}
       />
     </Modal>

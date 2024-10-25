@@ -55,7 +55,7 @@ function App() {
           setCTADocsLink={setInitialDocsLink}
         />
         <LayerInAction screenWidth={screenWidth} />
-        <Quote screenWidth={screenWidth} />
+        {/* <Quote screenWidth={screenWidth} /> */}
         <Numbers screenWidth={screenWidth} />
         <Accuracy screenWidth={screenWidth} />
         <ManagementPlatform screenWidth={screenWidth} />
