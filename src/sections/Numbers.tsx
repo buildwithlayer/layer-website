@@ -131,8 +131,8 @@ const Numbers = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         style={{
           width: "100%",
           display: "flex",
-          flexDirection: "row",
-          gap: "32px",
+          flexDirection: screenWidth === "lg" ? "row" : "column",
+          gap: screenWidth === "lg" ? "32px" : "16px",
           justifyContent: "stretch",
           alignItems: "stretch",
         }}

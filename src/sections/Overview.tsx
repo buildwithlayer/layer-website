@@ -215,6 +215,8 @@ const Overview = ({
           flexDirection: "column",
           gap: "64px",
           zIndex: "3",
+          flexGrow: "1",
+          maxWidth: "100%",
         }}
       >
         <div
@@ -232,7 +234,7 @@ const Overview = ({
             style={{
               display: "flex",
               flexDirection: screenWidth === "lg" ? "row" : "column",
-              justifyContent: screenWidth === "lg" ? "space-between" : "center",
+              justifyContent: screenWidth === "sm" ? "center" : "space-between",
               alignItems: "center",
               width: "100%",
               textAlign: screenWidth === "lg" ? "left" : "center",
@@ -245,7 +247,7 @@ const Overview = ({
                 display: "flex",
                 flexDirection: "column",
                 gap: "32px",
-                maxWidth: "500px",
+                maxWidth: screenWidth === "sm" ? "100%" : "500px",
                 alignItems: screenWidth === "lg" ? "flex-start" : "center",
               }}
             >
@@ -344,7 +346,7 @@ const Overview = ({
                     <img
                       src={investor.logo}
                       alt={investor.name + " Logo"}
-                      style={{ height: "16px" }}
+                      style={{ height: screenWidth === "lg" ? "16px" : "12px" }}
                     />
                   ))}
                 </div>
@@ -357,6 +359,7 @@ const Overview = ({
                 flexDirection: "column",
                 gap: "16px",
                 width: "450px",
+                maxWidth: "100%",
                 alignItems: "center",
                 position: "relative",
               }}

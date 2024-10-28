@@ -68,7 +68,12 @@ const ManagementPlatform = ({
 
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
-      <Triangle width={"100%"} height={"100%"} fill={Colors.gray[1000]} />
+      <Triangle
+        width={"100%"}
+        height={"100%"}
+        fill={Colors.gray[1000]}
+        style={{ transform: "translateY(0.5px)" }}
+      />
       <SectionTemplate
         section="Features"
         sectionStyleOverrides={{
@@ -161,7 +166,7 @@ const ManagementPlatform = ({
         width={"100%"}
         height={"100%"}
         fill={Colors.gray[1000]}
-        style={{ transform: "scale(-100%)" }}
+        style={{ transform: "translateY(-0.5px) scale(-100%)" }}
       />
     </div>
   );

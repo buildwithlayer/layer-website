@@ -46,7 +46,13 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             width: "100%",
           }}
         >
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              flexDirection: screenWidth === "sm" ? "column" : "row",
+            }}
+          >
             <Card
               label="VS Code"
               icon={<VSCodeIcon />}
@@ -62,7 +68,13 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              flexDirection: screenWidth === "sm" ? "column" : "row",
+            }}
+          >
             <Card
               label="Slack"
               icon={<SlackIcon />}
@@ -78,7 +90,13 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              flexDirection: screenWidth === "sm" ? "column" : "row",
+            }}
+          >
             <Card
               label="Zendesk"
               icon={<ZendeskIcon />}

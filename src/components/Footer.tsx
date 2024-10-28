@@ -24,7 +24,10 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
       <div
         style={{
           display: "flex",
+          flexDirection: screenWidth === "sm" ? "column" : "row",
+          gap: "48px",
           justifyContent: "space-between",
+          alignItems: screenWidth === "sm" ? "center" : "flex-start",
           width: "100%",
         }}
       >
@@ -43,27 +46,43 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               }}
             >
               <img src={LayerLogo} alt="Layer Logo" width={"40px"} />
-              <h1 className="brand-text" style={{ color: "white" }}>
+              <h1
+                className="brand-text"
+                style={{
+                  color: "white",
+                }}
+              >
                 Layer
               </h1>
             </div>
             {/* Tagline */}
-            <h2
-              style={{
-                color: "white",
-                fontWeight: "lighter",
-                maxWidth: "300px",
-              }}
-            >
-              Some tagline about our product
-            </h2>
+            {screenWidth !== "sm" && (
+              <h2
+                style={{
+                  color: "white",
+                  fontWeight: "lighter",
+                  maxWidth: "300px",
+                }}
+              >
+                Some tagline about our product
+              </h2>
+            )}
           </div>
-          <p style={{ fontWeight: "lighter", color: "white" }}>
-            © 2024 PumpML, LLC. All rights reserved.
-          </p>
+          {screenWidth !== "sm" && (
+            <p style={{ fontWeight: "lighter", color: "white" }}>
+              © 2024 PumpML, LLC. All rights reserved.
+            </p>
+          )}
         </div>
         {/* Right Section */}
-        <div style={{ display: "flex", gap: "96px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: screenWidth === "sm" ? "48px" : "96px",
+            flexDirection: screenWidth === "sm" ? "column" : "row",
+            textAlign: screenWidth === "sm" ? "center" : "left",
+          }}
+        >
           {/* Company Links Stack */}
           <div
             style={{ display: "flex", flexDirection: "column", gap: "12px" }}
@@ -89,6 +108,11 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             </a>
           </div>
         </div>
+        {screenWidth === "sm" && (
+          <p style={{ fontWeight: "lighter", color: "white" }}>
+            © 2024 PumpML, LLC. All rights reserved.
+          </p>
+        )}
       </div>
     </SectionTemplate>
   );

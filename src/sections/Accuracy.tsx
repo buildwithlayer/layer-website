@@ -56,7 +56,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: screenWidth === "lg" ? "row" : "column",
             gap: "16px",
             justifyContent: "stretch",
             width: "100%",

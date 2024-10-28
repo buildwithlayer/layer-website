@@ -7,7 +7,7 @@ import { ReactComponent as UpArrowIcon } from "../assets/icons/up-arrow-icon.svg
 import { ReactComponent as LightBulbIcon } from "../assets/icons/lightbulb-icon.svg";
 import DeployToVSCodeImage from "../assets/images/deploy-to-vscode.png";
 import DeployToWebImage from "../assets/images/deploy-to-web.png";
-import ConnectKnowledgeAnimation from "../assets/animations/connect-knowlege.json";
+import ConnectKnowledgeAnimation from "../assets/animations/connect-knowledge.json";
 import Card from "../components/Card";
 import { Colors } from "../constants/Colors";
 import { NumberBlock } from "./Numbers";
@@ -274,7 +274,15 @@ const LayerInAction = ({
             icon={<ConnectIcon />}
             text="Link your website, docs, GitHub repos, FAQs, and more to automatically train your AI chat system."
             imageElementOverride={
-              <Lottie animationData={ConnectKnowledgeAnimation} play loop />
+              <Lottie
+                animationData={ConnectKnowledgeAnimation}
+                play
+                loop
+                style={{
+                  borderRadius: "8px",
+                  backgroundColor: Colors.gray[1000],
+                }}
+              />
             }
           />
           <div
@@ -283,6 +291,7 @@ const LayerInAction = ({
               flexDirection: "column",
               gap: "16px",
               width: "100%",
+              height: "100%",
             }}
           >
             <Card
@@ -290,12 +299,14 @@ const LayerInAction = ({
               icon={<WebIcon />}
               text="Embed the AI chat widget on your docs site so users can have their questions answered without talking to a human."
               image={DeployToWebImage}
+              styleOverrides={{ height: "100%" }}
             />
             <Card
               label="Deploy to VS Code"
               icon={<VSCodeIcon />}
               text="Make the same AI chat system available to developers in the IDE for an enhanced support experience and increased ticket deflection."
               image={DeployToVSCodeImage}
+              styleOverrides={{ height: "100%" }}
             />
           </div>
           <Card
@@ -303,6 +314,7 @@ const LayerInAction = ({
             icon={<AnalyticsIcon />}
             text="Find out where users are getting stuck, areas your docs fall short, and make data-driven decisions to improve your product faster."
             imageElementOverride={<LiveInsights />}
+            styleOverrides={{ minHeight: "600px" }}
           />
         </div>
       </div>
