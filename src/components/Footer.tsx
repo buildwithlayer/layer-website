@@ -64,7 +64,7 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                   maxWidth: "300px",
                 }}
               >
-                Some tagline about our product
+                AI answers grounded in your docs
               </h2>
             )}
           </div>

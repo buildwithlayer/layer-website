@@ -32,7 +32,7 @@ const SelectableCard = ({
         boxShadow: `inset 0px 0px 0px 1px ${
           active && screenWidth === "lg"
             ? Colors.primary.main
-            : Colors.gray[200]
+            : Colors.gray[500]
         }`,
       }}
       onClick={onClick}

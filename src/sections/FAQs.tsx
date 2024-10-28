@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import { Colors } from "../constants/Colors";
@@ -9,11 +11,13 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     answer,
     expanded,
     index,
+    answerOverride,
   }: {
     question: string;
-    answer: string;
+    answer?: string;
     expanded: boolean;
     index: number;
+    answerOverride?: React.ReactNode;
   }) => {
     return (
       <div
@@ -53,7 +57,8 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             }}
           />
         </div>
-        {expanded && <p>{answer}</p>}
+        {expanded && !answerOverride && <p>{answer}</p>}
+        {expanded && answerOverride}
       </div>
     );
   };
@@ -68,8 +73,28 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
     },
     {
       question: "How do I get started?",
-      answer:
-        "You can sign up here to start your two week free trial or contact us for more information!",
+      answerOverride: (
+        <p>
+          You can sign up{" "}
+          <a
+            href="https://dashboard.buildwithlayer.com"
+            target="_blank"
+            css={css`
+              text-decoration: none;
+              color: ${Colors.primary.main};
+              &:visited: {
+                color: ${Colors.primary.main};
+              }
+              &:hover {
+                color: ${Colors.primary.dark};
+              }
+            `}
+          >
+            here
+          </a>{" "}
+          to start your two week free trial or contact us for more information!
+        </p>
+      ),
     },
     {
       question: "Why IDE extensions?",
