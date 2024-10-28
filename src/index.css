@@ -63,3 +63,55 @@ p {
     height: var(--target-height);
   }
 }
+
+/* Animated border */
+
+:root {
+  --clr-1: #f565ff;
+  --clr-2: #7a65ff;
+  --clr-3: rgb(41, 101, 239);
+  --bg-clr: #e0e0e0;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animated-border {
+  position: relative;
+  background: white;
+}
+
+.animated-border::after,
+.animated-border::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1)
+  );
+  animation: rotation 3s linear infinite, fadeIn 1s forwards;
+  opacity: 0.5;
+}
+
+.animated-border::after {
+  filter: blur(8px);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}

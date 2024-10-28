@@ -9,6 +9,7 @@ const Card = ({
   styleOverrides,
   imageStyleOverrides,
   imageElementOverride,
+  className,
 }: {
   label: string;
   icon: React.ReactNode;
@@ -17,6 +18,7 @@ const Card = ({
   styleOverrides?: React.CSSProperties;
   imageStyleOverrides?: React.CSSProperties;
   imageElementOverride?: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <div
@@ -32,6 +34,7 @@ const Card = ({
         backgroundColor: "white",
         ...styleOverrides,
       }}
+      className={className}
     >
       <div
         style={{

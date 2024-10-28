@@ -306,7 +306,8 @@ const LayerInAction = ({
               icon={<VSCodeIcon />}
               text="Make the same AI chat system available to developers in the IDE for an enhanced support experience and increased ticket deflection."
               image={DeployToVSCodeImage}
-              styleOverrides={{ height: "100%" }}
+              styleOverrides={{ height: "100%", boxShadow: "none" }}
+              className="animated-border"
             />
           </div>
           <Card
