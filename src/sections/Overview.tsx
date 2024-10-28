@@ -385,9 +385,8 @@ const Overview = ({
                   height: "500px",
                   width: "100%",
                   borderRadius: "8px",
-                  // border: `1px solid ${Colors.gray[200]}`,
+                  border: `1px solid ${Colors.gray[200]}`,
                   overflow: "hidden",
-                  boxShadow: `0px 0px 8px 1px ${Colors.primary.main}`,
                 }}
               >
                 <iframe

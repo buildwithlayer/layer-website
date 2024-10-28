@@ -100,10 +100,18 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             style={{ display: "flex", flexDirection: "column", gap: "12px" }}
           >
             <p style={{ fontWeight: "500", color: "white" }}>Socials</p>
-            <a href="/" css={linkStyles}>
+            <a
+              href="https://www.linkedin.com/company/buildwithlayer/"
+              target="_blank"
+              css={linkStyles}
+            >
               LinkedIn
             </a>
-            <a href="/" css={linkStyles}>
+            <a
+              href="https://x.com/buildwithlayer"
+              target="_blank"
+              css={linkStyles}
+            >
               Twitter
             </a>
           </div>
