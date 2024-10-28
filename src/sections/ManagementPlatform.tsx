@@ -8,6 +8,7 @@ import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.
 import { ReactComponent as Triangle } from "../assets/images/traingle.svg";
 import sourcesImage from "../assets/images/sources.png";
 import configureDeploymentsImage from "../assets/images/configure-deployments.png";
+import findIssuesImage from "../assets/images/find-issues.png";
 import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
@@ -51,7 +52,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Find User Issues");
       },
-      image: sourcesImage,
+      image: findIssuesImage,
     },
     {
       icon: AnalyticsIcon,
@@ -89,7 +90,7 @@ const ManagementPlatform = ({
             justifyContent: "space-between",
             alignItems: "center",
             width: "100%",
-            gap: "64px",
+            gap: "128px",
           }}
         >
           {/* Left Section */}
@@ -147,6 +148,8 @@ const ManagementPlatform = ({
               style={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
+                flexGrow: 1,
               }}
             >
               <img

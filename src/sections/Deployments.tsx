@@ -9,6 +9,7 @@ import { ReactComponent as ZendeskIcon } from "../assets/icons/zendesk-icon.svg"
 import VSCodeImage from "../assets/images/vscode-deployment.png";
 import WebWidgetImage from "../assets/images/webwidget-deployment.png";
 import DiscordImage from "../assets/images/discord-deployment.png";
+import SlackImage from "../assets/images/slack-deployment.png";
 import FutureDeploymentsImage from "../assets/images/future-deployments.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
@@ -77,17 +78,17 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             }}
           >
             <Card
-              label="Slack"
-              icon={<SlackIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
-              image={VSCodeImage}
-              styleOverrides={{ flexDirection: "column-reverse" }}
-            />
-            <Card
               label="Discord"
               icon={<DiscordIcon />}
               text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
               image={DiscordImage}
+              styleOverrides={{ flexDirection: "column-reverse" }}
+            />
+            <Card
+              label="Slack"
+              icon={<SlackIcon />}
+              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              image={SlackImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>

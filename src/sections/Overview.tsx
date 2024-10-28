@@ -152,7 +152,7 @@ const Overview = ({
   ];
 
   const [iframeSrc, setIframeSrc] = useState(
-    "https://chat-app-prod-692435806978.us-central1.run.app/?apikey=17243613-9791-49dd-8c64-8051a1c6593d"
+    "https://chat-app-prod-692435806978.us-central1.run.app/?apikey=17243613-9791-49dd-8c64-8051a1c6593d&theme=light"
   );
 
   const bgBallElement = (
