@@ -65,7 +65,8 @@ const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               display: "flex",
               flexDirection: "row",
               gap: "14px",
-              justifyContent: "flex-start",
+              justifyContent: screenWidth === "sm" ? "center" : "flex-start",
+              flexGrow: 1,
               alignItems: "center",
             }}
           >

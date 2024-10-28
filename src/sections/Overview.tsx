@@ -339,14 +339,16 @@ const Overview = ({
                     flexDirection: "row",
                     gap: "32px",
                     alignItems: "center",
+                    justifyContent: "center",
                     padding: "8px",
+                    flexWrap: "wrap",
                   }}
                 >
                   {investors.map((investor) => (
                     <img
                       src={investor.logo}
                       alt={investor.name + " Logo"}
-                      style={{ height: screenWidth === "lg" ? "16px" : "12px" }}
+                      style={{ height: "16px" }}
                     />
                   ))}
                 </div>
@@ -413,7 +415,13 @@ const Overview = ({
             overflow: "hidden",
           }}
         >
-          <p style={{ fontWeight: "500", color: Colors.gray[300] }}>
+          <p
+            style={{
+              fontWeight: "500",
+              color: Colors.gray[300],
+              textAlign: screenWidth === "lg" ? "left" : "center",
+            }}
+          >
             Powering production-grade AI chat experiences for...
           </p>
           <div
@@ -421,7 +429,7 @@ const Overview = ({
               display: "flex",
               flexDirection: "row",
               position: "absolute",
-              top: "48px",
+              top: screenWidth === "sm" ? "64px" : "48px",
               gap: "24px",
             }}
             css={css`
