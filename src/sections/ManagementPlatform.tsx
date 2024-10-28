@@ -9,6 +9,7 @@ import { ReactComponent as Triangle } from "../assets/images/traingle.svg";
 import sourcesImage from "../assets/images/sources.png";
 import configureDeploymentsImage from "../assets/images/configure-deployments.png";
 import findIssuesImage from "../assets/images/find-issues.png";
+import improveAnswersImage from "../assets/images/improve-answers.png";
 import { Colors } from "../constants/Colors";
 
 const ManagementPlatform = ({
@@ -63,7 +64,7 @@ const ManagementPlatform = ({
       onClick: () => {
         setActiveFeature("Track Usage");
       },
-      image: sourcesImage,
+      image: improveAnswersImage,
     },
   ];
 
