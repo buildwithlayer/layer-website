@@ -13,7 +13,6 @@ import ManagementPlatform from "./sections/ManagementPlatform";
 import Deployments from "./sections/Deployments";
 import Footer from "./components/Footer";
 import CTAForm from "./components/CTAForm";
-import emailjs from "emailjs-com";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);

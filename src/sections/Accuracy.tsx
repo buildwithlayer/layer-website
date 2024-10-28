@@ -40,6 +40,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             Brought to you by the makers of{" "}
             <a
               href="https://pypi.org/project/pyprompt/"
+              target="_blank"
               css={css`
                 text-decoration: none;
                 font-weight: 600;

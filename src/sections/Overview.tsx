@@ -19,6 +19,7 @@ import { ReactComponent as SQLAlchemyLogo } from "../assets/logos/sqlalchemy.svg
 import { ReactComponent as APIFlaskLogo } from "../assets/logos/apiflask.svg";
 import { css, keyframes } from "@emotion/react";
 import { darken, lighten } from "polished";
+import { Chat } from "@buildwithlayer/embeddable-widget";
 
 // TODO: Fix mobile centering
 
@@ -341,7 +342,7 @@ const Overview = ({
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "8px",
-                    flexWrap: "wrap",
+                    flexWrap: screenWidth === "sm" ? "wrap" : "nowrap",
                   }}
                 >
                   {investors.map((investor) => (
@@ -400,6 +401,17 @@ const Overview = ({
                     backgroundColor: "#181818",
                   }}
                 />
+                {/* <Chat
+                product={{
+                  name: "",
+                  logoUrl: "",
+                  apiUrl: "",
+                  marketplaceUrl: "",
+                  primaryColor: "#0273E6",
+                  apiKey: "",
+                }}
+                walkthroughEnabled={false}
+              /> */}
               </div>
             </div>
           </div>
