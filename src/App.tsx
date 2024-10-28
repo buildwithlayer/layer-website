@@ -36,6 +36,10 @@ function App() {
     }
   }, [isDesktop, isTablet, isMobile]);
 
+  useEffect(() => {
+    document.title = "Layer";
+  }, []);
+
   return (
     <>
       <Header screenWidth={screenWidth} />
