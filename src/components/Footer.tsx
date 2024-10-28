@@ -88,10 +88,18 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             style={{ display: "flex", flexDirection: "column", gap: "12px" }}
           >
             <p style={{ fontWeight: "500", color: "white" }}>Company</p>
-            <a href="/" css={linkStyles}>
+            <a
+              href="https://storage.googleapis.com/generic-assets/Terms%20of%20Service.pdf"
+              target="_blank"
+              css={linkStyles}
+            >
               Terms of Service
             </a>
-            <a href="/" css={linkStyles}>
+            <a
+              href="https://storage.googleapis.com/generic-assets/Privacy%20Policy.pdf"
+              target="_blank"
+              css={linkStyles}
+            >
               Privacy Policy
             </a>
           </div>
