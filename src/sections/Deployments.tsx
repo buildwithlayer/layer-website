@@ -10,6 +10,7 @@ import VSCodeImage from "../assets/images/vscode-deployment.png";
 import WebWidgetImage from "../assets/images/webwidget-deployment.png";
 import DiscordImage from "../assets/images/discord-deployment.png";
 import SlackImage from "../assets/images/slack-deployment.png";
+import ZendeskImage from "../assets/images/zendesk-deployment.png";
 import FutureDeploymentsImage from "../assets/images/future-deployments.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
@@ -103,7 +104,7 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               label="Zendesk"
               icon={<ZendeskIcon />}
               text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
-              image={VSCodeImage}
+              image={ZendeskImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
             <Card
