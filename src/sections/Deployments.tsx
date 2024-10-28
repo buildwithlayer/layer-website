@@ -8,6 +8,7 @@ import { ReactComponent as SlackIcon } from "../assets/icons/slack-icon.svg";
 import { ReactComponent as ZendeskIcon } from "../assets/icons/zendesk-icon.svg";
 import VSCodeImage from "../assets/images/vscode-deployment.png";
 import WebWidgetImage from "../assets/images/webwidget-deployment.png";
+import DiscordImage from "../assets/images/discord-deployment.png";
 import FutureDeploymentsImage from "../assets/images/future-deployments.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
@@ -86,7 +87,7 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
               label="Discord"
               icon={<DiscordIcon />}
               text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
-              image={WebWidgetImage}
+              image={DiscordImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>
