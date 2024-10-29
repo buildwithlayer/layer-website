@@ -35,7 +35,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         >
           <h2>Unrivaled Accuracy</h2>
           <p style={{ lineHeight: "24px" }}>
-            LLMs are prone to bullshitting. Ours is trained on your docs.
+            LLMs are prone to bullshitting. Ours are meticulously trained on your docs.
             <br />
             Brought to you by the makers of{" "}
             <a
@@ -66,7 +66,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           <Card
             label="Cites its Sources"
             icon={<BookIcon />}
-            text="All responses are grounded in the provided context to ensure users always get accurate answers with relevant citations."
+            text="Responses are grounded in real context to ensure users get accurate answers with relevant citations."
             imageElementOverride={
               <Lottie play loop animationData={Citations} />
             }
@@ -74,7 +74,7 @@ const Accuracy = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           <Card
             label="Knows What it Doesn’t Know"
             icon={<QuestionIcon />}
-            text="Acknowledges when it doesn't have the information needed to answer a question and suggests relevant backup plans."
+            text="Acknowledges when it doesn't have what it needs to answer a question and suggests relevant backup plans."
             imageElementOverride={
               <Lottie play loop animationData={NoHallucinate} />
             }

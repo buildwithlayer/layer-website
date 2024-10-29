@@ -297,7 +297,7 @@ const LayerInAction = ({
             <Card
               label="Deploy to Web"
               icon={<WebIcon />}
-              text="Embed the AI chat widget on your docs site so users can have their questions answered without talking to a human."
+              text="Embed the integration copilot on your docs site so users can have their questions answered without talking to a human."
               image={DeployToWebImage}
               styleOverrides={{ height: "100%" }}
             />
@@ -313,7 +313,7 @@ const LayerInAction = ({
           <Card
             label="Get Live Insights"
             icon={<AnalyticsIcon />}
-            text="Find out where users are getting stuck, areas your docs fall short, and make data-driven decisions to improve your product faster."
+            text="Figure out where users are getting stuck, what places your docs fall short, and make data-driven decisions to improve your product faster."
             imageElementOverride={<LiveInsights />}
             styleOverrides={{ minHeight: "600px" }}
           />

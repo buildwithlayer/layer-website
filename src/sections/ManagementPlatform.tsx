@@ -26,7 +26,7 @@ const ManagementPlatform = ({
       icon: ConnectIcon,
       label: "Manage Knowledge Sources",
       description:
-        "Your control center into exactly what sources of information are accessible to the AI chat system.",
+        "Your control center into exactly what information is accessible to the integration copilot.",
       active: activeFeature === "Manage Knowledge Sources",
       onClick: () => {
         setActiveFeature("Manage Knowledge Sources");
@@ -37,7 +37,7 @@ const ManagementPlatform = ({
       icon: DeploymentsIcon,
       label: "Configure Deployments",
       description:
-        "Decide where to deploy to and customize the look and feel of the experience across all channels.",
+        "Decide where to deploy to and customize the experience across channels.",
       active: activeFeature === "Configure Deployments",
       onClick: () => {
         setActiveFeature("Configure Deployments");
@@ -46,12 +46,12 @@ const ManagementPlatform = ({
     },
     {
       icon: BugIcon,
-      label: "Find User Issues",
+      label: "Uncover Issues",
       description:
         "Get detailed usage reports and analytics on the questions users are asking, where they're running into issues, and how to address them.",
-      active: activeFeature === "Find User Issues",
+      active: activeFeature === "Uncover Issues",
       onClick: () => {
-        setActiveFeature("Find User Issues");
+        setActiveFeature("Uncover Issues",);
       },
       image: findIssuesImage,
     },
@@ -59,7 +59,7 @@ const ManagementPlatform = ({
       icon: AnalyticsIcon,
       label: "Improve Answers Over Time",
       description:
-        "Create reinforcement loops to continually train the AI system on new information such as support tickets, docs updates, and more.",
+        "Continually update the integration copilot with new information such as support tickets, docs updates, and more.",
       active: activeFeature === "Track Usage",
       onClick: () => {
         setActiveFeature("Track Usage");
@@ -121,9 +121,8 @@ const ManagementPlatform = ({
                   width: "100%",
                 }}
               >
-                Introducing the Layer Management Platform: A complete suite of
-                tools designed to help you deflect tickets and improve developer
-                experience.
+                The Layer Management Platform is the ultimate suite of tools 
+                designed to help you deflect tickets and improve developer experience.
               </p>
             </div>
             <div

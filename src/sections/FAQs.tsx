@@ -67,9 +67,9 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
 
   const faqs = [
     {
-      question: "What is Layer?",
+      question: "Why Layer?",
       answer:
-        "Our platform allows customers to easily connect existing knowledge bases (documentation, code repositories, FAQs, etc) and train an AI chat system on them. Our platform then allows customers to deploy this AI chat system to as many places as possible where developers are (website docs, discord channel, slack channel, VS Code, Jetbrains, etc). The goal is to bring everything developers need to integrate to their fingertips and provide as much assistance as possible throughout the process.",
+        "Layer handholds the developer from the moment they reach your docs, to the moment they finish implementing. By using the same AI Chat system in your documentation, discord / slack, and IDE, you can pinpoint exactly where developers are getting stuck and provide them with the right resources at the right time.",
     },
     {
       question: "How do I get started?",

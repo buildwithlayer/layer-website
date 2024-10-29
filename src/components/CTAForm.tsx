@@ -123,8 +123,7 @@ const CTAForm = ({
             >
               <h2>Generate an AI Expert for Your Docs</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur. Habitasse vel risus
-                sapien id aliquam.
+                By filling out this form, we will customize an integration copilot for your docs or website.  We will get back to you within a few days.
               </p>
             </div>
             <form
