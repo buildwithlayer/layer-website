@@ -82,14 +82,14 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             <Card
               label="Discord"
               icon={<DiscordIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              text="Respond to questions in your Discord channels with AI."
               image={DiscordImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
             <Card
               label="Slack"
               icon={<SlackIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              text="Respond to questions in your Slack channels with AI."
               image={SlackImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
@@ -104,7 +104,7 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             <Card
               label="Zendesk"
               icon={<ZendeskIcon />}
-              text="Lorem ipsum dolor sit amet consectetur. Habitasse vel risus sapien id aliquam neque."
+              text="Empower your support agents with accurate auto-generated responses to tickets that they can easily edit and send in Zendesk."
               image={ZendeskImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
