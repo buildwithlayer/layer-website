@@ -274,8 +274,10 @@ const Overview = ({
                   </span>
                 </h1>
                 <p className="subheader">
-                  Elevate your docs into an interactive <strong>integration</strong> <br />
-                  <strong>copilot</strong> — making developer support smarter and faster.
+                  Elevate your docs into an interactive{" "}
+                  <strong>integration</strong> <br />
+                  <strong>copilot</strong> — making developer support smarter
+                  and faster.
                 </p>
               </div>
               {/* Left Section CTA */}

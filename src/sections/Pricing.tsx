@@ -124,9 +124,13 @@ const PricingCard = ({
 const Pricing = ({
   screenWidth,
   setDemoFormOpen,
+  setCTAFormOpen,
+  setCTADocsLink,
 }: {
   screenWidth: "sm" | "md" | "lg";
   setDemoFormOpen: (open: boolean) => void;
+  setCTAFormOpen: (open: boolean) => void;
+  setCTADocsLink: (link: string) => void;
 }) => {
   const pricingPlans: iPricingCard[] = [
     {
@@ -143,8 +147,8 @@ const Pricing = ({
       buttonLabel: "Get Started for Free",
       buttonType: "primary",
       buttonOnClick: () => {
-        window.location.href =
-          process.env.REACT_APP_MANAGEMENT_DASH_URL + "signup";
+        setCTADocsLink("");
+        setCTAFormOpen(true);
       },
     },
     {
