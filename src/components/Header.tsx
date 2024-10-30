@@ -6,11 +6,20 @@ import { Colors } from "../constants/Colors";
 import HamburgerIcon from "../assets/icons/hamburger-icon.svg";
 import CloseIcon from "../assets/icons/close-icon.svg";
 
-const Header = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
+const Header = ({
+  screenWidth,
+  setCTAFormOpen,
+  setCTADocsLink,
+}: {
+  screenWidth: "sm" | "md" | "lg";
+  setCTAFormOpen: (open: boolean) => void;
+  setCTADocsLink: (link: string) => void;
+}) => {
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
 
   const handleClick = () => {
-    window.location.href = "https://dashboard.buildwithlayer.com/signup";
+    setCTADocsLink("");
+    setCTAFormOpen(true);
   };
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);

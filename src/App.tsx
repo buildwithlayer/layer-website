@@ -41,7 +41,11 @@ function App() {
 
   return (
     <>
-      <Header screenWidth={screenWidth} />
+      <Header
+        screenWidth={screenWidth}
+        setCTAFormOpen={setCTAFormOpen}
+        setCTADocsLink={setInitialDocsLink}
+      />
       <div
         style={{
           display: "flex",
@@ -63,7 +67,12 @@ function App() {
         <Accuracy screenWidth={screenWidth} />
         <ManagementPlatform screenWidth={screenWidth} />
         <Deployments screenWidth={screenWidth} />
-        <Pricing screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
+        <Pricing
+          screenWidth={screenWidth}
+          setDemoFormOpen={setDemoFormOpen}
+          setCTAFormOpen={setCTAFormOpen}
+          setCTADocsLink={setInitialDocsLink}
+        />
         <FAQs screenWidth={screenWidth} />
         <Footer screenWidth={screenWidth} />
       </div>
