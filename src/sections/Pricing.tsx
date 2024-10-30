@@ -135,7 +135,7 @@ const Pricing = ({
       showPerMonth: true,
       badge: "2 Week Free Trial",
       features: [
-        "Up to 1,000 queries per month",
+        "Up to 1,000 Queries per Month",
         "Deploy to Website Chatbot & VS Code Extension",
         "Website & Public Docs Data Sources",
         "Semantic Search on Your Docs",
@@ -153,7 +153,7 @@ const Pricing = ({
       price: "Contact Us",
       features: [
         "Everything in Starter",
-        "Up to 10,000 queries per month",
+        "Up to 10,000 Queries per Month",
         "Discord & Slack Bot Deployments",
         "Advanced Docs Analytics & Reports",
         "Custom Styling",
@@ -170,9 +170,9 @@ const Pricing = ({
       price: "Contact Us",
       features: [
         "Everything in Growth",
-        "Unlimited queries",
+        "Unlimited Queries",
         "Zendesk Copilot for Support Agents",
-        "Integrations: Salesforce, Zendesk, Intercom, Custom",
+        "Integrations: Salesforce, Zendesk",
         "Auto Integration (Experimental)",
         "Uptime SLA",
       ],

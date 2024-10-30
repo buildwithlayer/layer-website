@@ -72,31 +72,6 @@ const FAQs = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         "Layer handholds the developer from the moment they reach your docs, to the moment they finish implementing. By using the same AI Chat system in your documentation, discord / slack, and IDE, you can pinpoint exactly where developers are getting stuck and provide them with the right resources at the right time.",
     },
     {
-      question: "How do I get started?",
-      answerOverride: (
-        <p>
-          You can sign up{" "}
-          <a
-            href="https://dashboard.buildwithlayer.com"
-            target="_blank"
-            css={css`
-              text-decoration: none;
-              color: ${Colors.primary.main};
-              &:visited: {
-                color: ${Colors.primary.main};
-              }
-              &:hover {
-                color: ${Colors.primary.dark};
-              }
-            `}
-          >
-            here
-          </a>{" "}
-          to start your two week free trial or contact us for more information!
-        </p>
-      ),
-    },
-    {
       question: "Why IDE extensions?",
       answer:
         "There are several “chat-with-your-docs” providers that train AI chatbots for companies to deploy on their documentation sites. We believe any “chat with your docs” solution that is not also available to developers in the IDE is incomplete. The IDE (whether VS Code, Jetbrains, or something else altogether) is where >99 percent of bugs occur and it’s where developers spend the majority of their time. The biggest benefit of having an AI chat extension in the IDE is that it’s able to use codebase context when generating code and making suggestions. This leads to much more accurate, useful, and comprehensive developer assistance.",
