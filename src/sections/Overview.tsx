@@ -19,7 +19,7 @@ import { ReactComponent as SQLAlchemyLogo } from "../assets/logos/sqlalchemy.svg
 import { ReactComponent as APIFlaskLogo } from "../assets/logos/apiflask.svg";
 import { css, keyframes } from "@emotion/react";
 import { darken, lighten } from "polished";
-import { Chat } from "@buildwithlayer/embeddable-widget";
+import { Chat, ChatWindow } from "@buildwithlayer/embeddable-widget";
 
 // TODO: Fix mobile centering
 
@@ -390,30 +390,24 @@ const Overview = ({
                   borderRadius: "8px",
                   border: `1px solid ${Colors.gray[200]}`,
                   overflow: "hidden",
+                  textAlign: "left",
                 }}
               >
-                <iframe
-                  title="Chat Demo"
-                  src={iframeSrc}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    borderRadius: "8px",
-                    border: "none",
-                    backgroundColor: "#181818",
+                <ChatWindow
+                  product={{
+                    name: "Django",
+                    logoUrl:
+                      "https://buildwithlayer.gallerycdn.vsassets.io/extensions/buildwithlayer/django-integration-expert-gus30/0.0.6/1727975610478/Microsoft.VisualStudio.Services.Icons.Default",
+                    apiUrl: "https://api.buildwithlayer.com/",
+                    marketplaceUrl:
+                      "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.django-integration-expert-Gus30",
+                    primaryColor: "#508E76",
+                    apiKey: "17243613-9791-49dd-8c64-8051a1c6593d",
                   }}
+                  showModalWalkthrough={false}
+                  inModal={false}
+                  paletteMode="light"
                 />
-                {/* <Chat
-                product={{
-                  name: "",
-                  logoUrl: "",
-                  apiUrl: "",
-                  marketplaceUrl: "",
-                  primaryColor: "#0273E6",
-                  apiKey: "",
-                }}
-                walkthroughEnabled={false}
-              /> */}
               </div>
             </div>
           </div>
