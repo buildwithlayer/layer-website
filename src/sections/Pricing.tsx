@@ -170,6 +170,7 @@ const Pricing = ({
       price: "Contact Us",
       features: [
         "Everything in Basic",
+        "20k+ Queries per Month",
         "Discord and Slack Bots",
         "Zendesk App for Support Team",
         "Auto Integration (Experimental)",
