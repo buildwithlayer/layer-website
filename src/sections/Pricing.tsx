@@ -2,12 +2,14 @@ import React from "react";
 import SectionTemplate from "./SectionTemplate";
 import Button from "../components/Button";
 import { Colors } from "../constants/Colors";
+import Slider from "@mui/material/Slider";
+import { queries } from "@testing-library/react";
 
 interface iPricingCard {
-  badge?: string | null;
   label: string;
   price: string;
   showPerMonth?: boolean;
+  sliderComponent?: React.ReactNode;
   features: string[];
   buttonLabel: string;
   buttonType: "primary" | "secondary";
@@ -15,10 +17,10 @@ interface iPricingCard {
 }
 
 const PricingCard = ({
-  badge = null,
   label,
   price,
   showPerMonth = false,
+  sliderComponent,
   features,
   buttonLabel,
   buttonType,
@@ -45,32 +47,7 @@ const PricingCard = ({
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: badge ? "space-between" : "flex-start",
-              alignItems: "center",
-            }}
-          >
-            <p style={{ color: Colors.gray[300], fontWeight: "600" }}>
-              {label}
-            </p>
-            {badge && (
-              <div
-                style={{
-                  padding: "2px 8px",
-                  boxShadow: `inset 0px 0px 0px 1px ${Colors.primary.main}`,
-                  borderRadius: "16px",
-                  color: Colors.primary.main,
-                  fontWeight: "500",
-                  fontSize: "14px",
-                }}
-              >
-                {badge}
-              </div>
-            )}
-          </div>
+          <p style={{ color: Colors.gray[300], fontWeight: "600" }}>{label}</p>
           <div
             style={{
               display: "flex",
@@ -100,6 +77,7 @@ const PricingCard = ({
             )}
           </div>
         </div>
+        {sliderComponent}
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {features.map((feature, index) => (
             <div key={index} style={{ display: "flex", gap: "8px" }}>
@@ -132,17 +110,36 @@ const Pricing = ({
   setCTAFormOpen: (open: boolean) => void;
   setCTADocsLink: (link: string) => void;
 }) => {
+  const [queriesSelectedIndex, setQueriesSelectedIndex] = React.useState(0);
+
+  const basicPriceTiers = [
+    { queries: 1000, monthly: 250, perQuery: 0.25 },
+    { queries: 2000, monthly: 400, perQuery: 0.2 },
+    { queries: 3000, monthly: 550, perQuery: 0.183 },
+    { queries: 4000, monthly: 700, perQuery: 0.174 },
+    { queries: 5000, monthly: 800, perQuery: 0.16 },
+    { queries: 10000, monthly: 1450, perQuery: 0.145 },
+    { queries: 15000, monthly: 2000, perQuery: 0.133 },
+    { queries: 20000, monthly: 2500, perQuery: 0.125 },
+  ];
+
+  const queriesMarks = basicPriceTiers.map((tier, index) => ({
+    value: index,
+    label: tier.queries.toLocaleString(),
+  }));
+
   const pricingPlans: iPricingCard[] = [
     {
-      label: "Starter",
-      price: "$250",
+      label: "Basic",
+      price: "$" + basicPriceTiers[queriesSelectedIndex]?.monthly,
       showPerMonth: true,
-      badge: "2 Week Free Trial",
       features: [
-        "Up to 1,000 Queries per Month",
-        "Deploy to Website Chatbot & VS Code Extension",
-        "Website & Public Docs Data Sources",
+        "AI Chat on your Docs Site",
+        "VS Code Extension",
+        "Github Copilot Extension",
         "Semantic Search on Your Docs",
+        "Public Sources (website, docs)",
+        "Usage & Query Analytics",
       ],
       buttonLabel: "Get Started for Free",
       buttonType: "primary",
@@ -150,35 +147,34 @@ const Pricing = ({
         setCTADocsLink("");
         setCTAFormOpen(true);
       },
-    },
-    {
-      badge: "Most Popular",
-      label: "Growth",
-      price: "Contact Us",
-      features: [
-        "Everything in Starter",
-        "Up to 10,000 Queries per Month",
-        "Discord & Slack Bot Deployments",
-        "Advanced Docs Analytics & Reports",
-        "Custom Styling",
-        "Adaptive Models",
-      ],
-      buttonLabel: "Book a Demo",
-      buttonType: "secondary",
-      buttonOnClick: () => {
-        setDemoFormOpen(true);
-      },
+      sliderComponent: (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <p>Queries per month</p>
+          <div style={{ padding: "8px 24px" }}>
+            <Slider
+              marks={queriesMarks}
+              step={null}
+              min={queriesMarks[0].value}
+              max={queriesMarks[queriesMarks.length - 1].value}
+              value={queriesSelectedIndex}
+              onChange={(_, value) => setQueriesSelectedIndex(value as number)}
+              sx={{ color: Colors.primary.main }}
+              slotProps={{ markLabel: { style: { color: "white" } } }}
+            />
+          </div>
+        </div>
+      ),
     },
     {
       label: "Enterprise",
       price: "Contact Us",
       features: [
-        "Everything in Growth",
-        "Unlimited Queries",
-        "Zendesk Copilot for Support Agents",
-        "Integrations: Salesforce, Zendesk",
+        "Everything in Basic",
+        "Discord and Slack Bots",
+        "Zendesk App for Support Team",
         "Auto Integration (Experimental)",
-        "Uptime SLA",
+        "Private Sources (support tickets, Slack)",
+        "Premium Support and SLAs",
       ],
       buttonLabel: "Book a Demo",
       buttonType: "secondary",
