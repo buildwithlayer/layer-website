@@ -125,7 +125,10 @@ const Pricing = ({
 
   const queriesMarks = basicPriceTiers.map((tier, index) => ({
     value: index,
-    label: tier.queries.toLocaleString(),
+    label:
+      tier.queries < 10000 && screenWidth !== "sm"
+        ? tier.queries.toLocaleString()
+        : tier.queries.toString().slice(0, -3) + "k",
   }));
 
   const pricingPlans: iPricingCard[] = [
@@ -141,11 +144,10 @@ const Pricing = ({
         "Public Sources (website, docs)",
         "Usage & Query Analytics",
       ],
-      buttonLabel: "Get Started for Free",
+      buttonLabel: "Book a Demo",
       buttonType: "primary",
       buttonOnClick: () => {
-        setCTADocsLink("");
-        setCTAFormOpen(true);
+        setDemoFormOpen(true);
       },
       sliderComponent: (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -178,7 +180,7 @@ const Pricing = ({
         "Premium Support and SLAs",
       ],
       buttonLabel: "Book a Demo",
-      buttonType: "secondary",
+      buttonType: "primary",
       buttonOnClick: () => {
         setDemoFormOpen(true);
       },

@@ -41,11 +41,7 @@ function App() {
 
   return (
     <>
-      <Header
-        screenWidth={screenWidth}
-        setCTAFormOpen={setCTAFormOpen}
-        setCTADocsLink={setInitialDocsLink}
-      />
+      <Header screenWidth={screenWidth} setDemoFormOpen={setDemoFormOpen} />
       <div
         style={{
           display: "flex",

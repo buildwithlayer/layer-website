@@ -3,23 +3,18 @@ import LayerLogo from "../assets/icons/LayerLogo.svg";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
-import HamburgerIcon from "../assets/icons/hamburger-icon.svg";
-import CloseIcon from "../assets/icons/close-icon.svg";
 
 const Header = ({
   screenWidth,
-  setCTAFormOpen,
-  setCTADocsLink,
+  setDemoFormOpen,
 }: {
   screenWidth: "sm" | "md" | "lg";
-  setCTAFormOpen: (open: boolean) => void;
-  setCTADocsLink: (link: string) => void;
+  setDemoFormOpen: (open: boolean) => void;
 }) => {
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
 
   const handleClick = () => {
-    setCTADocsLink("");
-    setCTAFormOpen(true);
+    setDemoFormOpen(true);
   };
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -108,7 +103,7 @@ const Header = ({
               </div> */}
               {/* Button */}
               <Button
-                label="Get Started for Free"
+                label="Book a Demo"
                 type="primary"
                 onClick={handleClick}
               />
