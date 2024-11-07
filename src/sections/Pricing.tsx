@@ -151,7 +151,20 @@ const Pricing = ({
       },
       sliderComponent: (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <p>Queries per month</p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <p>Queries per month</p>
+            <p style={{ color: Colors.gray[300], fontSize: "12px" }}>
+              {"$" +
+                basicPriceTiers[queriesSelectedIndex]?.perQuery +
+                " per query"}
+            </p>
+          </div>
           <div style={{ padding: "8px 24px" }}>
             <Slider
               marks={queriesMarks}
