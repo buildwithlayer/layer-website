@@ -369,19 +369,29 @@ const Overview = ({
                 position: "relative",
               }}
             >
-              <Lottie
+              <div
                 style={{
                   zIndex: "-1",
                   position: "absolute",
-                  width: 650,
-                  height: 650,
-                  transform: "rotate(90deg)",
-                  filter: "blur(0px)",
+                  overflow: "hidden",
+                  width: "100vw",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-                loop
-                animationData={bgBlob}
-                play
-              />
+              >
+                <Lottie
+                  style={{
+                    width: 650,
+                    height: 650,
+                    transform: "rotate(90deg)",
+                    filter: "blur(0px)",
+                  }}
+                  loop
+                  animationData={bgBlob}
+                  play
+                />
+              </div>
               <p style={{ color: Colors.gray[300] }}>Try it yourself</p>
               <div
                 style={{
