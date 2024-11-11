@@ -19,7 +19,7 @@ import { ReactComponent as SQLAlchemyLogo } from "../assets/logos/sqlalchemy.svg
 import { ReactComponent as APIFlaskLogo } from "../assets/logos/apiflask.svg";
 import { css, keyframes } from "@emotion/react";
 import { darken, lighten } from "polished";
-import { Chat, ChatWindow } from "@buildwithlayer/embeddable-widget";
+import { ChatWindow } from "@buildwithlayer/embeddable-widget";
 
 // TODO: Fix mobile centering
 
