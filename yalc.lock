@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@buildwithlayer/embeddable-widget": {
+      "version": "0.1.7",
+      "signature": "c559193011caf70a1310d91c0912fc5b",
+      "file": true
+    }
+  }
+}

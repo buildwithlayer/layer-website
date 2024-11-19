@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@buildwithlayer/embeddable-widget": "^0.1.7",
+    "@buildwithlayer/embeddable-widget": "file:.yalc/@buildwithlayer/embeddable-widget",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.6",

@@ -19,7 +19,7 @@ import { ReactComponent as SQLAlchemyLogo } from "../assets/logos/sqlalchemy.svg
 import { ReactComponent as APIFlaskLogo } from "../assets/logos/apiflask.svg";
 import { css, keyframes } from "@emotion/react";
 import { darken, lighten } from "polished";
-import { ChatWindow } from "@buildwithlayer/embeddable-widget";
+import { Chat } from "@buildwithlayer/embeddable-widget";
 
 // TODO: Fix mobile centering
 
@@ -403,7 +403,7 @@ const Overview = ({
                   textAlign: "left",
                 }}
               >
-                <ChatWindow
+                <Chat
                   product={{
                     name: "Django",
                     logoUrl:
@@ -414,7 +414,6 @@ const Overview = ({
                     primaryColor: "#508E76",
                     apiKey: "17243613-9791-49dd-8c64-8051a1c6593d",
                   }}
-                  showModalWalkthrough={false}
                   inModal={false}
                   paletteMode="light"
                 />
