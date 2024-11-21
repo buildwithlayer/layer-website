@@ -402,19 +402,12 @@ const Overview = ({
                   overflow: "hidden",
                   textAlign: "left",
                 }}
+                id="layer-widget-container"
               >
                 <Chat
-                  product={{
-                    name: "Django",
-                    logoUrl:
-                      "https://buildwithlayer.gallerycdn.vsassets.io/extensions/buildwithlayer/django-integration-expert-gus30/0.0.6/1727975610478/Microsoft.VisualStudio.Services.Icons.Default",
-                    apiUrl: "https://api.buildwithlayer.com/",
-                    marketplaceUrl:
-                      "https://marketplace.visualstudio.com/items?itemName=buildwithlayer.django-integration-expert-Gus30",
-                    primaryColor: "#508E76",
-                    apiKey: "17243613-9791-49dd-8c64-8051a1c6593d",
-                  }}
+                  apiKey="17243613-9791-49dd-8c64-8051a1c6593d"
                   inModal={false}
+                  inContainer={true}
                   paletteMode="light"
                 />
               </div>
