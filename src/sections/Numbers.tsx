@@ -117,7 +117,7 @@ const Numbers = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const numbers = [
     { number: 15, label: "Questions Answered", numberSuffix: "k+" },
     { number: 80, label: "Extensions Deployed", numberSuffix: "+" },
-    { number: 12, label: "Languages Supported" },
+    { number: 750, label: "Active Developers", numberSuffix: "+" },
   ];
   return (
     <SectionTemplate

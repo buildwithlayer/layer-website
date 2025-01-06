@@ -1,11 +1,11 @@
 import SectionTemplate from "./SectionTemplate";
 import { ReactComponent as ConnectIcon } from "../assets/icons/connect-icon.svg";
 import { ReactComponent as WebIcon } from "../assets/icons/web-icon.svg";
-import { ReactComponent as VSCodeIcon } from "../assets/icons/vscode-icon.svg";
+import { ReactComponent as AssistantIcon } from "../assets/icons/assistant-icon.svg";
 import { ReactComponent as AnalyticsIcon } from "../assets/icons/analytics-icon.svg";
 import { ReactComponent as UpArrowIcon } from "../assets/icons/up-arrow-icon.svg";
 import { ReactComponent as LightBulbIcon } from "../assets/icons/lightbulb-icon.svg";
-import DeployToVSCodeImage from "../assets/images/deploy-to-vscode.png";
+import {ReactComponent as LLMDeploymentsImage} from "../assets/icons/llm-deployments.svg";
 import DeployToWebImage from "../assets/images/deploy-to-web.png";
 import ConnectKnowledgeAnimation from "../assets/animations/connect-knowledge.json";
 import Card from "../components/Card";
@@ -297,15 +297,15 @@ const LayerInAction = ({
             <Card
               label="Deploy to Web"
               icon={<WebIcon />}
-              text="Embed the integration copilot on your docs site so users can have their questions answered without talking to a human."
+              text="Embed the integration agent on your docs site so users can have their questions answered without talking to a human."
               image={DeployToWebImage}
               styleOverrides={{ height: "100%" }}
             />
             <Card
-              label="Deploy to VS Code"
-              icon={<VSCodeIcon />}
-              text="Make the same AI chat system available to developers in the IDE for an enhanced support experience and increased ticket deflection."
-              image={DeployToVSCodeImage}
+              label="Deploy to LLM Ecosystems"
+              icon={<AssistantIcon />}
+              text="Control how the most popular AI tools assist developers with your product."
+              imageElementOverride={<LLMDeploymentsImage width="100%" />}
               styleOverrides={{ height: "100%", boxShadow: "none" }}
               className="animated-border"
             />
@@ -313,7 +313,7 @@ const LayerInAction = ({
           <Card
             label="Get Live Insights"
             icon={<AnalyticsIcon />}
-            text="Figure out where users are getting stuck, what places your docs fall short, and make data-driven decisions to improve your product faster."
+            text="Typically, LLM questions and responses are a black box. We show you exactly what developers are asking about your product."
             imageElementOverride={<LiveInsights />}
             styleOverrides={{ minHeight: "600px" }}
           />

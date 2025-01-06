@@ -3,14 +3,12 @@ import SectionTemplate from "./SectionTemplate";
 import Card from "../components/Card";
 import { ReactComponent as VSCodeIcon } from "../assets/icons/vscode-icon.svg";
 import { ReactComponent as WebIcon } from "../assets/icons/web-icon.svg";
-import { ReactComponent as DiscordIcon } from "../assets/icons/discord-icon.svg";
-import { ReactComponent as SlackIcon } from "../assets/icons/slack-icon.svg";
-import { ReactComponent as ZendeskIcon } from "../assets/icons/zendesk-icon.svg";
+import { ReactComponent as CopilotIcon } from "../assets/icons/copilot-icon.svg";
+import { ReactComponent as GPTIcon } from "../assets/icons/gpt-icon.svg";
 import VSCodeImage from "../assets/images/vscode-deployment.png";
 import WebWidgetImage from "../assets/images/webwidget-deployment.png";
-import DiscordImage from "../assets/images/discord-deployment.png";
-import SlackImage from "../assets/images/slack-deployment.png";
-import ZendeskImage from "../assets/images/zendesk-deployment.png";
+import GPTImage from "../assets/images/gpt-deployment.png";
+import CopilotImage from "../assets/images/copilot-deployment.png";
 import FutureDeploymentsImage from "../assets/images/future-deployments.png";
 
 const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
@@ -67,7 +65,7 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             <Card
               label="Embeddable Website Widget"
               icon={<WebIcon />}
-              text="Embed the integration copilot on your docs site to serve as a first line of defense against any questions."
+              text="Embed the integration agent on your docs site to serve as a first line of defense against any questions."
               image={WebWidgetImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
@@ -80,42 +78,27 @@ const Deployments = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             }}
           >
             <Card
-              label="Discord"
-              icon={<DiscordIcon />}
-              text="Respond to questions in your Discord channels with AI."
-              image={DiscordImage}
+              label="GitHub Copilot"
+              icon={<CopilotIcon />}
+              text="Deploy an integration agent to the GitHub Copilot extension store, reaching over 1.3 million developers."
+              image={CopilotImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
             <Card
-              label="Slack"
-              icon={<SlackIcon />}
-              text="Respond to questions in your Slack channels with AI."
-              image={SlackImage}
+              label="ChatGPT"
+              icon={<GPTIcon />}
+              text="Turn your integration agent into a custom GPT, available to over 10 million ChatGPT plus users."
+              image={GPTImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
           </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "16px",
-              flexDirection: screenWidth === "sm" ? "column" : "row",
-            }}
-          >
-            <Card
-              label="Zendesk"
-              icon={<ZendeskIcon />}
-              text="Empower your support agents with accurate auto-generated responses to tickets that they can easily edit and send in Zendesk."
-              image={ZendeskImage}
-              styleOverrides={{ flexDirection: "column-reverse" }}
-            />
-            <Card
+          <Card
               label="Coming Soon..."
               icon={<></>}
-              text="Stay tuned for new deployment options such as Intercom, JetBrains IDEs, and ChatGPT."
+              text="Stay tuned for new deployment options such as JetBrains IDEs, Google Gemini Tools, Discord, Slack, and more."
               image={FutureDeploymentsImage}
               styleOverrides={{ flexDirection: "column-reverse" }}
             />
-          </div>
         </div>
       </div>
     </SectionTemplate>

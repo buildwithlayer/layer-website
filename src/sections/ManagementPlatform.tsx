@@ -26,7 +26,7 @@ const ManagementPlatform = ({
       icon: ConnectIcon,
       label: "Manage Knowledge Sources",
       description:
-        "Your control center into exactly what information is accessible to the integration copilot.",
+        "Your control center into exactly what information is accessible to the integration agent.",
       active: activeFeature === "Manage Knowledge Sources",
       onClick: () => {
         setActiveFeature("Manage Knowledge Sources");
@@ -59,7 +59,7 @@ const ManagementPlatform = ({
       icon: AnalyticsIcon,
       label: "Improve Answers Over Time",
       description:
-        "Continually update the integration copilot with new information such as support tickets, docs updates, and more.",
+        "Continually update the integration agent with new information such as support tickets, docs updates, and more.",
       active: activeFeature === "Track Usage",
       onClick: () => {
         setActiveFeature("Track Usage");
@@ -122,7 +122,7 @@ const ManagementPlatform = ({
                 }}
               >
                 The Layer Management Platform is the ultimate suite of tools 
-                designed to help you deflect tickets and improve developer experience.
+                designed to help you improve your product's developer experience.
               </p>
             </div>
             <div

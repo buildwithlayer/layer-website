@@ -274,10 +274,8 @@ const Overview = ({
                   </span>
                 </h1>
                 <p className="subheader">
-                  Elevate your docs into an interactive{" "}
-                  <strong>integration</strong> <br />
-                  <strong>copilot</strong> — making developer support smarter
-                  and faster.
+                  Deploy LLM extensions across top developer ecosystems to
+                  control how AI helps people with your product.
                 </p>
               </div>
               {/* Left Section CTA */}
