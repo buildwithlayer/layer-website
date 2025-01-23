@@ -403,7 +403,7 @@ const Overview = ({
                 id="layer-widget-container"
               >
                 <Chat
-                  apiKey="17243613-9791-49dd-8c64-8051a1c6593d"
+                  apiKey="b962b39e-2fc6-4fa9-b1a0-82cc46db7481"
                   inModal={false}
                   inContainer={true}
                   paletteMode="light"
