@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
 import LayerLogo from "../assets/icons/LayerLogo.svg";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
+import { css } from "@emotion/react";
 
 const Header = ({
   screenWidth,
@@ -11,6 +13,7 @@ const Header = ({
   screenWidth: "sm" | "md" | "lg";
   setDemoFormOpen: (open: boolean) => void;
 }) => {
+  const isMobile = screenWidth === "sm";
   const sections = ["Overview", "Features", "Benefits", "Pricing", "FAQs"];
 
   const handleClick = () => {
@@ -22,6 +25,39 @@ const Header = ({
   const handleMobileNavClick = () => {
     setMobileNavOpen(!mobileNavOpen);
   };
+
+  const navLinkStyles = isMobile
+    ? css`
+        cursor: pointer;
+        text-decoration: none;
+        padding: 16px 24px;
+        color: ${Colors.gray[500]};
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        &:hover {
+          background-color: ${Colors.gray[200]};
+        }
+        &.active {
+          color: white;
+          background-color: ${Colors.primary.main};
+        }
+      `
+    : css`
+        cursor: pointer;
+        text-decoration: none;
+        padding: 8px 12px;
+        color: ${Colors.gray[500]};
+        border-radius: 8px;
+        border: none;
+        background-color: transparent;
+        &:hover {
+          box-shadow: inset 0px 0px 0px 1px ${Colors.gray[200]};
+        }
+        &.active {
+          color: ${Colors.primary.main};
+        }
+      `;
 
   return (
     // Top Level Nav Container (Contains mobile nav links too)
@@ -102,6 +138,22 @@ const Header = ({
                 ))}
               </div> */}
               {/* Button */}
+              <a
+                href="https://docs.buildwithlayer.com"
+                target="_blank"
+                className="button"
+                css={navLinkStyles}
+              >
+                Docs
+              </a>
+              <a
+                href="https://docs.buildwithlayer.com/blog"
+                target="_blank"
+                className="button"
+                css={navLinkStyles}
+              >
+                Blog
+              </a>
               <Button
                 label="Book a Demo"
                 type="primary"
