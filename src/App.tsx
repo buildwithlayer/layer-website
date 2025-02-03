@@ -13,6 +13,7 @@ import ManagementPlatform from "./sections/ManagementPlatform";
 import Deployments from "./sections/Deployments";
 import Footer from "./components/Footer";
 import CTAForm from "./components/CTAForm";
+import TempHome from "./sections/TempHome";
 
 function App() {
   const [demoFormOpen, setDemoFormOpen] = useState(false);
@@ -52,24 +53,30 @@ function App() {
           maxWidth: "100%",
         }}
       >
-        <Overview
-          screenWidth={screenWidth}
-          setCTAFormOpen={setCTAFormOpen}
-          setCTADocsLink={setInitialDocsLink}
-        />
-        <LayerInAction screenWidth={screenWidth} />
-        {/* <Quote screenWidth={screenWidth} /> */}
-        <Numbers screenWidth={screenWidth} />
-        <Accuracy screenWidth={screenWidth} />
-        <ManagementPlatform screenWidth={screenWidth} />
-        <Deployments screenWidth={screenWidth} />
-        <Pricing
-          screenWidth={screenWidth}
-          setDemoFormOpen={setDemoFormOpen}
-          setCTAFormOpen={setCTAFormOpen}
-          setCTADocsLink={setInitialDocsLink}
-        />
-        <FAQs screenWidth={screenWidth} />
+        <TempHome screenWidth={screenWidth} />
+        {/* Removing these for temp home */}
+        {false && (
+          <>
+            <Overview
+              screenWidth={screenWidth}
+              setCTAFormOpen={setCTAFormOpen}
+              setCTADocsLink={setInitialDocsLink}
+            />
+            <LayerInAction screenWidth={screenWidth} />
+            {/* <Quote screenWidth={screenWidth} /> */}
+            <Numbers screenWidth={screenWidth} />
+            <Accuracy screenWidth={screenWidth} />
+            <ManagementPlatform screenWidth={screenWidth} />
+            <Deployments screenWidth={screenWidth} />
+            <Pricing
+              screenWidth={screenWidth}
+              setDemoFormOpen={setDemoFormOpen}
+              setCTAFormOpen={setCTAFormOpen}
+              setCTADocsLink={setInitialDocsLink}
+            />
+            <FAQs screenWidth={screenWidth} />
+          </>
+        )}
         <Footer screenWidth={screenWidth} />
       </div>
       <DemoForm open={demoFormOpen} setOpen={setDemoFormOpen} />

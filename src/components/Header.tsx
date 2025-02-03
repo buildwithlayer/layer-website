@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
-import LayerLogo from "../assets/icons/LayerLogo.svg";
+import { ReactComponent as LayerLogo } from "../assets/icons/LayerLogo.svg";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { Colors } from "../constants/Colors";
@@ -110,7 +110,7 @@ const Header = ({
               alignItems: "center",
             }}
           >
-            <img src={LayerLogo} alt="Layer Logo" width={"40px"} />
+            <LayerLogo width={"40px"} fill="#7b65ff" />
             <h1 className="brand-text">Layer</h1>
           </div>
           {/* Nav Links & Button */}
@@ -138,16 +138,19 @@ const Header = ({
                 ))}
               </div> */}
               {/* Button */}
-              <a
+              {/* TODO: Add this docs link back */}
+              {/* <a
                 href="https://docs.buildwithlayer.com"
                 target="_blank"
                 className="button"
                 css={navLinkStyles}
               >
                 Docs
-              </a>
+              </a> */}
               <a
-                href="https://docs.buildwithlayer.com/blog"
+                // TODO: Switch this back when docs are live
+                // href="https://docs.buildwithlayer.com/blog"
+                href="https://docs.buildwithlayer.com"
                 target="_blank"
                 className="button"
                 css={navLinkStyles}

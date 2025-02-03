@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import React from "react";
 import SectionTemplate from "../sections/SectionTemplate";
 import { Colors } from "../constants/Colors";
-import LayerLogo from "../assets/icons/LayerLogo.svg";
+import { ReactComponent as LayerLogo } from "../assets/icons/LayerLogo.svg";
 
 const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const linkStyles = css`
@@ -45,7 +45,7 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                 alignItems: "center",
               }}
             >
-              <img src={LayerLogo} alt="Layer Logo" width={"40px"} />
+              <LayerLogo width={"40px"} fill="#7b65ff" />
               <h1
                 className="brand-text"
                 style={{
@@ -64,7 +64,7 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                   maxWidth: "300px",
                 }}
               >
-                AI answers grounded in your docs
+                Make your API agent‑friendly
               </h2>
             )}
           </div>
