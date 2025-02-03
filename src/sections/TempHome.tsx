@@ -483,7 +483,13 @@ const ChatExample = ({ type }: { type: "standard" | "extension" }) => {
                 <p style={{ color: "#828282", fontSize: "12px" }}>
                   Called with 1 argument
                 </p>
-                <p style={{ color: "#333" }}>
+                <p
+                  style={{
+                    color: "#333",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
                   <span
                     style={{
                       padding: "0px 6px",
@@ -554,7 +560,7 @@ const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "4px",
+              gap: screenWidth === "sm" ? "16px" : "4px",
             }}
           >
             <div
@@ -563,6 +569,7 @@ const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "16px",
+                flexDirection: screenWidth === "sm" ? "column" : "row",
               }}
             >
               <h1 style={{ fontSize: "32px", lineHeight: "40px" }}>
@@ -605,7 +612,13 @@ const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           </div>
         </div>
         {/* Chat Examples */}
-        <div style={{ display: "flex", gap: "16px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "16px",
+            flexDirection: screenWidth === "sm" ? "column" : "row",
+          }}
+        >
           <ChatExample type="standard" />
           <ChatExample type="extension" />
         </div>
