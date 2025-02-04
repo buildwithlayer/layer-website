@@ -4,6 +4,8 @@ import DriveLogo from "../assets/logos/drive-logo.svg";
 import DetroitLogo from "../assets/logos/detroit-logo.png";
 import ResoluteLogo from "../assets/logos/resolute-logo.png";
 import AlumniLogo from "../assets/logos/alumni-logo.png";
+import FifteenSeventeenLogo from "../assets/logos/1517-logo.png";
+import ExpansionLogo from "../assets/logos/expansion-logo.png";
 import SectionTemplate from "./SectionTemplate";
 import { ReactComponent as LayerLogo } from "../assets/icons/LayerLogo.svg";
 import { ReactComponent as ThumbUpFilled } from "../assets/icons/thumb_up_filled.svg";
@@ -21,10 +23,32 @@ import neonResponse from "../assets/images/neon-response.png";
 
 const Investors = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
   const investors = [
-    { name: "Drive Capital", logo: DriveLogo },
-    { name: "Resolute Ventures", logo: ResoluteLogo },
-    { name: "Detroit Venture Partners", logo: DetroitLogo },
-    { name: "Alumni Ventures", logo: AlumniLogo },
+    {
+      name: "Drive Capital",
+      logo: DriveLogo,
+      url: "https://www.drivecapital.com/",
+    },
+    {
+      name: "Resolute Ventures",
+      logo: ResoluteLogo,
+      url: "https://www.resolute.vc/",
+    },
+    {
+      name: "1517 Fund",
+      logo: FifteenSeventeenLogo,
+      url: "https://www.1517fund.com/",
+    },
+    {
+      name: "Expansion VC",
+      logo: ExpansionLogo,
+      url: "https://www.expansionvc.com/",
+    },
+    {
+      name: "Detroit Venture Partners",
+      logo: DetroitLogo,
+      url: "https://www.detroit.vc/",
+    },
+    { name: "Alumni Ventures", logo: AlumniLogo, url: "https://www.av.vc/" },
   ];
 
   return (
@@ -67,11 +91,13 @@ const Investors = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         }}
       >
         {investors.map((investor) => (
-          <img
-            src={investor.logo}
-            alt={investor.name + " Logo"}
-            style={{ height: "16px" }}
-          />
+          <a href={investor.url} target="_blank" key={investor.name}>
+            <img
+              src={investor.logo}
+              alt={investor.name + " Logo"}
+              style={{ height: "16px" }}
+            />
+          </a>
         ))}
       </div>
     </div>
@@ -165,7 +191,7 @@ const SurfaceBlock = () => {
             color: "#333",
           }}
         >
-          <CopilotIcon height={40} width={40} />
+          <CopilotIcon height={40} width={40} fill="#333" />
           <h1
             style={{ fontSize: "32px", lineHeight: "40px", fontWeight: "500" }}
           >
@@ -195,7 +221,7 @@ const SurfaceBlock = () => {
             color: "#333",
           }}
         >
-          <AnthropicIcon height={40} width={40} />
+          <AnthropicIcon height={40} width={40} fill="#333" />
           <h1
             style={{ fontSize: "32px", lineHeight: "40px", fontWeight: "500" }}
           >
@@ -334,8 +360,7 @@ const ChatExample = ({ type }: { type: "standard" | "extension" }) => {
             target="_blank"
             style={{
               display: "inline-flex",
-              gap: "8px",
-              textDecoration: "none",
+              gap: "4px",
               color: "#7b65ff",
               alignItems: "center",
             }}
@@ -529,6 +554,10 @@ const ChatExample = ({ type }: { type: "standard" | "extension" }) => {
 };
 
 const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
+  const [currentExample, setCurrentExample] = React.useState<
+    "standard" | "extension"
+  >("standard");
+
   return (
     <SectionTemplate
       section="Overview"
@@ -572,12 +601,22 @@ const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                 flexDirection: screenWidth === "sm" ? "column" : "row",
               }}
             >
-              <h1 style={{ fontSize: "32px", lineHeight: "40px" }}>
+              <h1
+                style={{
+                  fontSize: screenWidth === "sm" ? "26px" : "32px",
+                  lineHeight: "40px",
+                }}
+              >
                 Devs already ask
               </h1>
               <SurfaceBlock />
             </div>
-            <h1 style={{ fontSize: "32px", lineHeight: "40px" }}>
+            <h1
+              style={{
+                fontSize: screenWidth === "sm" ? "26px" : "32px",
+                lineHeight: "40px",
+              }}
+            >
               for help with your product
             </h1>
           </div>
@@ -615,14 +654,71 @@ const TempHome = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             gap: "16px",
-            flexDirection: screenWidth === "sm" ? "column" : "row",
+            width: "100%",
           }}
         >
-          <ChatExample type="standard" />
-          <ChatExample type="extension" />
+          {screenWidth === "sm" && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "2px",
+                border: "1px solid #E0E0E0",
+                borderRadius: "4px",
+              }}
+            >
+              <button
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: "4px",
+                  border: "none",
+                  backgroundColor:
+                    currentExample === "standard" ? "#7b65ff" : "transparent",
+                  color: currentExample === "standard" ? "#fff" : "#333",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                }}
+                onClick={() => setCurrentExample("standard")}
+              >
+                Before Layer
+              </button>
+              <button
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: "4px",
+                  border: "none",
+                  backgroundColor:
+                    currentExample === "extension" ? "#7b65ff" : "transparent",
+                  color: currentExample === "extension" ? "#fff" : "#333",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                }}
+                onClick={() => setCurrentExample("extension")}
+              >
+                With Layer
+              </button>
+            </div>
+          )}
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              width: "100%",
+            }}
+          >
+            {(!(screenWidth === "sm") || currentExample === "standard") && (
+              <ChatExample type="standard" />
+            )}
+            {(!(screenWidth === "sm") || currentExample === "extension") && (
+              <ChatExample type="extension" />
+            )}
+          </div>
+          <Investors screenWidth={screenWidth} />
         </div>
-        <Investors screenWidth={screenWidth} />
       </div>
     </SectionTemplate>
   );

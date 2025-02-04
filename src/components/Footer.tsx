@@ -64,7 +64,7 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
                   maxWidth: "300px",
                 }}
               >
-                Make your API agent‑friendly
+                Make Your API Easy for Agents to Use
               </h2>
             )}
           </div>
