@@ -70,7 +70,7 @@ const Footer = ({ screenWidth }: { screenWidth: "sm" | "md" | "lg" }) => {
           </div>
           {screenWidth !== "sm" && (
             <p style={{ fontWeight: "lighter", color: "white" }}>
-              © 2024 Layer. All rights reserved.
+              © {new Date().getFullYear()} Layer. All rights reserved.
             </p>
           )}
         </div>
