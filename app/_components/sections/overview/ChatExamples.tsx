@@ -137,7 +137,7 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
             </ChatMessage>
             <ChatMessage type={type} role="agent" ratings={false}>
               <p className="text-gray-800">
-                {`I&apos;d love to help you with the design or planning stages, but `}
+                {`I'd love to help you with the design or planning stages, but `}
                 <strong>
                   unfortunately, I can&apos;t physically create or install the
                   neon project for you.
