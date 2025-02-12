@@ -1,33 +1,35 @@
+import Image from "next/image";
+
 const Investors = () => {
   const investors = [
     {
       name: "Drive Capital",
-      logo: "drive-logo.png",
+      logo: "/drive-logo.png",
       url: "https://www.drivecapital.com/",
     },
     {
       name: "Resolute Ventures",
-      logo: "resolute-logo.png",
+      logo: "/resolute-logo.png",
       url: "https://www.resolute.vc/",
     },
     {
       name: "1517 Fund",
-      logo: "1517-logo.png",
+      logo: "/1517-logo.png",
       url: "https://www.1517fund.com/",
     },
     {
       name: "Expansion VC",
-      logo: "expansion-logo.png",
+      logo: "/expansion-logo.png",
       url: "https://www.expansionvc.com/",
     },
     {
       name: "Detroit Venture Partners",
-      logo: "detroit-logo.png",
+      logo: "/detroit-logo.png",
       url: "https://www.detroit.vc/",
     },
     {
       name: "Alumni Ventures",
-      logo: "alumni-logo.png",
+      logo: "/alumni-logo.png",
       url: "https://www.av.vc/",
     },
   ];
@@ -42,11 +44,11 @@ const Investors = () => {
       <div className="flex gap-8 items-center justify-center p-2 flex-wrap">
         {investors.map((investor) => (
           <a href={investor.url} target="_blank" key={investor.name}>
-            <img
+            <Image
               src={investor.logo}
               alt={investor.name + " Logo"}
               style={{ height: "16px" }}
-            />
+            ></Image>
           </a>
         ))}
       </div>

@@ -18,7 +18,7 @@ const Navbar = () => {
             width={40}
             height={40}
             loading="eager"
-          />
+          ></Image>
           <h1 className="font-bold text-[24px]">Layer</h1>
         </div>
         {/* NavLinks */}

@@ -9,6 +9,7 @@ import ThumbDownFilled from "public/thumb-down-filled.svg";
 import ThumbDownOutlined from "public/thumb-down-outlined.svg";
 import ThumbUpFilled from "public/thumb-up-filled.svg";
 import ThumbUpOutlined from "public/thumb-up-outlined.svg";
+import Image from "next/image";
 
 type ExampleType = "standard" | "extension";
 
@@ -124,8 +125,9 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
             <ChatMessage type={type} role="agent" ratings={true}>
               <p className="text-gray-800">
                 Starting a neon project can be a fun and creative process,
-                whether you're aiming to make neon signs, art pieces, or custom
-                lighting. Here’s a general guide to help you get started:
+                whether you&apos;re aiming to make neon signs, art pieces, or
+                custom lighting. Here&apos;s a general guide to help you get
+                started:
               </p>
             </ChatMessage>
             <ChatMessage type={type} role="user" ratings={false}>
@@ -135,10 +137,10 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
             </ChatMessage>
             <ChatMessage type={type} role="agent" ratings={false}>
               <p className="text-gray-800">
-                {`I’d love to help you with the design or planning stages, but `}
+                {`I&apos;d love to help you with the design or planning stages, but `}
                 <strong>
-                  unfortunately, I can’t physically create or install the neon
-                  project for you.
+                  unfortunately, I can&apos;t physically create or install the
+                  neon project for you.
                 </strong>
               </p>
             </ChatMessage>
@@ -198,11 +200,11 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
               </div>
               <p>Created “new-project”:</p>
               <div className="bg-[#262626] py-2 px-1 rounded-[4px] max-h-[150px] overflow-y-auto">
-                <img
-                  src={"neon-response.png"}
+                <Image
+                  src={"/neon-response.png"}
                   alt="Neon API Request Response"
                   className="w-full"
-                />
+                ></Image>
               </div>
             </div>
           </ChatMessage>

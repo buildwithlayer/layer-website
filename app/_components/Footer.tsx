@@ -47,7 +47,7 @@ const Footer = () => {
                 width={40}
                 height={40}
                 loading="eager"
-              />
+              ></Image>
               <h1 className="font-bold text-[24px]">Layer</h1>
             </div>
             <h2 className="text-[26px] font-light max-w-[300px] hidden md:block">
