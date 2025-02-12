@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div className="mt-[90px]">{children}</div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-6J1GTJ5G7L" />
     </html>
   );
 }
