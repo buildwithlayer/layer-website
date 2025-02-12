@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LayerLogo from "public/LayerLogo.svg";
 import React from "react";
 
 const Footer = () => {
@@ -41,13 +41,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             {/* Brand */}
             <div className="flex items-center gap-4">
-              <Image
-                src="/LayerLogo.svg"
-                alt="Layer Logo"
-                width={40}
-                height={40}
-                loading="eager"
-              ></Image>
+              <LayerLogo fill="var(--primary)" height={32} />
               <h1 className="font-bold text-[24px]">Layer</h1>
             </div>
             <h2 className="text-[26px] font-light max-w-[300px] hidden md:block">

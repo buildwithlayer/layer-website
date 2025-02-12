@@ -44,11 +44,15 @@ const Investors = () => {
       <div className="flex gap-8 items-center justify-center p-2 flex-wrap">
         {investors.map((investor) => (
           <a href={investor.url} target="_blank" key={investor.name}>
-            <Image
-              src={investor.logo}
-              alt={investor.name + " Logo"}
-              style={{ height: "16px" }}
-            ></Image>
+            <div className="h-[16px] relative">
+              <Image
+                src={investor.logo}
+                alt={investor.name + " Logo"}
+                width={200}
+                height={200}
+                className="w-auto h-full"
+              ></Image>
+            </div>
           </a>
         ))}
       </div>

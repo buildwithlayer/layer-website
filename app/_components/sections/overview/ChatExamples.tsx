@@ -92,7 +92,7 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
   return (
     <div className="flex flex-col rounded-[4px] border-[1px] border-gray-200 overflow-hidden w-full dark:bg-gray-100 light:bg-gray-50">
       <div
-        className="flex items-center justify-center py-1 px-4 gap-2 font-semibold min-h-[48px]"
+        className="flex items-center justify-center py-1 px-4 gap-3 font-semibold min-h-[48px]"
         style={{
           backgroundColor:
             type === "standard" ? "var(--gray-50)" : "var(--primary)",
@@ -203,6 +203,9 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
                 <Image
                   src={"/neon-response.png"}
                   alt="Neon API Request Response"
+                  width={100}
+                  height={100}
+                  layout="responsive"
                   className="w-full"
                 ></Image>
               </div>

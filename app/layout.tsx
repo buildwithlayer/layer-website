@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
         <Navbar />
-        <div className="mt-[90px]">{children}</div>
+        <div className="mt-[85px]">{children}</div>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-6J1GTJ5G7L" />

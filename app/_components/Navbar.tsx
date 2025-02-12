@@ -1,6 +1,6 @@
-import Image from "next/image";
 import React from "react";
 import OpenDemoButton from "./OpenDemoButton";
+import LayerLogo from "public/LayerLogo.svg";
 
 const Navbar = () => {
   const sections = [{ name: "Blog", link: "https://docs.buildwithlayer.com" }];
@@ -12,13 +12,7 @@ const Navbar = () => {
       <div className="max-w-[--content-width] w-full flex justify-between items-center">
         {/* Brand */}
         <div className="flex items-center gap-4 justify-center">
-          <Image
-            src="/LayerLogo.svg"
-            alt="Layer Logo"
-            width={40}
-            height={40}
-            loading="eager"
-          ></Image>
+          <LayerLogo fill="var(--primary)" height={32} />
           <h1 className="font-bold text-[24px]">Layer</h1>
         </div>
         {/* NavLinks */}
