@@ -170,7 +170,7 @@ const ChatExample = ({ type }: { type: ExampleType }) => {
               <ol className="pl-6 flex flex-col gap-[6px] mb-0 list-decimal">
                 <li>Navigate to the Neon Console. Click New Project.</li>
                 <li>
-                  Specify values for
+                  Specify values for{" "}
                   <strong>
                     Project Name, Postgres version, Cloud Service Provider,
                   </strong>{" "}

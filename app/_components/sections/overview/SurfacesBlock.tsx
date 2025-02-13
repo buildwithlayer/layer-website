@@ -36,7 +36,7 @@ const SurfacesBlock = () => {
   ];
 
   return (
-    <div className="py-[2px] pr-[10px] pl-[4px] rounded-sm border-[1px] border-gray-200 h-[44px] overflow-hidden">
+    <div className="py-[2px] pr-[10px] pl-[4px] rounded-sm border-[1px] border-gray-200 h-[44px] overflow-hidden z-[-1]">
       <style>
         {`
           @keyframes slide-up {
