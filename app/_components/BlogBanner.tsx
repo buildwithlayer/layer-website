@@ -9,7 +9,7 @@ const BlogBanner = () => {
     <>
       {showBanner && (
         <div className="w-full bg-primary text-white py-2 flex items-center justify-center">
-          <div className="flex justify-center items-center w-full max-w-[--content-width] text-left md:text-center px-4 md:px-0 gap-6">
+          <div className="flex justify-between md:justify-center items-center w-full max-w-[--content-width] text-left md:text-center px-4 md:px-0 gap-6">
             <p>
               Check out our new blog on <br className="visible md:hidden" />
               <a
