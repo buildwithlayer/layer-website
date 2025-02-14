@@ -1,40 +1,43 @@
+"use client";
+
 import React from "react";
 import Investors from "./Investors";
-import SurfacesBlock from "./SurfacesBlock";
-import ChatExamples from "./ChatExamples";
+import VideoThumbnail from "./VideoThumbnail";
+import ParticlesBg from "./ParticlesBg";
 
 const Overview = () => {
   return (
-    <div className="w-full max-w-[--content-width] flex flex-col gap-16 text-center py-16">
-      {/* Hero Text */}
-      <div className="flex flex-col gap-8">
-        {/* Header */}
-        <div className="flex flex-col gap-4 md:gap-0">
-          <div className="flex flex-col gap-4 items-center justify-center md:flex-row">
-            <h1 className="font-bold text-[26px]/[40px] md:text-[32px]/[40px]">
-              Devs already ask
+    <div className="relative w-screen flex items-center justify-center">
+      <div className="w-full max-w-[--content-width] flex flex-col gap-16 text-center pt-16 z-10 relative">
+        {/* Hero Text */}
+        <div className="flex flex-col gap-8 sticky top-[200px] w-full">
+          {/* Header */}
+          <div className="flex flex-col font-extrabold text-4xl/tight md:text-7xl/tight">
+            <h1>
+              Bring Your API
+              <br />
+              to the AI Ecosystem
             </h1>
-            <SurfacesBlock />
           </div>
-          <h1 className="font-bold text-[26px]/[40px] md:text-[32px]/[40px]">
-            for help with your product
-          </h1>
+          {/* End Header */}
+          {/* Subheader */}
+          <div className="flex flex-col gap-2 text-xl font-light text-gray-700">
+            <h2>
+              Unlock New Users by Integrating into the AI Ecosystem
+              <br />
+              Don't Miss Out on the Future of Developer Tools
+            </h2>
+          </div>
+          {/* End Subheader */}
         </div>
-        {/* End Header */}
-        {/* Subheader */}
-        <div className="flex flex-col gap-2">
-          <h2 className="font-light text-gray-700 text-[20px] whitespace-pre">
-            {`🎮  Control the help they get`}
-          </h2>
-          <h2 className="font-light text-gray-700 text-[20px] whitespace-pre">
-            {`👀  See the help they need`}
-          </h2>
-        </div>
-        {/* End Subheader */}
+        {/* End Hero Text */}
+        <VideoThumbnail />
       </div>
-      {/* End Hero Text */}
-      <ChatExamples />
-      <Investors />
+      <ParticlesBg />
+      {/* BG Gradient */}
+      <div className="absolute top-0 left-0 right-0 w-screen bg-gradient-to-b from-[rgba(0,0,0,0)] from-30% to-layerPink-dark h-full opacity-50"></div>
+      {/* White BG Section */}
+      <div className="absolute bg-white bottom-0 left-0 right-0 w-screen h-[100px]"></div>
     </div>
   );
 };

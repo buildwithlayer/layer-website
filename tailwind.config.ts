@@ -30,6 +30,17 @@ export default {
           900: "var(--gray-900)",
           1000: "var(--gray-1000)",
         },
+        layerPink: {
+          dark: "var(--layer-pink-dark)",
+          80: "var(--layer-pink-80)",
+        },
+        layerPurple: {
+          dark: "var(--layer-purple-dark)",
+          80: "var(--layer-purple-80)",
+        },
+        transparentBlack: {
+          30: "var(--black-30)",
+        },
       },
     },
   },
