@@ -1,7 +1,4 @@
 import React from "react";
-import ThumbUpIcon from "public/thumb-up-outlined.svg";
-import NeonLogo from "public/neon-logo.svg";
-import Button from "../../Button";
 import OpenDemoButton from "../../OpenDemoButton";
 
 const Details = () => {

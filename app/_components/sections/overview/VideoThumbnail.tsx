@@ -1,19 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Modal from "../../Modal";
 import PlayIcon from "public/play-icon.svg";
+import Image from "next/image";
 
 const VideoThumbnail = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      {/* <Modal open={open} onClose={() => setOpen(false)}>
-        <iframe
-          className="w-full h-full"
-          src="https://www.loom.com/embed/7ac8371fa6e04dc98d114979ef5cfb93?sid=41f94368-ced0-41ba-8b4d-5178070566cf&muted=0&hide_speed=true&hide_title=true&hide_owner=true&hide_share=true"
-        ></iframe>
-      </Modal> */}
       <div
         className={`flex items-center justify-center rounded-md bg-gradient-to-br from-layerPink-80 to-layerPurple-80 backdrop-blur-[50px] w-full aspect-[3024/1964] relative overflow-hidden ${
           open ? "" : "p-4 md:p-16"
@@ -33,7 +27,13 @@ const VideoThumbnail = () => {
             src="https://www.loom.com/embed/7ac8371fa6e04dc98d114979ef5cfb93?sid=41f94368-ced0-41ba-8b4d-5178070566cf&muted=0&hide_speed=true&hide_title=true&hide_owner=true&hide_share=true"
           ></iframe>
         ) : (
-          <img src="video-thumbnail.png" alt="Layer Demo" className="w-full" />
+          <Image
+            src="/video-thumbnail.png"
+            alt="Layer Demo"
+            width={5000}
+            height={5000}
+            className="w-full"
+          />
         )}
       </div>
     </>

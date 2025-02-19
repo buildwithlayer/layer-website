@@ -14,10 +14,6 @@ const Build = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [barHeight, setBarHeight] = useState(0);
 
-  const [smallScreen, setSmallScreen] = useState(
-    window.matchMedia("(max-width: 767px)").matches
-  );
-
   const tabs = [
     {
       name: "Connect Docs",
@@ -50,12 +46,6 @@ const Build = () => {
   ];
 
   useEffect(() => {
-    window
-      .matchMedia("(max-width: 767px)")
-      .addEventListener("change", (e) => setSmallScreen(e.matches));
-  }, []);
-
-  useEffect(() => {
     let shouldChangeTab = false;
 
     const interval = setInterval(() => {
@@ -78,7 +68,7 @@ const Build = () => {
     setBarHeight(0);
 
     return () => clearInterval(interval);
-  }, [activeTab]);
+  }, [activeTab, tabs.length]);
 
   return (
     <div className="w-screen flex items-center justify-center bg-white text-gray-50 px-4 md:px-0">
@@ -110,13 +100,20 @@ const Build = () => {
                   }}
                 >
                   {isActive && (
-                    <div
-                      className="bg-primary absolute left-0 top-0"
-                      style={{
-                        width: smallScreen ? `${barHeight}%` : "4px",
-                        height: smallScreen ? "4px" : `${barHeight}%`,
-                      }}
-                    />
+                    <>
+                      <div
+                        className="w-1 bg-primary absolute left-0 top-0 hidden md:flex"
+                        style={{
+                          height: `${barHeight}%`,
+                        }}
+                      />
+                      <div
+                        className="h-1 bg-primary absolute left-0 top-0 flex md:hidden"
+                        style={{
+                          width: `${barHeight}%`,
+                        }}
+                      />
+                    </>
                   )}
                   {React.cloneElement(tab.icon, {
                     className: "w-8 h-8",

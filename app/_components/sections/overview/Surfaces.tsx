@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import VSCodeIcon from "public/vscode-icon.svg";
 import GPTIcon from "public/gpt-icon.svg";
@@ -30,6 +32,18 @@ const SurfaceBlock = ({
   top,
   bottom,
 }: SurfaceBlockProps) => {
+  const [randomValues, setRandomValues] = React.useState({
+    duration: 0,
+    distance: 0,
+  });
+
+  React.useEffect(() => {
+    setRandomValues({
+      duration: Math.random() * 2 + 10,
+      distance: (Math.random() * 10 + 20) * (index % 2 === 0 ? 1 : -1),
+    });
+  }, [index]);
+
   return (
     <div
       className="w-fit h-fit absolute opacity-60 hidden md:flex"
@@ -39,10 +53,10 @@ const SurfaceBlock = ({
           right: right + "%",
           top: top + "%",
           bottom: bottom + "%",
-          animation: `float ${Math.random() * 2 + 10}s ease-in-out infinite`,
-          "--float-distance": `${
-            (Math.random() * 10 + 20) * (index % 2 === 0 ? 1 : -1)
-          }px`,
+          animation: randomValues.duration
+            ? `float ${randomValues.duration}s ease-in-out infinite`
+            : "none",
+          "--float-distance": `${randomValues.distance}px`,
         } as React.CSSProperties
       }
     >
