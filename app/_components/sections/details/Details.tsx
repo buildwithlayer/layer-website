@@ -1,35 +1,37 @@
 import React from "react";
 import ThumbUpIcon from "public/thumb-up-outlined.svg";
 import NeonLogo from "public/neon-logo.svg";
+import Button from "../../Button";
+import OpenDemoButton from "../../OpenDemoButton";
 
 const Details = () => {
-  const benefits = [
-    {
-      name: "Tools",
-      content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
-      icon: <ThumbUpIcon />,
-    },
-    {
-      name: "Accurate Responses",
-      content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
-      icon: <ThumbUpIcon />,
-    },
-    {
-      name: "Observability",
-      content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
-      icon: <ThumbUpIcon />,
-    },
-  ];
+  //   const benefits = [
+  //     {
+  //       name: "Tools",
+  //       content:
+  //         "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+  //       icon: <ThumbUpIcon />,
+  //     },
+  //     {
+  //       name: "Accurate Responses",
+  //       content:
+  //         "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+  //       icon: <ThumbUpIcon />,
+  //     },
+  //     {
+  //       name: "Observability",
+  //       content:
+  //         "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+  //       icon: <ThumbUpIcon />,
+  //     },
+  //   ];
 
   return (
     <div className="w-screen flex flex-col items-center justify-center bg-black border-b-[1px] border-gray-100 overflow-hidden">
-      <div className="w-full max-w-[--content-width] flex flex-col z-10">
-        {/* Top Section */}
-        <div className="flex flex-col gap-[150px] py-28 relative">
-          {/*
+      {/* <div className="w-full max-w-[--content-width] flex flex-col z-10"> */}
+      {/* Top Section */}
+      {/* <div className="flex flex-col gap-[150px] py-28 relative"> */}
+      {/*
             Benefits Section
           <div className="flex w-full">
             {benefits.map((tab, index) => {
@@ -50,8 +52,8 @@ const Details = () => {
             })}
           </div> */}
 
-          {/* Customers */}
-          <div className="flex flex-col gap-12 text-center">
+      {/* Customers */}
+      {/* <div className="flex flex-col gap-12 text-center">
             <div className="flex flex-col gap-2">
               <h2 className="text-3xl font-semibold">
                 Powering the Agent Experience for Top APIs
@@ -66,28 +68,34 @@ const Details = () => {
               <NeonLogo className="h-8" fill="white" />
               <NeonLogo className="h-8" fill="white" />
             </div>
-          </div>
-          {/* End Customers */}
-          {/* Gradient BG */}
-          <div className="absolute bottom-0 -z-10 translate-y-[50%] -translate-x-[10%] w-full h-[800px] bg-[radial-gradient(var(--layer-pink-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div>
-          <div className="absolute bottom-0 right-0 -z-10 translate-y-[50%] -translate-x-[30%] w-[400px] h-[400px] bg-[radial-gradient(var(--layer-purple-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div>
-        </div>
-        {/* End Top Section */}
-      </div>
-      <div className="w-full flex justify-center z-10 backdrop-blur-sm bg-gradient-to-b from-transparentBlack-30 to-black">
+          </div> */}
+      {/* End Customers */}
+      {/* Gradient BG */}
+      {/* <div className="absolute bottom-0 -z-10 translate-y-[50%] -translate-x-[10%] w-full h-[800px] bg-[radial-gradient(var(--layer-pink-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div> */}
+      {/* <div className="absolute bottom-0 right-0 -z-10 translate-y-[50%] -translate-x-[30%] w-[400px] h-[400px] bg-[radial-gradient(var(--layer-purple-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div> */}
+      {/* </div> */}
+      {/* End Top Section */}
+      {/* </div> */}
+      <div className="w-full flex justify-center z-10 backdrop-blur-sm bg-gradient-to-b from-transparentBlack-30 to-transparentBlack-30">
         {/* CTA Section */}
-        <div className="flex flex-col gap-12 py-24 max-w-[--content-width]">
-          <div className="flex flex-col gap-1 text-center">
+        <div className="flex flex-col gap-12 py-24 max-w-[--content-width] items-center">
+          <div className="flex flex-col gap-6 text-center max-w-[500px]">
             <h2 className="text-3xl font-semibold">
-              Make your API agent-friendly
+              Start scaling your GTM
+              <br />
+              through AI Agents
             </h2>
             <p>
-              Amet eu exercitation minim tempor proident laborum minim veniam
-              velit ullamco.
+              Increase revenue and product usage by exposing your API and
+              product through a variety of popular AI tools.
             </p>
           </div>
+          <OpenDemoButton />
         </div>
         {/* End CTA Section */}
+        {/* Gradient BG */}
+        <div className="absolute bottom-0 -z-10 translate-y-[50%] -translate-x-[10%] w-full h-[800px] bg-[radial-gradient(var(--layer-pink-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div>
+        <div className="absolute bottom-0 right-0 -z-10 translate-y-[50%] -translate-x-[30%] w-[400px] h-[400px] bg-[radial-gradient(var(--layer-purple-dark)_0%,rgba(0,0,0,0)_70%)] opacity-60"></div>
       </div>
     </div>
   );

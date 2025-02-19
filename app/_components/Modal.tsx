@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import CloseIcon from "public/close-icon.svg";
+import { createPortal } from "react-dom";
 
 interface ModalProps {
   open: boolean;
@@ -10,11 +11,28 @@ interface ModalProps {
 }
 
 const Modal = ({ open, onClose, children }: ModalProps) => {
-  return (
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
+
+  return createPortal(
     <>
       {open && (
         // Modal Overlay
-        <div className="z-[99999] fixed top-0 bottom-0 right-0 left-0 bg-overlayBg flex justify-center items-center w-screen h-screen">
+        <div
+          className="z-[99999] fixed top-0 bottom-0 right-0 left-0 bg-overlayBg flex justify-center items-center w-screen h-screen"
+          onClick={onClose}
+        >
           {/* Modal Container */}
           <div className="flex flex-col gap-4 w-[80%] h-[80%]">
             {/* Modal Header */}
@@ -25,13 +43,17 @@ const Modal = ({ open, onClose, children }: ModalProps) => {
               <CloseIcon alt="Close Icon" width={24} height={24} fill="#333" />
             </button>
             {/* Modal Body */}
-            <div className="w-full h-full rounded-md overflow-hidden">
+            <div
+              className="w-full h-full rounded-md overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
               {children}
             </div>
           </div>
         </div>
       )}
-    </>
+    </>,
+    document.body
   );
 };
 

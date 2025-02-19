@@ -5,6 +5,10 @@ import DocsIcon from "public/docs-icon.svg";
 import OpenApiIcon from "public/openapi-icon.svg";
 import DeployIcon from "public/deploy-icon.svg";
 import GroupIcon from "public/group-icon.svg";
+import DocsGraphic from "public/docs.svg";
+import OpenApiGraphic from "public/api.svg";
+import DeployGraphic from "public/deploy.svg";
+import AnalyticsGraphic from "public/analytics.svg";
 
 const Build = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,28 +16,32 @@ const Build = () => {
 
   const tabs = [
     {
-      name: "Upload Docs",
+      name: "Connect Docs",
       content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+        "Connect your knowledge sources to power the “RAG” part of your extensions across popular AI surfaces",
       icon: <DocsIcon />,
+      graphic: <DocsGraphic />,
     },
     {
       name: "Upload API Spec",
       content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+        "Select which actions and workflows from your API you want to expose through surfaces like Copilot, ChatGPT, VS Code, and more.",
       icon: <OpenApiIcon />,
+      graphic: <OpenApiGraphic />,
     },
     {
       name: "Deploy Everywhere",
       content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+        "Layer’s platform eliminates the pain of having to manually build and maintain separate integrations with each of the AI ecosystems.",
       icon: <DeployIcon />,
+      graphic: <DeployGraphic />,
     },
     {
       name: "Learn Your Users",
       content:
-        "Deserunt ad eu dolor do mollit dolor dolor. Minim cupidatat esse labore irure minim sit reprehenderit eu.",
+        "View and analyze the prompts users are asking to AI tools when they relate to your API.",
       icon: <GroupIcon />,
+      graphic: <AnalyticsGraphic />,
     },
   ];
 
@@ -109,8 +117,12 @@ const Build = () => {
               );
             })}
           </div>
-          {/* Image */}
-          <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md"></div>
+          {/* Graphic */}
+          <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 flex items-center justify-center">
+            {React.cloneElement(tabs[activeTab].graphic, {
+              className: "w-full h-full",
+            })}
+          </div>
         </div>
         {/* End Section Content */}
       </div>

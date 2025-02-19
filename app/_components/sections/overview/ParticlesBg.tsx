@@ -23,7 +23,7 @@ const ParticlesBg = () => {
 
   return (
     init && (
-      <div className="w-full h-full -z-10 absolute top-0 left-0 opacity-40">
+      <div className="w-full h-full -z-10 absolute top-0 left-0 blur-sm">
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
@@ -37,19 +37,12 @@ const ParticlesBg = () => {
             smooth: true,
             interactivity: {
               events: {
-                onClick: {
-                  enable: true,
-                  mode: "push",
-                },
                 onHover: {
                   enable: true,
                   mode: "repulse",
                 },
               },
               modes: {
-                push: {
-                  quantity: 4,
-                },
                 repulse: {
                   distance: 100,
                   duration: 0.1,
@@ -65,7 +58,7 @@ const ParticlesBg = () => {
                 distance: 150,
                 enable: true,
                 opacity: 1,
-                width: 4,
+                width: 5,
               },
               move: {
                 direction: "none",
