@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import CloseIcon from "public/close-icon.svg";
-import { createPortal } from "react-dom";
+import ModalPortal from "./ModalPortal";
 
 interface ModalProps {
   open: boolean;
@@ -11,14 +11,6 @@ interface ModalProps {
 }
 
 const Modal = ({ open, onClose, children }: ModalProps) => {
-  const ref = useRef<HTMLElement>();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    ref.current = document.body;
-    setMounted(true);
-  }, []);
-
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -33,10 +25,8 @@ const Modal = ({ open, onClose, children }: ModalProps) => {
     };
   }, [onClose]);
 
-  if (!mounted || !ref.current) return null;
-
-  return createPortal(
-    <>
+  return (
+    <ModalPortal>
       {open && (
         // Modal Overlay
         <div
@@ -62,8 +52,7 @@ const Modal = ({ open, onClose, children }: ModalProps) => {
           </div>
         </div>
       )}
-    </>,
-    ref.current
+    </ModalPortal>
   );
 };
 
