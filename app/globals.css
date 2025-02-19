@@ -3,50 +3,68 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --primary: #7b65ff;
   --primary-hover: rgba(123, 101, 255, 0.2);
   --primary-dark: #5e49d5;
-  --navbar-background: rgba(255, 255, 255, 0.7);
   --content-width: 1000px;
-  --overlay-background: rgba(0, 0, 0, 0.5);
-  --gray-0: #ffffff;
-  --gray-50: #f2f2f2;
-  --gray-100: #e6e6e6;
-  --gray-200: #cccccc;
-  --gray-300: #b3b3b3;
-  --gray-400: #999999;
+  --overlay-background: rgba(0, 0, 0, 0.9);
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --navbar-background: rgba(0, 0, 0, 0.7);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --black-20: rgba(0, 0, 0, 0.2);
+  --black-30: rgba(0, 0, 0, 0.3);
+  --black-40: rgba(0, 0, 0, 0.4);
+  --black-50: rgba(0, 0, 0, 0.5);
+  --black-60: rgba(0, 0, 0, 0.6);
+  --black-70: rgba(0, 0, 0, 0.7);
+  --black-80: rgba(0, 0, 0, 0.8);
+  --black-90: rgba(0, 0, 0, 0.9);
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-90: rgba(255, 255, 255, 0.9);
+  --gray-0: #000;
+  --gray-50: #0d0d0d;
+  --gray-100: #1a1a1a;
+  --gray-200: #333333;
+  --gray-300: #4d4d4d;
+  --gray-400: #666666;
   --gray-500: #808080;
-  --gray-600: #666666;
-  --gray-700: #4d4d4d;
-  --gray-800: #333333;
-  --gray-900: #1a1a1a;
-  --gray-1000: #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --navbar-background: rgba(10, 10, 10, 0.7);
-    --gray-0: #000;
-    --gray-50: #0d0d0d;
-    --gray-100: #1a1a1a;
-    --gray-200: #333333;
-    --gray-300: #4d4d4d;
-    --gray-400: #666666;
-    --gray-500: #808080;
-    --gray-600: #999999;
-    --gray-700: #b3b3b3;
-    --gray-800: #cccccc;
-    --gray-900: #e6e6e6;
-    --gray-1000: #fff;
-  }
+  --gray-600: #999999;
+  --gray-700: #b3b3b3;
+  --gray-800: #cccccc;
+  --gray-900: #e6e6e6;
+  --gray-1000: #fff;
+  --layer-pink-dark: #52004a;
+  --layer-pink-80: rgba(255, 120, 181, 0.8);
+  --layer-purple-dark: #3f1f8f;
+  --layer-purple-80: rgba(123, 101, 255, 0.8);
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--gray-0);
   font-family: "Manrope", sans-serif;
+}
+
+.animated {
+  display: inline;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--float-distance, 20px));
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

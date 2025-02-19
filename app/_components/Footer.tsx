@@ -26,16 +26,16 @@ const Footer = () => {
           name: "LinkedIn",
           link: "https://www.linkedin.com/company/buildwithlayer/",
         },
-        { name: "Twitter", link: "https://x.com/buildwithlayer" },
+        { name: "X", link: "https://x.com/buildwithlayer" },
       ],
     },
   ];
 
   return (
     // Outer footer container
-    <div className="w-screen flex items-center justify-center bg-foreground">
+    <div className="w-screen flex items-center justify-center bg-black">
       {/* Inner footer container */}
-      <div className="w-full max-w-[--content-width] text-background px-4 py-8 flex flex-col items-center text-center gap-10 justify-between md:flex-row md:items-start md:text-left">
+      <div className="w-full max-w-[--content-width] px-4 py-8 flex flex-col items-center text-center gap-10 justify-between md:flex-row md:items-start md:text-left">
         {/* Left footer content */}
         <div className="flex flex-col md:justify-between gap-10">
           <div className="flex flex-col gap-2">

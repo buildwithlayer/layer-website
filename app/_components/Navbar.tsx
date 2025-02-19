@@ -7,7 +7,7 @@ const Navbar = () => {
   const sections = [{ name: "Blog", link: "https://docs.buildwithlayer.com" }];
 
   return (
-    <div className="flex flex-col fixed top-0 right-0 left-0">
+    <div className="flex flex-col fixed top-0 right-0 left-0 z-50">
       <BlogBanner />
       {/* Outer nav container */}
       <div className="flex justify-center items-center bg-navbarbg backdrop-blur-sm py-6 px-4 z-50 border-b-[1px] border-b-gray-100">
