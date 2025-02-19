@@ -27,7 +27,7 @@ const Details = () => {
   //   ];
 
   return (
-    <div className="w-screen flex flex-col items-center justify-center bg-black border-b-[1px] border-gray-100 overflow-hidden">
+    <div className="w-screen flex flex-col items-center justify-center bg-black border-b-[1px] border-gray-100 overflow-hidden px-4 md:px-0">
       {/* <div className="w-full max-w-[--content-width] flex flex-col z-10"> */}
       {/* Top Section */}
       {/* <div className="flex flex-col gap-[150px] py-28 relative"> */}

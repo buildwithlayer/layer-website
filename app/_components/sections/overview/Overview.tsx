@@ -8,7 +8,7 @@ import Surfaces from "./Surfaces";
 const Overview = () => {
   return (
     <div className="relative w-screen flex items-center justify-center">
-      <div className="w-full max-w-[--content-width] flex flex-col items-center gap-16 text-center pt-16 z-10 relative">
+      <div className="w-full max-w-[--content-width] flex flex-col items-center gap-16 text-center pt-16 z-10 relative px-4 md:px-0">
         {/* Hero Text */}
         <div className="flex flex-col gap-8 sticky top-[200px] w-full">
           {/* Header */}
@@ -21,7 +21,7 @@ const Overview = () => {
           </div>
           {/* End Header */}
           {/* Subheader */}
-          <div className="flex flex-col gap-2 text-xl font-light text-gray-700">
+          <div className="flex flex-col gap-2 text-xl/relaxed font-light text-gray-700">
             <h2>
               Layer’s platform helps you deploy extensions to the top AI
               ecosystems,

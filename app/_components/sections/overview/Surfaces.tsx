@@ -32,7 +32,7 @@ const SurfaceBlock = ({
 }: SurfaceBlockProps) => {
   return (
     <div
-      className="flex w-fit h-fit absolute opacity-60"
+      className="w-fit h-fit absolute opacity-60 hidden md:flex"
       style={
         {
           left: left + "%",
