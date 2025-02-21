@@ -45,6 +45,7 @@ const Overview = () => {
           delay={400}
           animateOnce
           duration={0.8}
+          className="w-full"
         >
           <VideoThumbnail />
         </ScrollAnimation>
