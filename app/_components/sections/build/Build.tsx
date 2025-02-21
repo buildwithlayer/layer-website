@@ -136,7 +136,7 @@ const Build = () => {
                       >
                         <p className="text-gray-400">{tab.content}</p>
                         <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 items-center justify-center flex md:hidden mt-4">
-                          {React.cloneElement(tabs[activeTab].graphic, {
+                          {React.cloneElement(tab.graphic, {
                             className: "w-full h-full",
                           })}
                         </div>
