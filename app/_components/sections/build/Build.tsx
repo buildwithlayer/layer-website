@@ -130,7 +130,7 @@ const Build = () => {
                       <div
                         className={`overflow-hidden transition-[max-height,opacity] duration-1000 ease-in-out ${
                           isActive
-                            ? "max-h-[300px] opacity-100"
+                            ? "max-h-screen md:max-h-[300px] opacity-100"
                             : "max-h-0 opacity-0"
                         }`}
                       >
