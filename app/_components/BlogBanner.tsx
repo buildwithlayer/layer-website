@@ -9,7 +9,7 @@ const BlogBanner = () => {
     <>
       {showBanner && (
         <div
-          className="bg-primary text-white py-3 pl-6 pr-4 fixed z-[9999] bottom-8 right-8 rounded-full shadow-md opacity-0 hover:bg-primaryDark"
+          className="bg-primary text-white py-3 pl-4 md:pl-6 pr-4 fixed z-[9999] bottom-8 left-3 right-3 md:left-auto md:right-8 rounded-xl md:rounded-full shadow-md opacity-0 hover:bg-primaryDark"
           id="blog-banner"
         >
           <a
