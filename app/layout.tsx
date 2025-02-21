@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import BlogBanner from "./_components/BlogBanner";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -24,8 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
         <Navbar />
-        <div className="mt-[133px]">{children}</div>
+        <div className="mt-[85px]">{children}</div>
         <Footer />
+        <BlogBanner />
         <GoogleAnalytics gaId="G-6J1GTJ5G7L" />
       </body>
     </html>

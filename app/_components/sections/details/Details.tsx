@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import OpenDemoButton from "../../OpenDemoButton";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Details = () => {
   //   const benefits = [
@@ -77,17 +80,28 @@ const Details = () => {
         {/* CTA Section */}
         <div className="flex flex-col gap-12 py-24 max-w-[--content-width] items-center">
           <div className="flex flex-col gap-6 text-center max-w-[500px]">
-            <h2 className="text-3xl font-semibold">
-              Start scaling your GTM
-              <br />
-              through AI Agents
-            </h2>
-            <p>
-              Increase revenue and product usage by exposing your API and
-              product through a variety of popular AI tools.
-            </p>
+            <div className="flex flex-col text-3xl/tight font-semibold">
+              <ScrollAnimation animateIn="textSlideInUp" animateOnce>
+                <h2>Start scaling your GTM</h2>
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn="textSlideInUp"
+                delay={100}
+                animateOnce
+              >
+                <h2>through AI Agents</h2>
+              </ScrollAnimation>
+            </div>
+            <ScrollAnimation animateIn="fadeIn" delay={500} animateOnce>
+              <p>
+                Increase revenue and product usage by exposing your API and
+                product through a variety of popular AI tools.
+              </p>
+            </ScrollAnimation>
           </div>
-          <OpenDemoButton />
+          <ScrollAnimation animateIn="textSlideInUp" delay={400} animateOnce>
+            <OpenDemoButton />
+          </ScrollAnimation>
         </div>
         {/* End CTA Section */}
         {/* Gradient BG */}

@@ -8,25 +8,30 @@ const BlogBanner = () => {
   return (
     <>
       {showBanner && (
-        <div className="w-full bg-primary text-white py-2 flex items-center justify-center">
-          <div className="flex justify-between md:justify-center items-center w-full max-w-[--content-width] text-left md:text-center px-4 md:px-0 gap-6">
+        <div
+          className="bg-primary text-white py-3 pl-6 pr-4 fixed z-[9999] bottom-8 right-8 rounded-full shadow-md opacity-0 hover:bg-primaryDark"
+          id="blog-banner"
+        >
+          <a
+            href="https://docs.buildwithlayer.com/llm_extensibility_vital_to_api_vendors"
+            target="_blank"
+            className="flex items-center justify-between gap-8"
+          >
             <p>
-              Check out our new blog on <br className="visible md:hidden" />
-              <a
-                href="https://docs.buildwithlayer.com/llm_extensibility_vital_to_api_vendors"
-                target="_blank"
-                className="underline hover:bg-[rgba(255,255,255,0.1)] rounded-sm p-1"
-              >
-                Why LLM Extensibility is Vital to API Vendors.
-              </a>
+              <span className="font-semibold whitespace-pre">{`📝  Check out our new blog:`}</span>
+              <br />
+              Why LLM Extensibility is Vital to API Vendors.
             </p>
             <button
-              onClick={() => setShowBanner(false)}
-              className="rounded-xl p-0 md:p-1 hover:bg-[rgba(255,255,255,0.1)]"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowBanner(false);
+              }}
+              className="rounded-full p-0 md:p-1 hover:bg-[rgba(255,255,255,0.1)]"
             >
               <CloseIcon fill="white" width={24} height={24} />
             </button>
-          </div>
+          </a>
         </div>
       )}
     </>

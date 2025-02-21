@@ -9,6 +9,7 @@ import DocsGraphic from "public/docs.svg";
 import OpenApiGraphic from "public/api.svg";
 import DeployGraphic from "public/deploy.svg";
 import AnalyticsGraphic from "public/analytics.svg";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Build = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -75,11 +76,12 @@ const Build = () => {
       <div className="w-full max-w-[--content-width] flex flex-col gap-8 md:gap-24 py-28 pt-16 md:pt-28 z-10">
         {/* Section Title */}
         <div className="flex flex-col font-extrabold text-4xl md:text-8xl">
-          <h2>
-            Build Once,
-            <br />
-            Deploy Everywhere
-          </h2>
+          <ScrollAnimation animateIn="textSlideInUp" animateOnce>
+            <h2>Build Once,</h2>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="textSlideInUp" delay={300} animateOnce>
+            <h2>Deploy Everywhere</h2>
+          </ScrollAnimation>
         </div>
         {/* End Section Title */}
         {/* Section Content */}
@@ -89,57 +91,74 @@ const Build = () => {
             {tabs.map((tab, index) => {
               const isActive = activeTab === index;
               return (
-                <div
+                <ScrollAnimation
+                  animateIn="textSlideInUp"
+                  animateOnce
                   key={index}
-                  className={`flex flex-col gap-4 px-6 py-4 border-t border-l-0 md:border-t-0 md:border-l border-gray-900 relative cursor-pointer w-full ${
-                    isActive ? "" : "text-gray-500"
-                  }`}
-                  onClick={() => {
-                    setBarHeight(0);
-                    setActiveTab(index);
-                  }}
                 >
-                  {isActive && (
-                    <>
-                      <div
-                        className="w-1 bg-primary absolute left-0 top-0 hidden md:flex"
-                        style={{
-                          height: `${barHeight}%`,
-                        }}
-                      />
-                      <div
-                        className="h-1 bg-primary absolute left-0 top-0 flex md:hidden"
-                        style={{
-                          width: `${barHeight}%`,
-                        }}
-                      />
-                    </>
-                  )}
-                  {React.cloneElement(tab.icon, {
-                    className: "w-8 h-8",
-                    fill: isActive ? "#000" : "#666666",
-                  })}
-                  <div className="flex flex-col gap-2">
-                    <h3 className="font-semibold text-lg/none">{tab.name}</h3>
-                    {isActive && <p className="text-gray-400">{tab.content}</p>}
+                  <div
+                    className={`flex flex-col gap-4 px-6 py-4 border-t border-l-0 md:border-t-0 md:border-l border-gray-900 relative cursor-pointer w-full ${
+                      isActive ? "" : "text-gray-500"
+                    }`}
+                    onClick={() => {
+                      setBarHeight(0);
+                      setActiveTab(index);
+                    }}
+                  >
                     {isActive && (
-                      <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 items-center justify-center flex md:hidden mt-4">
-                        {React.cloneElement(tabs[activeTab].graphic, {
-                          className: "w-full h-full",
-                        })}
-                      </div>
+                      <>
+                        <div
+                          className="w-1 bg-primary absolute left-0 top-0 hidden md:flex"
+                          style={{
+                            height: `${barHeight}%`,
+                          }}
+                        />
+                        <div
+                          className="h-1 bg-primary absolute left-0 top-0 flex md:hidden"
+                          style={{
+                            width: `${barHeight}%`,
+                          }}
+                        />
+                      </>
                     )}
+                    {React.cloneElement(tab.icon, {
+                      className: "w-8 h-8",
+                      fill: isActive ? "#000" : "#666666",
+                    })}
+                    <div className="flex flex-col gap-2">
+                      <h3 className="font-semibold text-lg/none">{tab.name}</h3>
+                      <div
+                        className={`overflow-hidden transition-[max-height,opacity] duration-1000 ease-in-out ${
+                          isActive
+                            ? "max-h-[300px] opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <p className="text-gray-400">{tab.content}</p>
+                        <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 items-center justify-center flex md:hidden mt-4">
+                          {React.cloneElement(tabs[activeTab].graphic, {
+                            className: "w-full h-full",
+                          })}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </ScrollAnimation>
               );
             })}
           </div>
           {/* Graphic */}
-          <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 items-center justify-center hidden md:flex">
-            {React.cloneElement(tabs[activeTab].graphic, {
-              className: "w-full h-full",
-            })}
-          </div>
+          <ScrollAnimation
+            animateIn="textSlideInUp"
+            animateOnce
+            className="w-full"
+          >
+            <div className="w-full bg-gradient-to-br from-layerPink-80 to-layerPurple-80 rounded-md md:min-h-[550px] md:h-[550px] p-4 items-center justify-center hidden md:flex">
+              {React.cloneElement(tabs[activeTab].graphic, {
+                className: "w-full h-full",
+              })}
+            </div>
+          </ScrollAnimation>
         </div>
         {/* End Section Content */}
       </div>

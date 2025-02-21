@@ -68,3 +68,51 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes textSlideInUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.textSlideInUp {
+  animation: textSlideInUp 0.5s ease-out;
+}
+
+@keyframes videoThumbnailSlideInUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    backdrop-filter: blur(50px);
+  }
+}
+
+.videoThumbnailSlideInUp {
+  animation: videoThumbnailSlideInUp 0.5s ease-out;
+}
+
+@keyframes bannerSlideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#blog-banner {
+  animation: bannerSlideIn 0.5s ease-out forwards;
+  animation-delay: 1s;
+}
