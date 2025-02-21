@@ -24,7 +24,7 @@ const Overview = () => {
           </div>
           {/* End Header */}
           {/* Subheader */}
-          <div className="flex flex-col gap-2 text-xl/relaxed font-light text-gray-700">
+          <div className="flex flex-col text-xl/relaxed font-light text-gray-700">
             <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
               <h2>
                 Layer’s platform helps you deploy extensions to the top AI
