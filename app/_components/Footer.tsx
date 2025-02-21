@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   const linkStyles =
-    "font-light text-gray-400 hover:text-background text-center md:text-left md:pr-4";
+    "font-light text-gray-400 hover:text-white text-center md:text-left md:pr-4";
 
   const linkSections = [
     {
