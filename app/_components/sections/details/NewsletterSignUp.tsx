@@ -2,7 +2,7 @@
 
 import React, { FormEvent } from "react";
 import Button from "../../Button";
-import { appendRowToSheet } from "@/app/_clients/gapi";
+import { ScaleLoader } from "react-spinners";
 
 const NewsletterSignUp = () => {
   const [email, setEmail] = React.useState("");
@@ -10,18 +10,25 @@ const NewsletterSignUp = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Submitted " + email);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    setEmail("");
+    setSubmitted(true);
+
     try {
-      await appendRowToSheet(
-        [[email]],
-        process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "",
-        "Sheet1!A:A"
+      await fetch(
+        "https://script.google.com/macros/s/AKfycby0MPiJx7Ugbf5Mz5udgF2KPFUe0O55vfYOIqNn-6-G3hm4jgatzIb6rrniDZ0bZQHQ/exec",
+        {
+          redirect: "follow",
+          method: "POST",
+          body: formData,
+        }
       );
-      setEmail("");
-      setSubmitted(true);
-    } catch {
-      console.error("Error appending row");
-      alert("Error submitting email. Please try again later.");
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Error submitting form. Please try again later.");
     }
   };
 

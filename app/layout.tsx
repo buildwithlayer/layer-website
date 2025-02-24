@@ -29,6 +29,10 @@ export default function RootLayout({
           src="https://apis.google.com/js/api.js"
           strategy="beforeInteractive"
         />
+        <meta
+          name="google-signin-client_id"
+          content={`${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}.apps.googleusercontent.com`}
+        ></meta>
       </head>
       <body className={`${manrope.variable} antialiased`}>
         <Navbar />

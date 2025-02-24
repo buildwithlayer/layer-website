@@ -25,9 +25,4 @@ jobs:
         with:
           service: ${{vars.GOOGLE_CLOUD_RUN_SERVICE}}
           source: "."
-          env_vars: |-
-            NEXT_PUBLIC_GOOGLE_API_KEY=${{secrets.NEXT_PUBLIC_GOOGLE_API_KEY}}
-            NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID}}
-            NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=${{secrets.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET}}
-            NEXT_PUBLIC_GOOGLE_SHEET_ID=${{secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID}}
           timeout: 10m
