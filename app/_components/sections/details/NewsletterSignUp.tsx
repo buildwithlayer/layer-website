@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { FormEvent } from "react";
 import Button from "../../Button";
 import { appendRowToSheet } from "@/app/_clients/gapi";
 
@@ -8,7 +8,7 @@ const NewsletterSignUp = () => {
   const [email, setEmail] = React.useState("");
   const [submitted, setSubmitted] = React.useState(false);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitted " + email);
     try {
@@ -26,13 +26,13 @@ const NewsletterSignUp = () => {
   };
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 w-full">
       <form
-        className="flex items-stretch rounded-md overflow-hidden border border-gray-300"
+        className="flex items-stretch rounded-md overflow-hidden border border-gray-100 w-full"
         onSubmit={handleSubmit}
       >
         <input
-          className="border-none outline-none rounded-r-none px-4 py-2 w-full md:min-w-[300px] text-black"
+          className="border-none outline-none rounded-r-none px-4 py-2 w-full text-black"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"

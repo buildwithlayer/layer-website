@@ -1,10 +1,10 @@
 /// <reference types="gapi" />
 /// <reference types="gapi.client.sheets" />
 
-declare const gapi: any;
+type SheetData = string | number | boolean | null;
 
 export async function appendRowToSheet(
-  values: any[][],
+  values: SheetData[][],
   spreadsheetId: string,
   range: string
 ): Promise<void> {

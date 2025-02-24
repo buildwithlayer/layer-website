@@ -26,6 +26,8 @@ jobs:
           service: ${{vars.GOOGLE_CLOUD_RUN_SERVICE}}
           source: "."
           env_vars: |-
-            REACT_APP_MANAGEMENT_DASH_URL=${{vars.REACT_APP_MANAGEMENT_DASH_URL}}
-            REACT_APP_CHAT_URL=${{vars.REACT_APP_CHAT_URL}}
+            NEXT_PUBLIC_GOOGLE_API_KEY=${{vars.NEXT_PUBLIC_GOOGLE_API_KEY}}
+            NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{vars.NEXT_PUBLIC_GOOGLE_CLIENT_ID}}
+            NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=${{vars.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET}}
+            NEXT_PUBLIC_GOOGLE_SHEET_ID=${{vars.NEXT_PUBLIC_GOOGLE_SHEET_ID}}
           timeout: 10m

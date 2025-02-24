@@ -18,7 +18,6 @@
     "@types/gapi.client.sheets": "^4.0.20201031",
     "animate.css": "^4.1.1",
     "gapi": "^0.0.3",
-    "googleapis": "^144.0.0",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-animate-on-scroll": "^2.1.9",

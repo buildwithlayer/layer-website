@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
+import OpenDemoButton from "../../OpenDemoButton";
 import NewsletterSignUp from "./NewsletterSignUp";
+import CTABlock from "./CTABlock";
 
 const Details = () => {
   //   const benefits = [
@@ -78,27 +79,19 @@ const Details = () => {
       {/* </div> */}
       <div className="w-full flex justify-center z-10 backdrop-blur-sm bg-gradient-to-b from-transparentBlack-30 to-transparentBlack-30">
         {/* CTA Section */}
-        <div className="flex flex-col gap-12 py-24 max-w-[--content-width] items-center">
-          <div className="flex flex-col gap-6 text-center max-w-[500px]">
-            <div className="flex flex-col text-3xl/tight font-semibold">
-              <ScrollAnimation animateIn="textSlideInUp" animateOnce>
-                <h2>Keep up to date</h2>
-              </ScrollAnimation>
-              <ScrollAnimation
-                animateIn="textSlideInUp"
-                delay={100}
-                animateOnce
-              >
-                <h2>on all things Layer</h2>
-              </ScrollAnimation>
-            </div>
-            <ScrollAnimation animateIn="fadeIn" delay={500} animateOnce>
-              <p>Sign up for our newsletter!</p>
-            </ScrollAnimation>
-          </div>
-          <ScrollAnimation animateIn="textSlideInUp" delay={400} animateOnce>
-            <NewsletterSignUp />
-          </ScrollAnimation>
+        <div className="flex flex-col md:flex-row gap-5 py-10 max-w-[--content-width]">
+          <CTABlock
+            headers={["Start scaling your GTM", "through AI Agents"]}
+            paragraphs={[
+              "Increase revenue and product usage by exposing your API and product through a variety of popular AI tools.",
+            ]}
+            action={<OpenDemoButton />}
+          />
+          <CTABlock
+            headers={["Keep up to date", "on all things Layer"]}
+            paragraphs={["Sign up for our newsletter!"]}
+            action={<NewsletterSignUp />}
+          />
         </div>
         {/* End CTA Section */}
         {/* Gradient BG */}
