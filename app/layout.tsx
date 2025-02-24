@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
@@ -23,6 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://apis.google.com/js/api.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={`${manrope.variable} antialiased`}>
         <Navbar />
         <div className="mt-[85px]">{children}</div>
