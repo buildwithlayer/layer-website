@@ -2,7 +2,6 @@
 
 import React, { FormEvent } from "react";
 import Button from "../../Button";
-import { ScaleLoader } from "react-spinners";
 
 const NewsletterSignUp = () => {
   const [email, setEmail] = React.useState("");
