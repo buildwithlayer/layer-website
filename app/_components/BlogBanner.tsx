@@ -13,14 +13,14 @@ const BlogBanner = () => {
           id="blog-banner"
         >
           <a
-            href="https://docs.buildwithlayer.com/llm_extensibility_vital_to_api_vendors"
+            href="https://docs.buildwithlayer.com/ai_gtm"
             target="_blank"
             className="flex items-center justify-between gap-8"
           >
             <p>
               <span className="font-semibold whitespace-pre">{`📝  Check out our new blog:`}</span>
               <br />
-              Why LLM Extensibility is Vital to API Vendors.
+              AI Go-To-Market: Why Agents Are Your Newest Path to Adoption
             </p>
             <button
               onClick={(e) => {
