@@ -6,6 +6,7 @@ import ParticlesBg from "./ParticlesBg";
 import Surfaces from "./Surfaces";
 import "animate.css/animate.compat.css";
 import ScrollAnimation from "react-animate-on-scroll";
+import Button from "../../Button";
 
 const Overview = () => {
   return (
@@ -38,6 +39,25 @@ const Overview = () => {
             </ScrollAnimation>
           </div>
           {/* End Subheader */}
+          <ScrollAnimation
+            animateIn="textSlideInUp"
+            animateOnce
+            delay={800}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "8px",
+            }}
+          >
+            <a href="https://dashboard.buildwithlayer.com/demo" target="_blank">
+              <Button
+                label="Build a Demo MCP Server"
+                handleClick={() => {}}
+                size="lg"
+              />
+            </a>
+          </ScrollAnimation>
         </div>
         {/* End Hero Text */}
         <ScrollAnimation
