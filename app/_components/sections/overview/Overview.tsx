@@ -17,10 +17,10 @@ const Overview = () => {
           {/* Header */}
           <div className="flex flex-col font-extrabold text-4xl/tight md:text-7xl/tight">
             <ScrollAnimation animateIn="textSlideInUp" animateOnce>
-              <h1>{`Make Your API`}</h1>
+              <h1>{`Build great MCP`}</h1>
             </ScrollAnimation>
             <ScrollAnimation animateIn="textSlideInUp" delay={200} animateOnce>
-              <h1>{`Accessible to Agents`}</h1>
+              <h1>{`servers for your API`}</h1>
             </ScrollAnimation>
           </div>
           {/* End Header */}
@@ -28,13 +28,12 @@ const Overview = () => {
           <div className="flex flex-col text-xl/relaxed font-light text-gray-700">
             <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
               <h2>
-                Layer’s platform helps you deploy extensions to the top AI
-                ecosystems,
+                Layer’s platform generates production-grade MCP servers
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animateIn="fadeIn" delay={700} animateOnce>
               <h2>
-                so popular agentic tools can easily pick up and use your API.
+               so AI coding tools can easily pick up and use your API.
               </h2>
             </ScrollAnimation>
           </div>
