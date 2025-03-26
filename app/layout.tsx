@@ -14,7 +14,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Layer",
-  description: "Make Your API Easy for Agents to Use",
+  description: "Build Great MCP Servers for Your API",
 };
 
 export default function RootLayout({

@@ -45,7 +45,7 @@ const Footer = () => {
               <h1 className="font-bold text-[24px]">Layer</h1>
             </div>
             <h2 className="text-[26px] font-light max-w-[300px] hidden md:block">
-              Make Your API Easy For Agents to Use
+              Make Your API Accessible to Agents
             </h2>
           </div>
           <p className="font-light hidden md:block">{`© ${new Date().getFullYear()} Layer. All rights reserved.`}</p>

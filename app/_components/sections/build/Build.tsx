@@ -19,28 +19,28 @@ const Build = () => {
     {
       name: "Connect Docs",
       content:
-        "Connect your knowledge sources to power the “RAG” part of your extensions across popular AI surfaces",
+        "Connect your knowledge sources to power the “RAG” part of your MCP server across popular AI surfaces",
       icon: <DocsIcon />,
       graphic: <DocsGraphic />,
     },
     {
       name: "Upload API Spec",
       content:
-        "Select which actions from your API you want to expose via surfaces like Copilot, ChatGPT, VS Code, and more.",
+        "Select the endpoints want to expose via MCP clients and contruct workflows that execute automatically for users.",
       icon: <OpenApiIcon />,
       graphic: <OpenApiGraphic />,
     },
     {
       name: "Deploy Everywhere",
       content:
-        "Our platform eliminates the pain of having to manually build and maintain separate integrations with each of the AI ecosystems.",
+        "MCP gives you a standardized way to bring your product into every AI ecosystem without managing separate intergations for each one.",
       icon: <DeployIcon />,
       graphic: <DeployGraphic />,
     },
     {
       name: "Get Insight",
       content:
-        "View and analyze the prompts users are asking to AI tools when they relate to your API.",
+        "Our telemetry data gives you visibility into exactly where and how users are using your MCP servers.",
       icon: <GroupIcon />,
       graphic: <AnalyticsGraphic />,
     },
