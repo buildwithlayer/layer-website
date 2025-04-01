@@ -13,14 +13,14 @@ const BlogBanner = () => {
           id="blog-banner"
         >
           <a
-            href="https://docs.buildwithlayer.com/ai_gtm"
+            href="https://us06web.zoom.us/webinar/register/WN_Np6LTMyjTzywWIfpZMYKuQ#/registration"
             target="_blank"
             className="flex items-center justify-between gap-8"
           >
             <p>
-              <span className="font-semibold whitespace-pre">{`📝  Check out our new blog:`}</span>
+              <span className="font-semibold whitespace-pre">{`Sign up for our webinar:`}</span>
               <br />
-              AI Go-To-Market: Why Agents Are Your Newest Path to Adoption
+              MCP In The Wild: How to Turn MCP into Practical AI Solutions
             </p>
             <button
               onClick={(e) => {
