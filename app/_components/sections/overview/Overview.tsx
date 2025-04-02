@@ -13,7 +13,7 @@ const Overview = () => {
     <div className="relative w-screen flex items-center justify-center">
       <div className="w-full max-w-[--content-width] flex flex-col items-center gap-16 text-center pt-16 z-10 relative px-4 md:px-0">
         {/* Hero Text */}
-        <div className="flex flex-col gap-8 sticky top-[149px] w-full">
+        <div className="flex flex-col gap-8 sticky top-[185px] w-full">
           {/* Header */}
           <div className="flex flex-col font-extrabold text-4xl/tight md:text-7xl/tight">
             <ScrollAnimation animateIn="textSlideInUp" animateOnce>
@@ -27,14 +27,10 @@ const Overview = () => {
           {/* Subheader */}
           <div className="flex flex-col text-xl/relaxed font-light text-gray-700">
             <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
-              <h2>
-                Layer’s platform generates production-grade MCP servers
-              </h2>
+              <h2>Layer’s platform generates production-grade MCP servers</h2>
             </ScrollAnimation>
             <ScrollAnimation animateIn="fadeIn" delay={700} animateOnce>
-              <h2>
-               so AI coding tools can easily pick up and use your API.
-              </h2>
+              <h2>so AI coding tools can easily pick up and use your API.</h2>
             </ScrollAnimation>
           </div>
           {/* End Subheader */}

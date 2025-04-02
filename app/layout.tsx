@@ -36,9 +36,9 @@ export default function RootLayout({
       </head>
       <body className={`${manrope.variable} antialiased`}>
         <Navbar />
-        <div className="mt-[85px]">{children}</div>
+        <div className="mt-[120px]">{children}</div>
         <Footer />
-        <BlogBanner />
+        {/* <BlogBanner /> */}
         <GoogleAnalytics gaId="G-6J1GTJ5G7L" />
       </body>
     </html>
