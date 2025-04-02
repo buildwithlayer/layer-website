@@ -17,7 +17,8 @@ const TopBanner = ({ children, link, open, handleClose }: TopBannerProps) => {
         target="_blank"
         rel="noreferrer"
       >
-        <div className="max-w-[--content-width] w-full flex items-center justify-between">
+        <div className="max-w-[--content-width] w-full flex items-center justify-between gap-4">
+          <div className="w-6 md:w-8"></div>
           {children}
           <button
             onClick={(e) => {

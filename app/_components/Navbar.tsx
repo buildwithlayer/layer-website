@@ -17,7 +17,7 @@ const Navbar = () => {
         open={showBanner}
         handleClose={() => setShowBanner(false)}
       >
-        <p className="whitespace-pre">
+        <p className="text-center">
           <strong>Sign Up For Our Webinar:</strong>
           <br />
           MCP In The Wild: How to Turn MCP into Practical AI Solutions
