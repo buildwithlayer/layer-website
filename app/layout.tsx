@@ -5,7 +5,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import BlogBanner from "./_components/BlogBanner";
+// import BlogBanner from "./_components/BlogBanner";
 
 const manrope = Manrope({
   variable: "--font-manrope",
