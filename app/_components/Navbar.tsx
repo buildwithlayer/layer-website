@@ -6,7 +6,10 @@ import LayerLogo from "public/LayerLogo.svg";
 import TopBanner from "./TopBanner";
 
 const Navbar = () => {
-  const sections = [{ name: "Blog", link: "https://docs.buildwithlayer.com" }];
+  const sections = [
+    { name: "Docs", link: "https://docs.buildwithlayer.com" },
+    { name: "Blog", link: "https://docs.buildwithlayer.com/blog" },
+  ];
 
   const [showBanner, setShowBanner] = React.useState(true);
 
@@ -34,7 +37,7 @@ const Navbar = () => {
           </div>
           {/* NavLinks */}
           <div className="flex gap-8 items-center">
-            <div className="flex gap-4 items-center">
+            <div className="hidden md:flex gap-6 items-center">
               {sections.map((section) => (
                 <a
                   key={section.name}
