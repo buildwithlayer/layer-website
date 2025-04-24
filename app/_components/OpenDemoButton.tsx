@@ -17,7 +17,7 @@ const OpenDemoButton = () => {
       <Modal onClose={() => setDemoModalOpen(false)} open={demoModalOpen}>
         <iframe
           title="Booking Page"
-          src="https://cal.com/team/layer/demo?layout=month_view"
+          src="https://calendly.com/layer-team/15-minutes"
           className="w-full h-full"
         />
       </Modal>
