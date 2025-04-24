@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   const linkStyles =
-    "font-light text-gray-400 hover:text-white text-center md:text-left md:pr-4";
+    "font-light text-gray-400 hover:text-white text-center md:text-left md:pr-4 py-2 md:py-0 block";
 
   const linkSections = [
     {
@@ -51,7 +51,7 @@ const Footer = () => {
           <p className="font-light hidden md:block">{`© ${new Date().getFullYear()} Layer. All rights reserved.`}</p>
         </div>
         {/* Right footer content */}
-        <div className="flex gap-10 flex-col md:flex-row md:gap-20">
+        <div className="flex gap-10 flex-col md:flex-row md:gap-20 w-full md:w-auto">
           {linkSections.map((section) => (
             <div className="flex flex-col gap-2" key={section.name}>
               <p>{section.name}</p>
