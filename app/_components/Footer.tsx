@@ -59,6 +59,7 @@ const Footer = () => {
                 <a
                   href={link.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={linkStyles}
                   key={link.name}
                 >
