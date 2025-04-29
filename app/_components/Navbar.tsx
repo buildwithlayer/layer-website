@@ -1,20 +1,19 @@
 "use client";
 
 import React from "react";
-import OpenDemoButton from "./OpenDemoButton";
 import LayerLogo from "public/LayerLogo.svg";
 import TopBanner from "./TopBanner";
+import GithubIcon from "public/github-icon.svg";
 
 const Navbar = () => {
   const sections = [
-    { name: "Docs", link: "https://docs.buildwithlayer.com" },
     { name: "Blog", link: "https://docs.buildwithlayer.com/blog" },
   ];
 
   const [showBanner, setShowBanner] = React.useState(true);
 
   return (
-    <div className="flex flex-col fixed top-0 right-0 left-0 z-50">
+    <div className="flex flex-col fixed top-0 right-0 left-0 z-50" id="navbar">
       <TopBanner
         link="https://us06web.zoom.us/webinar/register/WN_Np6LTMyjTzywWIfpZMYKuQ#/registration"
         open={showBanner}
@@ -49,7 +48,17 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            <OpenDemoButton />
+            <a
+              href={"https://github.com/buildwithlayer"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <button className="w-full flex items-center justify-center gap-3 px-3 py-2 rounded border-[1px] border-white/20 bg-white text-black hover:bg-white/90 transition duration-200">
+                <GithubIcon fill="black" width="24" />
+                <p className="font-semibold">GitHub</p>
+              </button>
+            </a>
           </div>
         </div>
       </div>

@@ -1,76 +1,129 @@
 "use client";
 
-import React from "react";
-import VideoThumbnail from "./VideoThumbnail";
+import React, { useEffect, useState } from "react";
 import ParticlesBg from "./ParticlesBg";
-import Surfaces from "./Surfaces";
 import "animate.css/animate.compat.css";
 import ScrollAnimation from "react-animate-on-scroll";
-import Button from "../../Button";
+import RepoCard from "./RepoCard";
+import RoadmapStep from "./RoadmapStep";
 
 const Overview = () => {
+  const [marginTop, setMarginTop] = useState(205);
+
+  useEffect(() => {
+    const updateMargin = () => {
+      const navbarHeight = document.getElementById("navbar")?.offsetHeight || 0;
+      console.log("Navbar Height:", navbarHeight);
+      setMarginTop(navbarHeight + 48);
+    };
+
+    // Initial calculation
+    updateMargin();
+
+    // Create ResizeObserver to watch navbar
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      const observer = new ResizeObserver(updateMargin);
+      observer.observe(navbar);
+
+      // Cleanup
+      return () => observer.disconnect();
+    }
+  }, []);
+
   return (
-    <div className="relative w-screen flex items-center justify-center">
-      <div className="w-full max-w-[--content-width] flex flex-col items-center gap-16 text-center pt-16 z-10 relative px-4 md:px-0">
-        {/* Hero Text */}
-        <div className="flex flex-col gap-8 sticky top-[185px] w-full">
+    <div className="relative w-screen flex items-center justify-center pb-10 px-2">
+      <div
+        className="w-full max-w-[--content-width] flex flex-col items-center gap-14 text-center py-12 px-2 md:px-12 z-10 rounded bg-white/10"
+        style={{ marginTop }}
+      >
+        <div className="flex flex-col gap-5 items-center">
           {/* Header */}
-          <div className="flex flex-col font-extrabold text-4xl/tight md:text-7xl/tight">
+          <div className="flex flex-col font-extrabold text-3xl/tight md:text-6xl/tight">
             <ScrollAnimation animateIn="textSlideInUp" animateOnce>
-              <h1>{`Build great MCP`}</h1>
+              <h1>
+                The <span className="text-primary">Open Source</span> Provider
+              </h1>
             </ScrollAnimation>
             <ScrollAnimation animateIn="textSlideInUp" delay={200} animateOnce>
-              <h1>{`servers for your API`}</h1>
+              <h1>For All Things MCP</h1>
             </ScrollAnimation>
           </div>
           {/* End Header */}
           {/* Subheader */}
-          <div className="flex flex-col text-xl/relaxed font-light text-gray-700">
-            <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
-              <h2>Layer’s platform generates production-grade MCP servers</h2>
-            </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" delay={700} animateOnce>
-              <h2>so AI coding tools can easily pick up and use your API.</h2>
-            </ScrollAnimation>
-          </div>
+          <ScrollAnimation animateIn="textSlideInUp" delay={400} animateOnce>
+            <h2 className="text-2xl md:text-3xl font-light max-w-[600px]">
+              Build • Deploy • Test
+            </h2>
+          </ScrollAnimation>
           {/* End Subheader */}
+        </div>
+        {/* Repos */}
+        <div className="flex flex-col gap-4 items-stretch md:flex-row">
           <ScrollAnimation
+            className="flex-1 w-full"
             animateIn="textSlideInUp"
             animateOnce
-            delay={800}
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "8px",
-            }}
+            delay={400}
           >
-            <a href="https://dashboard.buildwithlayer.com/demo" target="_blank">
-              <Button
-                label="Build a Demo MCP Server"
-                handleClick={() => {}}
-                size="lg"
-              />
-            </a>
+            <RepoCard
+              name="OpenAPI to MCP"
+              description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+              url="https://github.com/buildwithlayer"
+              version="v0.0.1"
+            />
           </ScrollAnimation>
+          <div className="flex flex-col gap-4 flex-1 w-full">
+            <ScrollAnimation animateIn="textSlideInUp" animateOnce delay={600}>
+              <RepoCard
+                name="OpenAPI Zod Schemas"
+                description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+                url="https://github.com/buildwithlayer"
+                version="v0.0.1"
+              />
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="textSlideInUp" animateOnce delay={650}>
+              <RepoCard
+                name="JSON Schema Zod Schemas"
+                description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+                url="https://github.com/buildwithlayer"
+                version="v0.0.1"
+              />
+            </ScrollAnimation>
+          </div>
         </div>
-        {/* End Hero Text */}
-        <ScrollAnimation
-          animateIn="videoThumbnailSlideInUp"
-          delay={400}
-          animateOnce
-          duration={0.8}
-          className="w-full"
-        >
-          <VideoThumbnail />
-        </ScrollAnimation>
+        {/* End Repos */}
+        {/* Roadmap */}
+        <div className="bg-black/30 flex flex-col rounded w-full text-left">
+          <div className="w-full border-b-[1px] border-white/10 p-4">
+            <h3 className="text-2xl font-semibold whitespace-pre">
+              🚀{"  "}Development Roadmap
+            </h3>
+          </div>
+          <div className="flex flex-col gap-3 p-8">
+            <RoadmapStep
+              title="Web MCP Client"
+              description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+              state="current"
+            />
+            <RoadmapStep
+              title="MCP Server Evals"
+              description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+              state="upcoming"
+            />
+            <RoadmapStep
+              title="MCP Vault"
+              description="Officia tempor velit ipsum proident incididunt voluptate. Eiusmod aute id minim eiusmod dolore officia deserunt anim magna laborum laborum minim eiusmod."
+              state="upcoming"
+              last
+            />
+          </div>
+        </div>
+        {/* End Roadmap */}
       </div>
       <ParticlesBg />
-      <Surfaces />
       {/* BG Gradient */}
       <div className="absolute top-0 left-0 right-0 w-screen bg-gradient-to-b from-[rgba(0,0,0,0)] from-30% to-layerPink-dark h-full opacity-50"></div>
-      {/* White BG Section */}
-      <div className="absolute bg-white bottom-0 left-0 right-0 w-screen h-[100px]"></div>
     </div>
   );
 };
