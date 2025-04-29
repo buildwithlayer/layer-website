@@ -53,7 +53,7 @@ const Overview = () => {
           {/* Subheader */}
           <ScrollAnimation animateIn="textSlideInUp" delay={400} animateOnce>
             <h2 className="text-2xl md:text-3xl font-light max-w-[600px]">
-              Build • Deploy • Test
+              Build • Test • Deploy
             </h2>
           </ScrollAnimation>
           {/* End Subheader */}
