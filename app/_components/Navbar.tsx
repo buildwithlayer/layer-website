@@ -4,10 +4,15 @@ import React from "react";
 import LayerLogo from "public/LayerLogo.svg";
 import TopBanner from "./TopBanner";
 import GithubIcon from "public/github-icon.svg";
+import BlogIcon from "public/blog-icon.svg";
 
 const Navbar = () => {
   const sections = [
-    { name: "Blog", link: "https://docs.buildwithlayer.com/blog" },
+    {
+      name: "Blog",
+      link: "https://docs.buildwithlayer.com/blog",
+      icon: <BlogIcon fill="white" width="24" />,
+    },
   ];
 
   const [showBanner, setShowBanner] = React.useState(true);
@@ -42,8 +47,9 @@ const Navbar = () => {
                   key={section.name}
                   href={section.link}
                   target={`${section.link.startsWith("http") ? "_blank" : ""}`}
-                  className="text-sm font-semibold text-foreground hover:text-primary"
+                  className="flex items-center gap-3 font-semibold text-white hover:bg-white/10 px-4 py-2 rounded transition duration-200"
                 >
+                  {section.icon}
                   {section.name}
                 </a>
               ))}
