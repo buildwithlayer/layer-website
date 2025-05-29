@@ -45,7 +45,7 @@ const Overview = () => {
               marginTop: "8px",
             }}
           >
-            <a href="https://dashboard.buildwithlayer.com/demo" target="_blank">
+            <a href="https://dashboard.buildwithlayer.com/" target="_blank">
               <Button
                 label="Build a Demo MCP Server"
                 handleClick={() => {}}
