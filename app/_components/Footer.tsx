@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="flex gap-10 flex-col md:flex-row md:gap-20 w-full md:w-auto">
           <CalendlyWidget />
         </div>
-        <div className="flex-col gap-4 flex md:md-hidden">
+        <div className="flex-col gap-4 flex md:hidden">
           <div className="flex flex-col gap-2">
             <a
               href="https://storage.googleapis.com/generic-assets/TermsOfService.pdf"
