@@ -29,8 +29,8 @@ const Footer = () => {
                 See what MCP can do for your company
               </h2>
               <p className="text-gray-800 font-light text-xl">
-                Schedule a 15-minute discussion of how we can help you build and
-                take advantage of an MCP server.
+                Schedule a 15-minute discussion to learn how we can help you
+                build and take advantage of MCP.
               </p>
             </div>
           </div>

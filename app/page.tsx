@@ -3,7 +3,7 @@ import Faq from "./_components/sections/Faq";
 import Features from "./_components/sections/Features";
 import Overview from "./_components/sections/Overview";
 import Team from "./_components/sections/Team";
-import Testimonials from "./_components/sections/Testimonials";
+// import Testimonials from "./_components/sections/Testimonials";
 import WhyLayer from "./_components/sections/WhyLayer";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <Overview />
       <Features />
       <WhyLayer />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <BlogsAndTalks />
       <Team />
       <Faq />
