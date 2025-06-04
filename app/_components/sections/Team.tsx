@@ -11,7 +11,9 @@ interface TeamCardProps {
 const TeamCard = ({ name, role, imageSrc, linkedin }: TeamCardProps) => {
   return (
     <div className="flex flex-col items-center justify-end rounded-lg border-[1px] border-gray-900 relative h-[350px] overflow-hidden">
-      <img
+      <Image
+        width={400}
+        height={400}
         src={imageSrc}
         alt={name}
         className="w-full h-full absolute -z-10 object-contain"

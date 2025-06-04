@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface BlogCard {
@@ -17,10 +18,12 @@ const BlogCard = ({ title, description, link, imageSrc }: BlogCard) => {
       rel="noreferrer"
     >
       {imageSrc && (
-        <img
+        <Image
           src={imageSrc}
           alt={title}
           className="object-cover object-center h-[200px]"
+          width={400}
+          height={200}
         />
       )}
       <div className="flex flex-col gap-2 p-4 text-left">

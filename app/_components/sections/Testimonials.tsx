@@ -16,7 +16,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div className="flex flex-col items-center border-[1px] border-gray-900 rounded-md">
-      <p className="text-2xl p-4 text-center">"{quote}"</p>
+      <p className="text-2xl p-4 text-center">&quot;{quote}&quot;</p>
       <div className="flex gap-3 items-center border-t-[1px] border-gray-900 w-full p-2">
         <Image
           src={imageSrc}
