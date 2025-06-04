@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: #7b65ff;
   --primary-hover: rgba(123, 101, 255, 0.2);
@@ -48,8 +52,8 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--gray-0);
+  color: var(--gray-100);
+  background: var(--gray-1000);
   font-family: "Manrope", sans-serif;
 }
 
@@ -115,4 +119,11 @@ body {
 #blog-banner {
   animation: bannerSlideIn 0.5s ease-out forwards;
   animation-delay: 1s;
+}
+
+.section-header {
+  font-size: 0.8rem;
+  font-weight: 800;
+  width: fit-content;
+  color: var(--gray-500);
 }
