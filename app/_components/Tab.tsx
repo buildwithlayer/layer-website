@@ -10,7 +10,7 @@ interface TabProps {
 const Tab = ({ label, active, onClick, additionalClasses }: TabProps) => {
   return (
     <div
-      className={`p-4 font-semibold cursor-pointer whitespace-pre shadow-primary ${
+      className={`px-6 py-4 font-semibold cursor-pointer whitespace-pre shadow-primary ${
         active ? "shadow-[inset_0_-4px_0_0]" : ""
       } hover:text-primaryDark ${additionalClasses}`}
       onClick={onClick}

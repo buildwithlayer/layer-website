@@ -37,9 +37,9 @@ const TeamCard = ({ name, role, imageSrc, linkedin }: TeamCardProps) => {
 const Team = () => {
   return (
     <div className="relative w-screen flex items-center justify-center">
-      <div className="w-full max-w-[--content-width] flex flex-col gap-2 text-center py-16 z-10 relative px-16 border-x-[1px] border-x-gray-900">
+      <div className="w-full max-w-[--content-width] flex flex-col gap-2 text-center py-16 z-10 relative p-8 md:px-16 border-x-[1px] border-x-gray-900">
         <h2 className="section-header">THE TEAM</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <TeamCard
             name="Jonah Katz"
             role="Co-Founder & CEO"

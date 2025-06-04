@@ -15,7 +15,7 @@ const Accordion = ({ label, children }: AccordionProps) => {
         className="flex items-center justify-between p-3 cursor-pointer"
         onClick={() => setExpanded(!expanded)}
       >
-        <h3 className="font-semibold">{label}</h3>
+        <h3 className="font-semibold text-left">{label}</h3>
         <button
           className={`p-2 rounded-full hover:bg-gray-900 focus:outline-none ${
             expanded ? "rotate-180" : ""

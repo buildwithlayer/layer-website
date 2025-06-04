@@ -61,12 +61,12 @@ const Features = () => {
   return (
     <div className="relative w-screen flex items-center justify-center">
       <div className="w-full max-w-[--content-width] flex flex-col items-center gap-10 text-center py-16 z-10 relative md:px-0 border-x-[1px] border-x-gray-900">
-        <div className="flex flex-col gap-1 text-4xl font-semibold">
+        <div className="flex flex-col gap-1 text-2xl/tight md:text-3xl/tight font-semibold">
           <h2>Everything you need for the</h2>
           <h2 className="text-primary">perfect MCP experience</h2>
         </div>
         <div className="flex-flex-col w-full">
-          <div className="flex border-t-[1px] border-gray-900 w-full items-center justify-stretch">
+          <div className="flex border-t-[1px] border-gray-900 w-full items-center justify-stretch overflow-x-auto">
             <Tab
               label="🛠️  Build"
               additionalClasses="w-full border-r-[1px] border-r-gray-900"
@@ -93,7 +93,7 @@ const Features = () => {
             />
           </div>
           {activeTab === "build" && (
-            <div className="grid grid-cols-2 grid-rows-2 gap-0.5">
+            <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-0.5">
               <FeatureCard
                 title="Management Dashboard"
                 description="A comprehensive dashboard for managing your MCP server."

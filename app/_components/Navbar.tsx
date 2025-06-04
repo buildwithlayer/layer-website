@@ -78,7 +78,7 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            <a href="#footer">
+            <a href="#footer" className="hidden md:block">
               <Button label="Book a Demo" handleClick={() => {}} size="lg" />
             </a>
           </div>

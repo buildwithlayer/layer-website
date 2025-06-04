@@ -34,9 +34,9 @@ const BlogCard = ({ title, description, link, imageSrc }: BlogCard) => {
 const BlogsAndTalks = () => {
   return (
     <div className="relative w-screen flex items-center justify-center">
-      <div className="w-full max-w-[--content-width] flex flex-col gap-2 text-center py-16 z-10 relative px-16 border-x-[1px] border-x-gray-900">
+      <div className="w-full max-w-[--content-width] flex flex-col gap-2 text-center py-16 z-10 relative px-8 md:px-16 border-x-[1px] border-x-gray-900">
         <h2 className="section-header">BLOGS & TALKS</h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <BlogCard
             title="5 Rules to Build a Great MCP Server"
             description="Watch our CTO, Andrew Hamilton discuss the rules for building a great MCP Server at the APIDays conference in NYC."

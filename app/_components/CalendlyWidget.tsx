@@ -14,7 +14,7 @@ export default function CalendlyWidget() {
 
   return (
     <div
-      className="calendly-inline-widget min-w-[400px] h-[500px] rounded-md overflow-hidden bg-white"
+      className="calendly-inline-widget md:min-w-[400px] h-[500px] rounded-md overflow-hidden bg-white"
       data-url="https://calendly.com/layer-team/15-minutes?primary_color=7b65ff"
     />
   );
