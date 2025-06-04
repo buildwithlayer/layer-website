@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Tab from "../Tab";
 import Image from "next/image";
 import Button from "../Button";
+import ScrollAnimation from "react-animate-on-scroll";
 
 interface FeatureCardProps {
   title: string;
@@ -62,8 +63,10 @@ const Features = () => {
     <div className="relative w-screen flex items-center justify-center">
       <div className="w-full max-w-[--content-width] flex flex-col items-center gap-10 text-center py-16 z-10 relative md:px-0 border-x-[1px] border-x-gray-900">
         <div className="flex flex-col gap-1 text-2xl/tight md:text-3xl/tight font-semibold">
-          <h2>Everything you need for the</h2>
-          <h2 className="text-primary">perfect MCP experience</h2>
+          <ScrollAnimation animateIn="textSlideInUp" delay={1000} animateOnce>
+            <h2>Everything you need for the</h2>
+            <h2 className="text-primary">perfect MCP experience</h2>
+          </ScrollAnimation>
         </div>
         <div className="flex-flex-col w-full">
           <div className="flex border-t-[1px] border-gray-900 w-full items-center justify-stretch overflow-x-auto">
