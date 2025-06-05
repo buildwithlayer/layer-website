@@ -7,9 +7,9 @@ const WhyLayer = () => {
         <h2 className="section-header">WHY LAYER?</h2>
         <p className="text-2xl text-left">
           Our team was building Al plugins a year before MCP existed. Since
-          then, we've built over 100 MCP servers and have seen what works and
-          what doesn't. We often give talks about developments in the MCP
-          ecosystem and best practices for building servers.
+          then, we&apos;ve built over 100 MCP servers and have seen what works
+          and what doesn&apos;t. We often give talks about developments in the
+          MCP ecosystem and best practices for building servers.
         </p>
       </div>
     </div>
