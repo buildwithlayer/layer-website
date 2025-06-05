@@ -2,7 +2,7 @@ import BlogsAndTalks from "./_components/sections/BlogsAndTalks";
 import Faq from "./_components/sections/Faq";
 import Features from "./_components/sections/Features";
 import Overview from "./_components/sections/Overview";
-import Team from "./_components/sections/Team";
+// import Team from "./_components/sections/Team";
 // import Testimonials from "./_components/sections/Testimonials";
 import WhyLayer from "./_components/sections/WhyLayer";
 
