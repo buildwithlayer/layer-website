@@ -6,12 +6,12 @@ const Faq = () => {
     {
       question: "What is MCP?",
       answer:
-        "Model context protocol (MCP) is an emerging standard that lets Al applications securely access external tools, data, and services. It's an important technology that will make Al far more useful and interconnected with the products we use.",
+        "Model context protocol (MCP) is an emerging standard that lets AI applications access external tools, data, and services. It's an important technology that will make AI far more useful and interconnected with the products we use.",
     },
     {
       question: "Why do I need an MCP server?",
       answer:
-        "ChatGPT has more than 400 million daily active users. Cursor has more than a million. Having an MCP server enables developers and gentic systems to directly access and consume third-party platforms and APis. Al is a huge distribution channel and MCP enables you to distribute your products and services through it.",
+        "ChatGPT has more than 400 million daily active users. Cursor has more than a million. Having an MCP server enables developers and agentic systems to directly access and consume third-party platforms and APIs. AI is a huge distribution channel and MCP enables you to distribute your products and services through it.",
     },
   ];
 
