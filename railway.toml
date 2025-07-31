@@ -1,0 +1,14 @@
+[build]
+builder = "nixpacks"
+buildCommand = "yarn install && yarn build"
+
+[deploy]
+startCommand = "yarn start"
+healthcheckPath = "/"
+port = 3000
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[environments.production]
+[environments.staging]
