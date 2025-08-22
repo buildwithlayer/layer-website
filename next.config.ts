@@ -1,13 +1,6 @@
 import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  pageExtensions: ["ts", "tsx", "mdx"],
-
-  images: {
-    domains: ["storage.googleapis.com"],
-  },
-
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -17,24 +10,18 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  turbopack: {
-    rules: {
-      "*.svg": {
-        loaders: ["@svgr/webpack"],
-        as: "*.js",
+  experimental: {
+    turbo: {
+      rules: {
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
+        },
       },
     },
-  },
-
-  experimental: {
-    mdxRs: true,
   },
 
   output: "standalone",
 };
 
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-});
-
-export default withMDX(nextConfig);
+export default nextConfig;
